@@ -120,7 +120,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 -->
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a Windows, Linux, Mac operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
-  on.
+  on. <em> There are no pre-requisites, and we will assume no prior knowledge about the tools.</em>
 
 <!--
   ACCESSIBILITY
@@ -173,6 +173,16 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </p>
 
 <hr/>
+<h2 id="syllabus">Collaborative Notepad</h2>
+
+{% if page.collaborative_notes %}
+<p id="collaborative_notes">
+  We will use the Carpentries Etherpad collaborative notepad on this workshop <a href="{{page.collaborative_notes}}">collaborative document</a> for sharing resources and collaboration during the workshop. It allows participants and instructors to write and edit text in real-time, making it an excellent tool to foster collaboration during workshops.
+</p>
+{% endif %}
+
+<hr/>
+
 
 <!--
   SCHEDULE
@@ -204,26 +214,6 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 -->
 
 <hr/>
-
-<p>
-  <strong>Requirements:</strong>
-The training is hands-on, so participants are encouraged to bring in and use their own laptops to insure the proper setup of tools for an efficient workflow once you leave the workshop. <em> There are no pre-requisites, and we will assume no prior knowledge about the tools.</em> 
-</p>
-
-<hr/>
-
-<h2 id="syllabus">Collaborative Notepad</h2>
-
-{% if page.collaborative_notes %}
-<p id="collaborative_notes">
-  We will use the Carpentries Etherpad collaborative notepad on this workshop <a href="{{page.collaborative_notes}}">collaborative document</a> for sharing resources and collaboration during the workshop. It allows participants and instructors to write and edit text in real-time, making it an excellent tool to foster collaboration during workshops.
-</p>
-{% endif %}
-
-<hr/>
-
-
-
 
 <!--
   SYLLABUS
