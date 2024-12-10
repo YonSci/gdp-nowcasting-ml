@@ -177,7 +177,7 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 
 {% if page.collaborative_notes %}
 <p id="collaborative_notes">
-  We will use the Carpentries Etherpad collaborative notepad on this workshop <a href="{{page.collaborative_notes}}">collaborative document</a> for sharing resources and collaboration during the workshop. It allows participants and instructors to write and edit text in real-time, making it an excellent tool to foster collaboration during workshops.
+  We will use the Carpentries Etherpad collaborative notepad on this workshop <a href="{{page.collaborative_notes}}" target="_blank">collaborative document</a> for sharing resources and collaboration during the workshop. It allows participants and instructors to write and edit text in real-time, making it an excellent tool to foster collaboration during workshops.
 </p>
 {% endif %}
 
@@ -192,8 +192,8 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 
 {% elsif page.carpentry == "dc" %}
   <p>Please be sure to complete these surveys before and after the workshop.</p>
-  <p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-  <p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+  <p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}" target="_blank">Pre-workshop Survey</a></p>
+  <p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}" target="_blank">Post-workshop Survey</a></p>
 
 {% elsif page.carpentry == "lc" %}
   <p>Ask your instructor about pre- and post-workshop Survey details.</p>
@@ -277,11 +277,11 @@ Attendance Sheet: https://forms.gle/PeqzLxBt6Es6bGMeA
 
 <h2> Python Software Setup</h2>
   <p>
-    <a href="http://python.org">Python</a> is a popular language for
+    <a href="http://python.org" target="_blank">Python</a> is a popular language for
     research computing, and great for general-purpose programming as
     well.  Installing all of its research packages individually can be
     a bit difficult, so we recommend
-    <a href="https://www.anaconda.com/">Anaconda</a>,
+    <a href="https://www.anaconda.com/" target="_blank">Anaconda</a>,
     an all-in-one installer.
   </p>
 
@@ -296,7 +296,7 @@ Attendance Sheet: https://forms.gle/PeqzLxBt6Es6bGMeA
       that runs in a web browser. For this to work you will need a reasonably
       up-to-date browser. The current versions of the Chrome, Safari and
       Firefox browsers are all
-      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
+      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility" target="_blank">supported</a>
       (some older browsers, including Internet Explorer version 9
       and below, are not).
     </p>
@@ -304,18 +304,18 @@ Attendance Sheet: https://forms.gle/PeqzLxBt6Es6bGMeA
   <div class="row">
     <div class="col-md-4">
       <h4 id="python-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
+      <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA" target="_blank">Video Tutorial</a>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="http://continuum.io/downloads" target="_blank">http://continuum.io/downloads</a> with your web browser.</li>
         <li>Download the Python 3 installer for Windows.</li>
         <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
       </ol>
     </div>
     <div class="col-md-4">
       <h4 id="python-macosx">Mac OS X</h4>
-      <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
+      <a href="https://www.youtube.com/watch?v=TcSAln46u9U" target="_blank">Video Tutorial</a>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="http://continuum.io/downloads" target="_blank">http://continuum.io/downloads</a> with your web browser.</li>
         <li>Download the Python 3 installer for OS X.</li>
         <li>Install Python 3 using all of the defaults for installation.</li>
       </ol>
@@ -323,7 +323,7 @@ Attendance Sheet: https://forms.gle/PeqzLxBt6Es6bGMeA
     <div class="col-md-4">
       <h4 id="python-linux">Linux</h4>
       <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Open <a href="http://continuum.io/downloads" target="_blank">http://continuum.io/downloads</a> with your web browser.</li>
         <li>Download the Python 3 installer for Linux.<br>
           (Installation requires using the shell. If you aren't
            comfortable doing the installation yourself
