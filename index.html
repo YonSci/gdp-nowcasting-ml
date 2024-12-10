@@ -243,6 +243,27 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 The training is hands-on, so participants are encouraged to bring in and use their own laptops to insure the proper setup of tools for an efficient workflow once you leave the workshop. <em> There are no pre-requisites, and we will assume no prior knowledge about the tools.</em> 
 </p>
 
+<hr/>
+
+<h2 id="syllabus">Surveys</h2>
+
+{% if page.carpentry == "swc" %}
+  <p>Please be sure to complete these surveys before and after the workshop.</p>
+  <p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+  <p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+
+{% elsif page.carpentry == "dc" %}
+  <p>Please be sure to complete these surveys before and after the workshop.</p>
+  <p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+  <p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+
+{% elsif page.carpentry == "lc" %}
+  <p>Ask your instructor about pre- and post-workshop Survey details.</p>
+
+{% endif %}
+
+<hr/>
+
 <h2> Python Software Setup</h2>
   <p>
     <a href="http://python.org">Python</a> is a popular language for
@@ -331,22 +352,9 @@ The training is hands-on, so participants are encouraged to bring in and use the
 </div> 
 <!-- End of 'Python' section. -->
 
-<h2 id="syllabus">Surveys</h2>
+<hr/>
 
-{% if page.carpentry == "swc" %}
-  <p>Please be sure to complete these surveys before and after the workshop.</p>
-  <p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-  <p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 
-{% elsif page.carpentry == "dc" %}
-  <p>Please be sure to complete these surveys before and after the workshop.</p>
-  <p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-  <p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-
-{% elsif page.carpentry == "lc" %}
-  <p>Ask your instructor about pre- and post-workshop Survey details.</p>
-
-{% endif %}
 
 <!--
 
