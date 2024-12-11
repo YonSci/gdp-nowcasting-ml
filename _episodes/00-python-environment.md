@@ -100,6 +100,11 @@ For more detailed information, refer to the [Anaconda Installation Documentation
 
 ## Virtual Environment
 
+When installing Python on your machine, you have the option to install it `system-wide` or in a `virtual environment`.
+
+- Installing Python system-wide may seem like the most straightforward approach, it can lead to several problems such as `Dependency conflicts` and `Version conflicts`
+- Installing Python in a virtual environment provides several benefits such as `Isolation`, `Dependency management`, and `Reproducibility`.
+
 A **virtual environment** is an isolated Python environment that allows you to manage dependencies for different projects without conflicts. Below are step-by-step guides for creating virtual environments using **Conda** and **pip**.
 
 ## Python Environment Management with Conda
@@ -299,12 +304,7 @@ Remove-Item -Recurse -Force .\my_env
 - **Visual Insights**: Supports libraries like Matplotlib, Seaborn, Plotly, and more.
 - **Communicate Results**: Create professional charts, graphs, and interactive visualizations.
 
-### 6. Collaboration
-- **Teamwork Enabled**: Share notebooks and collaborate on code in real-time.
-- **Feedback Friendly**: Add comments and review shared notebooks for enhanced collaboration.
-- **Knowledge Sharing**: Streamlines team workflows and promotes shared learning.
-
-### 7. Education
+### 6. Education
 - **Learning Platform**: Widely used for teaching programming, data analysis, and machine learning.
 - **Interactive Learning**: Provides hands-on experiences to engage students and reinforce concepts.
 - **Instructor-Friendly**: Allows instructors to create interactive tutorials and demonstrations.
