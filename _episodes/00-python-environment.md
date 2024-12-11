@@ -2,7 +2,6 @@
 title: Python Development Environment
 teaching: 1
 exercises: 1
-
 questions:
 - "How to install Python?"
 - "How to use conda and pip package managers?"
@@ -15,7 +14,6 @@ objectives:
 - "Understand how to create and manage virtual environments."
 - "Get hands-on experience on IDEs."
 - "Learn how to use Google Colab."
-
 keypoints:
 - "Installing Python via Anaconda Distribution."
 - "Using conda and pip package managers"
