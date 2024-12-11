@@ -98,13 +98,20 @@ For more detailed information, refer to the [Anaconda Installation Documentation
 
 A **virtual environment** is an isolated Python environment that allows you to manage dependencies for different projects without conflicts. Below are step-by-step guides for creating virtual environments using **Conda** and **pip**.
 
-### Python Environment Management with Conda
+## Python Environment Management with Conda
+
+### Conda
+
+- **Package Manager**: Conda is a powerful package manager for managing software dependencies and virtual environments.
+- **Cross-Language Support**: Supports multiple languages, including Python, R, and others.
+- **Environment Isolation**: Enables the creation of isolated environments to prevent package conflicts.
+- **Non-Python Packages**: Manages non-Python dependencies like libraries and tools.
+- **Built-in with Anaconda**: Comes pre-installed with the Anaconda and Miniconda distributions.
+- **Integrated Tools**: Works seamlessly with Jupyter Notebook and other tools.
 
 ![](../assets/img/conda_env.png)  
 
-`Conda` is a powerful tool for managing `virtual environments` and `dependencies`.
-
-#### Verify Conda Installation
+### Verify Conda Installation
 
 ```bash
 conda --version
@@ -139,7 +146,7 @@ conda activate my_env
 ### Install Required Packages
 ```bash
 conda install packages_name 
-conda install numpy pandas matplotlib
+conda install numpy pandas matplotlib notebook
 ```
 
 ### To uninstall package:
@@ -184,16 +191,22 @@ conda remove -n my_env
 conda remove 
 ```
 
-### Python Environment management with pip
+## Python Environment management with pip
 
-`pip` is Python’s default package manager. Combined with `venv`, it provides a lightweight solution for virtual environments.
+### pip
 
-### Step 1: Create a Virtual Environment
+ **Python Default Package Manager**: pip is the standard/default package manager for Python.
+- **Lightweight**: Designed for Python-only projects and lightweight environments.
+- **Virtual Environment Support**: Works with `venv` or `virtualenv` to create isolated environments.
+- **Ease of Use**: Simple syntax for installing and managing packages.
+- **Community Driven**: Extensive library ecosystem supported by the Python community.
+- **Customizable Requirements**: Supports dependency management with `requirements.txt` files.
+
+### Create a Virtual Environment
 ```bash
 python -m venv my_env
 ```
-
-### Step 2: Activate the Virtual Environment
+### Activate the Virtual Environment
 
 #### On Windows
 ```bash
@@ -203,24 +216,33 @@ my_env\Scripts\activate
 ```bash
 source my_env/bin/activate
 ```
-### Step 3: Install Required Packages
+### To upgrade pip
 ```bash
-pip install numpy pandas matplotlib
+`python.exe -m pip install --upgrade pip`
 ```
-### Step 4: Deactivate the Virtual Environment
+### Install Required Packages
+```bash
+pip install numpy pandas matplotlib notebook
+```
+### Deactivate the Virtual Environment
 ```bash
 deactivate
 ```
-### Step 5: Remove the Virtual Environment (Optional)
+### Remove the Virtual Environment (Optional)
 
-#### On macOS/Linux
-```bash
-rm -r my_env
-```
 #### On Windows
 ```bash
 rmdir /s my_env
 ```
+#### On macOS/Linux
+```bash
+rm -r my_env
+```
+
+
+
+Machine Learning Python Environment
+------------------------------------
 
 ## Integrated Development Environment (IDE)
 
