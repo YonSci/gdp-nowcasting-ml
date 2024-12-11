@@ -392,7 +392,7 @@ bar()
 
 2) `kernel`:  It's the `computational engine` that runs your code. When you write code in a notebook and ask it to run, the kernel is what takes that code, processes it, and gives you the results.
 
-### Importing Libraries and Writing Code
+#### Importing Libraries and Writing Code
 
 ```bash
 import numpy as np
@@ -406,13 +406,13 @@ plt.plot(x, y)
 plt.title("Sine Wave")
 plt.show()
 ```
-### Saving and Exporting
+#### Saving and Exporting
 - Save your notebook: Click the Save icon or press `Ctrl + S`.
 - Export to different formats: Go to File > Download as and choose formats like `.html` or `.pdf`
 
 ## Integrated Development Environment (IDE)
 
-An `Integrated Development Environment (IDE)` is a software application that provides comprehensive tools for `coding`, `debugging`, and `managing Python projects`. It streamlines development by integrating features like `syntax highlighting`, `code completion`, `debugging`, and `version control`.
+`Integrated Development Environment (IDE)` is a software application that provides comprehensive tools for `coding`, `debugging`, and `managing Python projects`. It streamlines development by integrating features like `syntax highlighting`, `code completion`, `debugging`, and `version control`.
 
 ### Key Features to Look for in an IDE
 - **Code Completion**: Auto-suggests methods, variables, and functions.
@@ -456,8 +456,9 @@ Visual Studio Code (VS Code) is a `lightweight`, `versatile`, and powerful `code
 3. Open **Launchpad** or **Finder** to locate and run VS Code.
 
 #### On Linux
-1. Open a terminal.
-2. Install the `.deb` or `.rpm` package using your package manager. For example:
+1. Open a terminal
+2. Install the `.deb` or `.rpm` package using your package manager. 
+   
    ```bash
    sudo apt install ./<file>.deb    # For Debian-based systems
    sudo rpm -i <file>.rpm          # For Red Hat-based systems
