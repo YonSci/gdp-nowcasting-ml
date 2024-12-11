@@ -601,10 +601,10 @@ drive.flush_and_unmount()
    print("Matplotlib version:", matplotlib.__version__)
    ```    
  
-  6) Deactivate the environment
-  7) Get familier with Jupyter Notebook, VSCODE, Google Colab
-  8) Bonus Challenge: 
-     - Research and install a new Python library not mentioned in the tutorial, such as scikit-learn or statsmodels.
+  6) Deactivate the environment  
+  7) Get familier with Jupyter Notebook, VSCODE, Google Colab  
+  8) Bonus Challenge:   
+     - Research and install a new Python library not mentioned in the tutorial, such as scikit-learn or statsmodels.  
 
     
   ---
