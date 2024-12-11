@@ -550,7 +550,6 @@ os.chdir('/content/drive/MyDrive/Colab-Projects')  # Replace 'Colab-Projects' wi
 
 ### Unmount Drive (Optional)
 ```python
-Copy code
 drive.flush_and_unmount()
 ```
 
@@ -603,8 +602,7 @@ drive.flush_and_unmount()
  
   6) Deactivate the environment  
   7) Get familier with Jupyter Notebook, VSCODE, Google Colab  
-  8) Bonus Challenge:   
-     - Research and install a new Python library not mentioned in the tutorial, such as scikit-learn or statsmodels.  
+  8) Bonus Challenge: Research and install a new Python library not mentioned in the tutorial, such as scikit-learn or statsmodels.  
 
     
   ---
