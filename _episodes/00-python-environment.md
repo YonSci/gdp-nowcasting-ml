@@ -54,27 +54,27 @@ keypoints:
 
 Follow these steps to install Anaconda on your Windows machine:
 
-## Step 1: Download the Installer
+### Step 1: Download the Installer
 - Visit the official [Anaconda Distribution page](https://www.anaconda.com/products/distribution).
 - Download the latest Anaconda installer for Windows.
 
-## Step 2: Launch the Installer
+### Step 2: Launch the Installer
 - Navigate to your **Downloads** folder.
 - Double-click the downloaded installer to start the installation process.
 
-## Step 3: Start the Installation
+### Step 3: Start the Installation
 - Click **Next** on the welcome screen.
 
-## Step 4: Accept the License Agreement
+### Step 4: Accept the License Agreement
 - Read the licensing terms.
 - Click **I Agree** to proceed.
 
 > **Tip:** It is recommended to select "Just Me" during installation. This ensures Anaconda is installed only for the current user.
 
-## Step 5: Choose Installation Type
+### Step 5: Choose Installation Type
 - Click **Next** to confirm your installation type.
 
-## Step 6: Select Installation Folder
+### Step 6: Select Installation Folder
 - Choose a destination folder for Anaconda.
 - Click **Next** to proceed.
 
@@ -83,14 +83,14 @@ Follow these steps to install Anaconda on your Windows machine:
 > - Do not install as Administrator unless admin privileges are necessary.  
 > - **Do not add Anaconda to the PATH environment variable**, as this may cause conflicts with other software.
 
-## Step 7: Install Anaconda
+### Step 7: Install Anaconda
 - Click **Install** and wait for the installation to complete.
 - Click **Next** to proceed.
 
-## Step 8: Finish Installation
+### Step 8: Finish Installation
 - After a successful installation, you will see the "Thanks for installing Anaconda" dialog box.
 
-## Additional Resources
+### Additional Resources
 For more detailed information, refer to the [Anaconda Installation Documentation](https://docs.anaconda.com/anaconda/install/windows/).
 
 
@@ -117,7 +117,7 @@ A **virtual environment** is an isolated Python environment that allows you to m
 conda --version
 ```
 
-### To list of all available environments, type:
+### To list of all available environments
 ```bash
 conda info --envs
 conda env list
@@ -149,23 +149,23 @@ conda install packages_name
 conda install numpy pandas matplotlib notebook
 ```
 
-### To uninstall package:
+### Uninstall packages
 ```bash
 conda uninstall packages_name
 conda uninstall numpy
 ```
-### To search for package
+### Search for packages
 ```bash
 conda search packages_name
 conda search numpy
 ```
-### To update package
+### Update packages
 
 ```bash
 conda update packages_name
 conda update numpy
 ```
-### To list installed packages
+### List installed packages
 ```bash
 conda list
 ```
