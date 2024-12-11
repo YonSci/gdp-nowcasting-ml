@@ -30,6 +30,15 @@ keypoints:
 - Create a virtual environment using conda and pip and install required libraries  (NumPy, Pandas, Matplotlib, scikit-learn, etc.).
 - learn how to use Google Colab which provides Jupyter notebook environment with support for Python.
 
+## Installing Python via Anaconda Distribution
+
+## Conda and pip package managers
+
+## Virtual Environment
+
+## Integrated Development Environment (IDE)
+
+## Google Colab
 
 
 
