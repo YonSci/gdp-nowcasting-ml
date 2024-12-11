@@ -309,6 +309,120 @@ Remove-Item -Recurse -Force .\my_env
 - **Interactive Learning**: Provides hands-on experiences to engage students and reinforce concepts.
 - **Instructor-Friendly**: Allows instructors to create interactive tutorials and demonstrations.
 
+
+### Launching Jupyter Notebook (Hands-on)
+
+#### Using the Anaconda Prompt 
+
+1) Open the Anaconda Prompt terminal and run the following command to start Jupyter Notebook
+
+```bash
+jupyter-notebook
+jupyter-notebook
+```
+> **Important:**  
+> - This will open the Jupyter interface in your default web browser with the file extension `.ipynb.`
+> - The landing page displays your file directory.
+
+### Using the Anaconda Navigator  
+
+1) Open the `Anaconda Navigator` from the `Windows Start` and select the desired `Environment`
+
+2) Click on **Open with Jupyter Notebook**.
+
+3) Select the `desired folder` or create a `new folder` (Click `New` in top-right corner and create `Newfolder`)
+
+4) Click New in the top-right corner and select Python 3 (ipykernel) 
+
+5) A new notebook will open with the file extension `.ipynb.`
+
+### Basic Features of Jupyter Notebook
+
+ There are two main cell types that we will cover:
+
+1) Cells
+ - `Code cell`: contains code to be executed in the kernel. When the code is run, the notebook displays the output below the code cell that generated it.
+
+   - Press `A` or `B` to insert a new cell above or below the active cell.
+   - `M` : will transform the active cell to a Markdown cell.
+   - `Y` : will set the active cell to a code cell.
+   - `D + D` (D twice) will delete the active cell.
+   - `Z` will undo cell deletion.
+   - `Shift + Enter` : to run a cell
+   
+ - `Markdown cells`: cell contains text formatted using Markdown and displays its output in-place when the Markdown cell is run. Markdown is a lightweight, easy to learn markup language for formatting plain text.
+
+#### Headings
+
+```bash
+# This is a level 1 heading
+## This is a level 2 heading
+```
+
+#### Plain text formatting
+```bash
+ **bold** or __bold__
+ *italic* or _italic_
+```
+
+#### Paragraphs must be separated by an empty line.
+
+```bash
+* Sometimes we want to include lists.
+* Which can be bulleted using asterisks.
+
+1. Lists can also be numbered.
+2. If we want an ordered list.
+```
+
+#### Links
+
+[It is possible to include hyperlinks](https://www.dataquest.io)
+
+#### Inline code 
+
+```
+bar()
+```
+
+#### Images 
+```bash
+ ![Alt text]()
+```
+
+2) kernel:  It's the `computational engine` that runs your code. When you write code in a notebook and ask it to run, the kernel is what takes that code, processes it, and gives you the results.
+
+### Importing Libraries and Writing Code
+
+```bash
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Example: Create a simple plot
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.title("Sine Wave")
+plt.show()
+```
+### Saving and Exporting
+- Save your notebook: Click the Save icon or press `Ctrl + S`.
+- Export to different formats: Go to File > Download as and choose formats like .html or .pdf
+
+### Extensions and Customization (optional)
+- Install Jupyter Notebook extensions for added features:
+```bash
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+```
+
+### Customize themes (optional)
+```bash
+pip install jupyterthemes
+jt -t monokai
+```
+
 ## Integrated Development Environment (IDE)
 
 
