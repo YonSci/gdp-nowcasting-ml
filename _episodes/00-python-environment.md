@@ -279,7 +279,7 @@ Remove-Item -Recurse -Force .\my_env
 
 ## Interactive Development Environments
 
-### Why Use Jupyter Notebooks?
+### Jupyter Notebooks
 
 - `Jupyter Notebooks` are a versatile tool for professionals, researchers, educators, and learners, providing an `interactive` and `collaborative` environment for coding, documentation, and visualization.
 
@@ -324,7 +324,7 @@ jupyter-notebook
 > - This will open the Jupyter interface in your default web browser with the file extension `.ipynb.`
 > - The landing page displays your file directory.
 
-### Using the Anaconda Navigator  
+#### Using the Anaconda Navigator  
 
 1) Open the `Anaconda Navigator` from the `Windows Start` and select the desired `Environment`
 
@@ -340,14 +340,14 @@ jupyter-notebook
 
  There are two main cell types that we will cover:
 
-1) Cells
+1) **Cells**
  - `Code cell`: contains code to be executed in the kernel. When the code is run, the notebook displays the output below the code cell that generated it.
 
    - Press `A` or `B` to insert a new cell above or below the active cell.
    - `M` : will transform the active cell to a Markdown cell.
    - `Y` : will set the active cell to a code cell.
-   - `D + D` (D twice) will delete the active cell.
-   - `Z` will undo cell deletion.
+   - `D + D` : (D twice) will delete the active cell.
+   - `Z` : will undo cell deletion.
    - `Shift + Enter` : to run a cell
    
  - `Markdown cells`: cell contains text formatted using Markdown and displays its output in-place when the Markdown cell is run. Markdown is a lightweight, easy to learn markup language for formatting plain text.
@@ -375,9 +375,9 @@ jupyter-notebook
 2. If we want an ordered list.
 ```
 
-#### Links
+#### Hyperlinks
 
-[It is possible to include hyperlinks](https://www.dataquest.io)
+[It is possible to include hyperlinks](yonsci.github.io/gdp-nowcasting-ml/)
 
 #### Inline code 
 
@@ -387,10 +387,10 @@ bar()
 
 #### Images 
 ```bash
- ![Alt text]()
+ ![Alt text](../assets/img/uneca_logo.png)
 ```
 
-2) kernel:  It's the `computational engine` that runs your code. When you write code in a notebook and ask it to run, the kernel is what takes that code, processes it, and gives you the results.
+2) `kernel`:  It's the `computational engine` that runs your code. When you write code in a notebook and ask it to run, the kernel is what takes that code, processes it, and gives you the results.
 
 ### Importing Libraries and Writing Code
 
@@ -408,7 +408,7 @@ plt.show()
 ```
 ### Saving and Exporting
 - Save your notebook: Click the Save icon or press `Ctrl + S`.
-- Export to different formats: Go to File > Download as and choose formats like .html or .pdf
+- Export to different formats: Go to File > Download as and choose formats like `.html` or `.pdf`
 
 ### Extensions and Customization (optional)
 - Install Jupyter Notebook extensions for added features:
