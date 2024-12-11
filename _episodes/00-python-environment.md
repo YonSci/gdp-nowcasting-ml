@@ -410,7 +410,7 @@ plt.show()
 - Save your notebook: Click the Save icon or press `Ctrl + S`.
 - Export to different formats: Go to File > Download as and choose formats like `.html` or `.pdf`
 
-## Integrated Development Environment (IDE)
+## Integrated Development Environment (IDE) (Optional)
 
 `Integrated Development Environment (IDE)` is a software application that provides comprehensive tools for `coding`, `debugging`, and `managing Python projects`. It streamlines development by integrating features like `syntax highlighting`, `code completion`, `debugging`, and `version control`.
 
@@ -464,10 +464,47 @@ Visual Studio Code (VS Code) is a `lightweight`, `versatile`, and powerful `code
    sudo rpm -i <file>.rpm          # For Red Hat-based systems
    ```
 
+### Launch/Open VS Code
+
+- On Windows: Use the desktop shortcut or search for "Visual Studio Code" in the Start menu.
+- On macOS/Linux: Open it from Launchpad, Finder, or the terminal (code command if set up).
+  
+> **Important:**  
+> - On the first launch, VS Code may prompt you to install recommended extensions.
+
+#### Install Python Extension
+- Click on the Extensions icon (left sidebar) or press Ctrl+Shift+X.
+- Search for Python and install the official extension by Microsoft.
+
+> **Important:**  
+> - This extension adds features like IntelliSense, debugging, linting, and Jupyter Notebook support.
+
+### Set Up Python Interpreter
+
+- Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
+- Type `Python`: Select `Interpreter` and press `Enter`.
+
+> **Important:**  
+> - Select the Python interpreter installed on your system (e.g., Python 3.x or your virtual environment).
+
+### Test Your VS code Setup
+
+- Create a new Python file: `Click File` > `New File`
+  
+- Write a simple Python script
+   ```bash
+   print("Hello, VS Code!")
+   ```
+- Save the file with a `.py` extension (e.g., `hello.py`).
+- Run the script: open the terminal (Ctrl+~), type `python hello.py` and press `Enter`.
+- Customize VS Code (Optional)
+   - Explore themes: Go to File > Preferences > Color Theme.
 
 
 
-## Google Colab
+
+## Google Colab  (Optional)
+
 
 
 
