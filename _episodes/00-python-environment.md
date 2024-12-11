@@ -411,7 +411,9 @@ plt.show()
 - Export to different formats: Go to File > Download as and choose formats like `.html` or `.pdf`
 
 ### Extensions and Customization (optional)
-- Install Jupyter Notebook extensions for added features:
+
+Install Jupyter Notebook extensions for added features
+  
 ```bash
 pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
