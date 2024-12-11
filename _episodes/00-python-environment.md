@@ -410,21 +410,6 @@ plt.show()
 - Save your notebook: Click the Save icon or press `Ctrl + S`.
 - Export to different formats: Go to File > Download as and choose formats like `.html` or `.pdf`
 
-### Extensions and Customization (optional)
-
-Install Jupyter Notebook extensions for added features
-  
-```bash
-pip install jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
-```
-
-### Customize themes (optional)
-```bash
-pip install jupyterthemes
-jt -t monokai
-```
-
 ## Integrated Development Environment (IDE)
 
 
