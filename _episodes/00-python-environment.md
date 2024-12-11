@@ -29,6 +29,7 @@ keypoints:
 - Setting up Jupyter Notebook.
 - Create a virtual environment using conda and pip and install required libraries  (NumPy, Pandas, Matplotlib, scikit-learn, etc.).
 - learn how to use Google Colab which provides Jupyter notebook environment with support for Python.
+  
 ---
 ## What is Anaconda?
 
@@ -49,7 +50,9 @@ keypoints:
 - **Optimized for Machine Learning**: Includes popular libraries like TensorFlow, Keras, PyTorch, and Scikit-learn for ML projects.
 - **Visualization Tools**: Comes with libraries like Matplotlib, Seaborn, and Plotly for creating insightful visualizations.
 - **Scalable**: Suitable for both beginners and advanced users, with capabilities to scale from small projects to complex workflows.
+  
 ---
+
 ## Install Anaconda/Python on Windows OS
 
 Follow these steps to install Anaconda on your Windows machine:
@@ -100,8 +103,6 @@ For more detailed information, refer to the [Anaconda Installation Documentation
 A **virtual environment** is an isolated Python environment that allows you to manage dependencies for different projects without conflicts. Below are step-by-step guides for creating virtual environments using **Conda** and **pip**.
 
 ## Python Environment Management with Conda
-
-### Conda
 
 - **Package Manager**: Conda is a powerful package manager for managing software dependencies and virtual environments.
 - **Cross-Language Support**: Supports multiple languages, including Python, R, and others.
@@ -192,9 +193,8 @@ conda remove -n my_env
 conda remove 
 ```
 ---
-## Python Environment management with pip
 
-### pip
+## Python Environment management with pip
 
  **Python Default Package Manager**: pip is the standard/default package manager for Python.
 - **Lightweight**: Designed for Python-only projects and lightweight environments.
