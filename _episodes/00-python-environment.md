@@ -153,29 +153,29 @@ python -m venv my_env
 
 ### Step 2: Activate the Virtual Environment
 
-### On Windows
+#### On Windows
 ```bash
 my_env\Scripts\activate
 ```
-### On macOS/Linux
+#### On macOS/Linux
 ```bash
 source my_env/bin/activate
 ```
-# Step 3: Install Required Packages
+### Step 3: Install Required Packages
 ```bash
 pip install numpy pandas matplotlib
 ```
-# Step 4: Deactivate the Virtual Environment
+### Step 4: Deactivate the Virtual Environment
 ```bash
 deactivate
 ```
-# Step 5: Remove the Virtual Environment (Optional)
+### Step 5: Remove the Virtual Environment (Optional)
 
-# On macOS/Linux
+#### On macOS/Linux
 ```bash
 rm -r my_env
 ```
-# On Windows
+#### On Windows
 ```bash
 rmdir /s my_env
 ```
