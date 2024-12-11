@@ -4,18 +4,18 @@ teaching: 1
 exercises: 1
 questions:
 - "How to install Python?"
-- "How do virtual environments help manage dependencies?"
+- "How to use conda and pip package managers?"
 - "How do you create and activate a virtual environment?"
+- "How to install and use Integrated Development Environment (IDE)?
+- "How to use Google Colab?
 objectives:
 - "Help participants set up a Python development environment on their machines."
-- "Learn about virtual environments and their purpose in Python projects."
+- "Learn about conda and pip package managers."
 - "Understand how to create and manage virtual environments."
-- "Get hands-on experience with setting up and using a virtual environment."
+- "Get hands-on experience on IDEs."
+- "Learn how to use Google Colab."
 
 keypoints:
-- "Virtual environments isolate dependencies."
-- "Using `venv` for creating environments."
-- "Activating and deactivating virtual environments."
 - "Installing Python via Anaconda Distribution."
 - "Using conda and pip package managers"
 - "Creating a Virtual Environment."
@@ -27,9 +27,9 @@ keypoints:
 
 ## Activities:
 - Hands-on installation of Python/Anaconda.
-- Setting up Jupyter Notebook and running a simple script.
-- Participants will create a virtual environment and install required libraries  (NumPy, Pandas, Matplotlib, scikit-learn, etc.).
-- Using Google Colab
+- Setting up Jupyter Notebook.
+- Create a virtual environment using conda and pip and install required libraries  (NumPy, Pandas, Matplotlib, scikit-learn, etc.).
+- learn how to use Google Colab which provides Jupyter notebook environment with support for Python.
 
 
 
