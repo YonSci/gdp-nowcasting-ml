@@ -100,7 +100,7 @@ A **virtual environment** is an isolated Python environment that allows you to m
 
 ### Python Environment Management with Conda
 
-Conda is a powerful tool for managing virtual environments and dependencies.
+`Conda` is a powerful tool for managing `virtual environments` and `dependencies`.
 
 #### Step 1: Verify Conda and Python Installation
 
@@ -122,19 +122,21 @@ conda create --name my_env python=3.9
 > **Important:**  
 > - Replace my_env with your desired environment name and 3.9 with your preferred Python version.
 
-### Step 3: Conda: Activate the Environment
+### Step 3: Activate the Environment
 ```bash
 conda activate my_env
 ```
 
-### Step 4: Conda: Install Required Packages
+### Step 4: Install Required Packages
 ```bash
 conda install numpy pandas matplotlib
+```
 
-### Step 5: Conda: Deactivate the Environment
+### Step 5: Deactivate the Environment
 ```bash
 conda deactivate
 ```
+
 ### Remove an Environment (Optional)
 ```bash
 conda remove --name my_env --all
@@ -142,6 +144,41 @@ conda remove --name my_env --all
 
 ### Python Environment management with pip
 
+`pip` is Python’s default package manager. Combined with `venv`, it provides a lightweight solution for virtual environments.
+
+### Step 1: Create a Virtual Environment
+```bash
+python -m venv my_env
+```
+
+### Step 2: Activate the Virtual Environment
+
+### On Windows
+```bash
+my_env\Scripts\activate
+```
+### On macOS/Linux
+```bash
+source my_env/bin/activate
+```
+# Step 3: Install Required Packages
+```bash
+pip install numpy pandas matplotlib
+```
+# Step 4: Deactivate the Virtual Environment
+```bash
+deactivate
+```
+# Step 5: Remove the Virtual Environment (Optional)
+
+# On macOS/Linux
+```bash
+rm -r my_env
+```
+# On Windows
+```bash
+rmdir /s my_env
+```
 
 ## Integrated Development Environment (IDE)
 
