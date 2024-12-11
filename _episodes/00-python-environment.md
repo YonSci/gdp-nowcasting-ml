@@ -96,6 +96,8 @@ For more detailed information, refer to the [Anaconda Installation Documentation
 
 ## Virtual Environment
 
+![](../assests/img/conda_env.png)  
+
 A **virtual environment** is an isolated Python environment that allows you to manage dependencies for different projects without conflicts. Below are step-by-step guides for creating virtual environments using **Conda** and **pip**.
 
 ### Python Environment Management with Conda
