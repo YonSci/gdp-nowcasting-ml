@@ -578,10 +578,10 @@ drive.flush_and_unmount()
 - **Save to Google Drive**: Click File > Save a copy in Drive.
 - **Download**: Click File > Download > Download .ipynb.
 - **Share**: Click the Share button in the top-right corner and configure sharing permissions.
+  
+---
 
-  ---
-
-  ## Exercise
+## Exercise
   
   1) Installing Anaconda  
   2) Creating a Conda Environment named `gdp_nowcasting`  
@@ -589,11 +589,11 @@ drive.flush_and_unmount()
   4) Install the following packages: NumPy, Pandas, Matplotlib  
   5) Verify the installed libraries and their versions  
      ```python
-     print("NumPy version:", np.__version__)
-     print("Pandas version:", pd.__version__)
-     print("Matplotlib version:", matplotlib.__version__)
-     ```
-  6) Deactivate the environment  
+     print("NumPy version:", np.__version__)  
+     print("Pandas version:", pd.__version__)  
+     print("Matplotlib version:", matplotlib.__version__)  
+     ```  
+  6) Deactivate the environment    
   7) Get familier with Jupyter Notebook, VSCODE, Google Colab  
   8) Bonus Challenge: 
      - Research and install a new Python library not mentioned in the tutorial, such as scikit-learn or statsmodels. 
