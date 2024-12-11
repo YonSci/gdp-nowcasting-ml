@@ -23,13 +23,13 @@ keypoints:
 ---
 
 # Setting up the Python Development Environment
-
-## Activities:
+---
+## Activities
 - Hands-on installation of Python/Anaconda.
 - Setting up Jupyter Notebook.
 - Create a virtual environment using conda and pip and install required libraries  (NumPy, Pandas, Matplotlib, scikit-learn, etc.).
 - learn how to use Google Colab which provides Jupyter notebook environment with support for Python.
-
+---
 ## What is Anaconda?
 
 - Anaconda is a popular **open-source distribution** of Python and R programming languages.
@@ -49,8 +49,8 @@ keypoints:
 - **Optimized for Machine Learning**: Includes popular libraries like TensorFlow, Keras, PyTorch, and Scikit-learn for ML projects.
 - **Visualization Tools**: Comes with libraries like Matplotlib, Seaborn, and Plotly for creating insightful visualizations.
 - **Scalable**: Suitable for both beginners and advanced users, with capabilities to scale from small projects to complex workflows.
-
-## Install Anaconda on Windows OS
+---
+## Install Anaconda/Python on Windows OS
 
 Follow these steps to install Anaconda on your Windows machine:
 
@@ -93,6 +93,7 @@ Follow these steps to install Anaconda on your Windows machine:
 ### Additional Resources
 For more detailed information, refer to the [Anaconda Installation Documentation](https://docs.anaconda.com/anaconda/install/windows/).
 
+---
 
 ## Virtual Environment
 
@@ -190,7 +191,7 @@ conda remove --name my_env
 conda remove -n my_env
 conda remove 
 ```
-
+---
 ## Python Environment management with pip
 
 ### pip
@@ -201,6 +202,8 @@ conda remove
 - **Ease of Use**: Simple syntax for installing and managing packages.
 - **Community Driven**: Extensive library ecosystem supported by the Python community.
 - **Customizable Requirements**: Supports dependency management with `requirements.txt` files.
+
+### Virtual Environment using Windows Command Prompt
 
 ### Create a Virtual Environment
 ```bash
@@ -238,6 +241,39 @@ rmdir /s my_env
 ```bash
 rm -r my_env
 ```
+---
+### Virtual Environment using Windows Power-Shell
+
+### Verify Python Installation
+```bash
+python --version
+```
+
+### Create a Virtual Environment
+```bash
+python -m venv my_env
+```
+### Activate the Virtual Environment
+```bash
+.\my_env\Scripts\Activate
+```
+
+### Install Required Packages
+```bash
+pip install numpy pandas matplotlib notebook
+```
+
+### Deactivate the Virtual Environment
+```bash
+deactivate
+```
+### Remove the Virtual Environment (Optional)
+```bash
+Remove-Item -Recurse -Force .\my_env
+```
+
+
+
 
 
 
