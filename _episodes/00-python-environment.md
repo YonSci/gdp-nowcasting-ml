@@ -102,44 +102,84 @@ A **virtual environment** is an isolated Python environment that allows you to m
 
 `Conda` is a powerful tool for managing `virtual environments` and `dependencies`.
 
-#### Step 1: Verify Conda and Python Installation
+#### Verify Conda Installation
 
 ```bash
 conda --version
 ```
 
+### To list of all available environments, type:
+```bash
+conda info --envs
+conda env list
+```
+
+### Verify Python Installation
 ```bash
 python --version
 ```
 > **Important:**  
 > - Ensure Conda is installed. If not, install Anaconda or Miniconda.
 
-### Step 2: Create a New Environment
+### Create a New Environment
 
 ```bash
 conda create --name my_env python=3.9
+conda create -n my_env python=3.9
 ```
 > **Important:**  
 > - Replace my_env with your desired environment name and 3.9 with your preferred Python version.
 
-### Step 3: Activate the Environment
+### Activate the Environment
 ```bash
 conda activate my_env
 ```
-
-### Step 4: Install Required Packages
+### Install Required Packages
 ```bash
+conda install packages_name 
 conda install numpy pandas matplotlib
 ```
 
-### Step 5: Deactivate the Environment
+### To uninstall package:
+```bash
+conda uninstall packages_name
+conda uninstall numpy
+```
+### To search for package
+```bash
+conda search packages_name
+conda search numpy
+```
+### To update package
+
+```bash
+conda update packages_name
+conda update numpy
+```
+### To list installed packages
+```bash
+conda list
+```
+### Sharing python environment
+
+#### Export the environment
+```bash
+conda env export > environment.yml
+conda env export --from-history > environment.yml
+```
+#### Install the environment from the environment.yml file
+```bash
+conda env create -f environment.yml
+```
+### Deactivate the Environment
 ```bash
 conda deactivate
 ```
-
-### Remove an Environment (Optional)
+### Remove an Environment 
 ```bash
-conda remove --name my_env --all
+conda remove --name my_env
+conda remove -n my_env
+conda remove 
 ```
 
 ### Python Environment management with pip
