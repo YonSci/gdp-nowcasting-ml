@@ -6,8 +6,8 @@ questions:
 - "How to install Python?"
 - "How to use conda and pip package managers?"
 - "How do you create and activate a virtual environment?"
-- "How to install and use Integrated Development Environment (IDE)?
-- "How to use Google Colab?
+- "How to install and use Integrated Development Environment (IDE)?"
+- "How to use Google Colab?"
 objectives:
 - "Help participants set up a Python development environment on their machines."
 - "Learn about conda and pip package managers."
