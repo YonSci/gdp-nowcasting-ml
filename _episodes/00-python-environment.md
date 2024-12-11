@@ -41,11 +41,11 @@ keypoints:
 ## Importance of Anaconda for Python and Machine Learning Projects
 
 - **Easy Package Management**: Anaconda uses `conda` to install, update, and manage Python packages, avoiding compatibility issues.
-- **Environment Isolation**: Allows creation of isolated virtual environments for different projects to prevent library conflicts.
-- **Pre-installed Libraries**: Provides a rich ecosystem of pre-installed libraries essential for machine learning and data analysis.
-- **Simplified Development**: Tools like Jupyter Notebook make it easy to write and test Python code interactively.
-- **Cross-Platform Support**: Available for Windows, macOS, and Linux, ensuring flexibility across different systems.
-- **Community and Support**: Widely used in the data science community, making it easier to find resources, tutorials, and support.
+- **Environment Isolation**: Allows creation of `isolated virtual environments` for different projects to prevent library conflicts.
+- **Pre-installed Libraries**: Provides a rich ecosystem of `pre-installed libraries` essential for machine learning and data analysis.
+- **Simplified Development**: Tools like `Jupyter Notebook` make it easy to write and test Python code interactively.
+- **Cross-Platform Support**: Available for `Windows`, `macOS`, and `Linux`, ensuring flexibility across different systems.
+- **Community and Support**: Widely used in the `data science community`, making it easier to find resources, tutorials, and support.
 - **Optimized for Machine Learning**: Includes popular libraries like TensorFlow, Keras, PyTorch, and Scikit-learn for ML projects.
 - **Visualization Tools**: Comes with libraries like Matplotlib, Seaborn, and Plotly for creating insightful visualizations.
 - **Scalable**: Suitable for both beginners and advanced users, with capabilities to scale from small projects to complex workflows.
