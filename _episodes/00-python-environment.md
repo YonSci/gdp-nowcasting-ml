@@ -502,29 +502,57 @@ Visual Studio Code (VS Code) is a `lightweight`, `versatile`, and powerful `code
 
 ## Google Colab  (Optional)
 
-**Cloud-Based**: No need for local installations; everything runs in the cloud.
-**Free GPUs and TPUs**: Access hardware accelerators for machine learning and deep learning tasks.
-**Interactive Development**: Combine code, text (Markdown), and outputs in a single document.
-**Integration with Google Drive**: Automatically save and access notebooks from your Google Drive.
-**Collaboration**: Share notebooks and collaborate with others in real-time.
-**Rich Visualization**: Supports libraries like Matplotlib, Seaborn, and Plotly for creating visualizations.
-**Easy Library Installation**: Install libraries directly with pip or apt.
+**Cloud-Based**: No need for local installations; everything runs in the cloud.  
+**Free GPUs and TPUs**: Access hardware accelerators for machine learning and deep learning tasks.  
+**Interactive Development**: Combine code, text (Markdown), and outputs in a single document.  
+**Integration with Google Drive**: Automatically save and access notebooks from your Google Drive.  
+**Collaboration**: Share notebooks and collaborate with others in real-time.  
+**Rich Visualization**: Supports libraries like Matplotlib, Seaborn, and Plotly for creating visualizations.  
+**Easy Library Installation**: Install libraries directly with pip or apt.  
 
 ### How to Set Up and Use Google Colab
 
 Google Colab (short for Colaboratory) is a `free`, `cloud-based` platform for coding and executing Python. It’s particularly popular in `data science`, `machine learning`, and `research` due to its simplicity and powerful features.
 
 ### Access Google Colab
-1. Open your web browser.
-2. Go to the official [Google Colab](https://colab.research.google.com/) page.
-3. Sign in with your Google account. If you don’t have one, create a Google account first.
 
-### Create a New Notebook
-1. On the Colab homepage, click **New Notebook**.
-2. A new `.ipynb` file will open in a new tab.
+1. Go to [Google Drive](https://drive.google.com/drive/home).
+2. Sign in with your Google account. If you don’t have an account, create one first.
+
+###  Create a New Folder
+1. In Google Drive, click the **New** button on the left sidebar.
+2. Select **New Folder** and give it a meaningful name (e.g., `Colab-Projects`).
+3. Click **Create** to make the folder.
+
+### Create a New Google Colab File
+1. Navigate to the newly created folder in Google Drive.
+2. Right-click inside the folder and select **More > Google Colaboratory**.
+3. A new `.ipynb` file will open in a new browser tab.
+4. 
+### Mount Google Drive in Colab
+To access files in your Google Drive from the Colab notebook, mount the drive:
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
+> **Important:**  
+> - Follow the prompts to authorize access to your Google Drive.
+
+### Set the Working Directory
+Set your Colab working directory to the folder you created earlier:
+
+```python
+import os
+os.chdir('/content/drive/MyDrive/Colab-Projects')  # Replace 'Colab-Projects' with your folder name
+```
+
+### Unmount Drive (Optional)
+```python
+Copy code
+drive.flush_and_unmount()
+```
 
 ### Understanding the Interface
-- **Toolbar**: Provides options to save, upload, or manage your notebook.
 - **Code Cells**: Where you write and execute Python code.
 - **Markdown Cells**: For writing formatted text, documentation, and equations.
 - **Runtime**: Displays options to manage your session, including connecting to a runtime, restarting it, or changing runtime types.
