@@ -147,18 +147,69 @@ print("Hello, World!")
 ---
 
 ### Basic Syntax and Structure
-   - Writing your first Python program.
-     
-     ```python
-     # print(): A built-in function used to display output on the screen.
-     # ("") The text inside the parentheses in double quotes called a string.
+
+#### Writing your first Python program
+
+   ```python
      print("Hello, World!")
-     ```
-
+   ```
+   1) print(): A built-in function used to display output on the screen.
+   2) (""):  The text inside the parentheses in double quotes called a string.
      
 
-   - Python indentation rules.
-   - Comments and documentation.
+#### Python indentation rules
+1) In Python, `indentation` is crucial. It defines the structure of your code.
+2) Python uses `whitespace` to organize code block.
+3) Typically,  `4 spaces` are used for each level of indentation.
+4) If the indentation is incorrect, Python will raise an `IndentationError`.
+    
+```python
+# Check if a number is positive or not.
+number = 10  # Assigning a value to a variable
+
+# This block executes if the condition is true
+if number > 0:
+    print("The number is positive.")
+     
+# This block executes if the condition is false
+else:
+    print("The number is not positive.")
+```
+     
+#### Comments and documentation
+1) Comments are lines of text in a program that Python ignores during execution.
+2) They are used to explain what the code does, making it easier to understand (To explain complex code logic.).
+3) To make your code more readable for others (or for your future self!).
+4) To temporarily disable a piece of code during debugging.
+
+##### Single-line Comments
+
+```python
+# This is a single-line comment
+print("Single-line comments start with a hash (#).")
+```
+
+##### Multi-line Comments
+
+```python
+"""
+This is an example of a multi-line comment.
+It can be used to describe a block of code or provide detailed information.
+print("Multi-line comments are written using triple quotes.")
+"""
+```
+
+##### Inline Comments
+
+1) Comments can also be placed at the end of a line of code.
+
+```python
+number = 42  # This variable stores the answer to life, the universe, and everything
+print(number)
+```
+
+
+
 
 ---
 
