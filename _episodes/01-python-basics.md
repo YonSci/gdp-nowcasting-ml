@@ -208,9 +208,6 @@ number = 42  # This variable stores the answer to life, the universe, and everyt
 print(number)
 ```
 
-
-
-
 ---
 
 ### Variables and Data Types
@@ -278,11 +275,97 @@ print("The type of", colors, "is", type(colors))
 
 ---
 
-
-
 ### Operators
-   - Arithmetic, comparison, and logical operators.
-   - Simple arithmetic operations.
+1) Arithmetic Operators
+2) Comparison Operators
+3) Logical Operators
+
+#### Arithmetic Operators
+- Arithmetic operators are used to perform mathematical operations  
+
+```python
+# Define and y
+x = 10
+y = 3
+```
+
+```python
+print("Addition:", x + y)        # Addition
+```
+
+```python
+print("Subtraction:", x - y)     # Subtraction
+```
+
+```python
+print("Multiplication:", x * y)  # Multiplication
+```
+
+```python
+print("Division:", x / y)        # Division
+```
+
+```python
+print("Floor Division:", x // y) # Floor Division
+```
+
+```python
+print("Modulus:", x % y)         # Modulus (remainder)
+```
+
+```python
+print("Exponentiation:", x ** y) # Exponentiation
+```
+
+#### Comparison Operators
+
+- Comparison operators are used to compare two values
+
+```python
+print("Equal to:", x == y)       # Equal to
+```
+
+```python
+print("Not equal to:", x != y)   # Not equal to
+```
+
+```python
+print("Greater than:", x > y)    # Greater than
+```
+
+```python
+print("Less than:", x < y)       # Less than
+```
+
+```python
+print("Greater or equal:", x >= y) # Greater than or equal to
+```
+
+```python
+print("Less or equal:", x <= y)   # Less than or equal to
+```
+
+#### Logical Operators
+
+- Logical operators are used to combine conditional statements.
+
+```python
+# Define a and b
+a = True
+b = False
+```
+
+```python
+print("AND operator:", a and b) # Logical AND
+```
+
+```python
+print("OR operator:", a or b)   # Logical OR
+```
+
+```python
+print("NOT operator:", not a)   # Logical NOT
+```
 
 ---
 
