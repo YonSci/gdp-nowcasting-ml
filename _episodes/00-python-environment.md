@@ -378,8 +378,9 @@ jupyter-notebook
 ```
 
 #### Hyperlinks
-
+```bash
 [It is possible to include hyperlinks](yonsci.github.io/gdp-nowcasting-ml/)
+```
 
 #### Inline code 
 
