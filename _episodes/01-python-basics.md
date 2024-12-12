@@ -371,11 +371,11 @@ print("NOT operator:", not a)   # Logical NOT
 
 ### Control Structures  
 
-1) If-else Statement
-2) While Loop
-3) For Loop
+1) If-else Statement  
+2) While Loop  
+3) For Loop    
 
-#### if-else Statement
+#### If-else Statement
 
 - Python evaluates a condition, and based on the result (True/False), it executes one of the code blocks.
 
@@ -395,7 +395,7 @@ else:
     print(f"The number {number} is negative.")
 ```
 
-####  Nested if-else
+####  Nested if-else  
 
 - Python evaluates conditions sequentially, stopping once a condition is met.
 
@@ -414,7 +414,7 @@ else:
     print(f"The number {number} is negative.")
 ```
 
-#### while Loop
+#### While Loop  
 
 - The while loop repeats a block of code as long as its condition is True.  
 - Used for looping until a condition is False.  
@@ -431,7 +431,7 @@ while number <= 5:  # The loop runs as long as 'number' is less than or equal to
 ```
 
 
-#### for Loop
+#### For Loop  
 
 - Used for looping over a sequence (like a list, range, or string)    
 
