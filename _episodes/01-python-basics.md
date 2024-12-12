@@ -26,10 +26,18 @@ keypoints:
 # Python Basics
 
 ## Training Agenda
-
 1. **Introduction to Python**
-   
-### What is Python?
+2. **Basic Syntax and Structure**
+3. **Variables and Data Types**
+4. **Operators**
+5. **Control Structures**
+6. **Functions**
+7. **Error Handling**
+8. **Conclusion and Wrap-Up**
+
+---
+
+### Introduction to Python: What is Python?
 
 - Python is a **beginner-friendly** (syntax is simple and intuitive, similar to plain English) **versatile**, & **high-level language** that is widely used across various fields, including web development, data analysis, artificial intelligence, and more.
 
@@ -92,7 +100,7 @@ Python Language
 print("Hello, World!")
 ```
 
-### Key Features of Python:
+### Key Features of Python
 
 #### Versatility/Multi-Purpose 
 - Python can be used for wide range of applications:
@@ -137,32 +145,42 @@ print("Hello, World!")
 
 ---
 
-2. **Basic Syntax and Structure**
+### Basic Syntax and Structure
    - Writing your first Python program.
    - Python indentation rules.
    - Comments and documentation.
 
-3. **Variables and Data Types**
+---
+
+### Variables and Data Types
    - Declaring variables.
    - Exploring data types: `int`, `float`, `str`, `bool`, and `list`.
 
-4. **Operators**
+---
+
+### Operators
    - Arithmetic, comparison, and logical operators.
    - Simple arithmetic operations.
 
-5. **Control Structures**
+---
+
+### Control Structures
    - `if`, `elif`, and `else` statements.
    - Loops: `for` and `while`.
 
-6. **Functions**
+---
+
+### Functions
    - Defining and calling functions.
    - Function arguments and return values.
 
-7. **Error Handling**
+---
+### Error Handling
    - Common Python errors.
    - Debugging basics.
 
-8. **Conclusion and Wrap-Up**
+---
+### Conclusion and Wrap-Up
    - Recap of key concepts.
    - Additional resources for further learning.
 
@@ -174,6 +192,3 @@ print("Hello, World!")
 3. Define a function that takes two numbers and returns their sum.
 
 ---
-
-
-
