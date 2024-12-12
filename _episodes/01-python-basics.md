@@ -153,15 +153,15 @@ print("Hello, World!")
    ```python
      print("Hello, World!")
    ```
-   1) print(): A built-in function used to display output on the screen.
+   1) print(): A built-in function used to display output on the screen.     
    2) (""):  The text inside the parentheses in double quotes called a string.
      
 
 #### Python indentation rules
-1) In Python, `indentation` is crucial. It defines the structure of your code.
-2) Python uses `whitespace` to organize code block.
-3) Typically,  `4 spaces` are used for each level of indentation.
-4) If the indentation is incorrect, Python will raise an `IndentationError`.
+1) In Python, `indentation` is crucial. It defines the structure of your code.  
+2) Python uses `whitespace` to organize code block.  
+3) Typically,  `4 spaces` are used for each level of indentation.  
+4) If the indentation is incorrect, Python will raise an `IndentationError`.  
     
 ```python
 # Check if a number is positive or not.
@@ -177,10 +177,10 @@ else:
 ```
      
 #### Comments and documentation
-1) Comments are lines of text in a program that Python ignores during execution.
-2) They are used to explain what the code does, making it easier to understand (To explain complex code logic.).
-3) To make your code more readable for others (or for your future self!).
-4) To temporarily disable a piece of code during debugging.
+1) Comments are lines of text in a program that Python ignores during execution.  
+2) They are used to explain what the code does, making it easier to understand (To explain complex code logic.).  
+3) To make your code more readable for others (or for your future self!).  
+4) To temporarily disable a piece of code during debugging.  
 
 ##### Single-line Comments
 
