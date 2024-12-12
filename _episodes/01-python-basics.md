@@ -26,9 +26,42 @@ keypoints:
 # Python Basics
 
 ## Training Agenda
+
 1. **Introduction to Python**
-   - What is Python?
-   - Why learn Python?
+   
+### What is Python?
+
+- Python is a **beginner-friendly** (syntax is simple and intuitive, similar to plain English) **versatile**, & **High-Level Language** that is widely used across various fields, including web development, data analysis, artificial intelligence, and more.
+  
+- It was created in the late 1980s by **Guido van Rossum** and emphasizes **readability** and **simplicity**, making it one of the most popular languages today.
+
+### Key Features of Python:
+
+#### Versatility/Multi-Purpose 
+- Python can be used for wide range of applications:
+   - Building websites.
+   - Automating tasks.
+   - Analyzing data.
+   - Training machine learning models.
+
+#### In-Demand Skill
+  - Python ranks among the most popular programming languages in the world.
+  - Companies like Google, Netflix, and NASA use Python, making it a valuable skill in the job market.
+    
+#### Rich Ecosystem/Extensive Libraries
+- Python has thousands of libraries and frameworks to help you:
+   - Work with data: Pandas, NumPy.
+   - Create visualizations: Matplotlib, Seaborn.
+   - Build machine learning models: Scikit-learn, TensorFlow.
+
+#### Collaboration and Community Support/Large Community
+- With millions of developers worldwide, you’ll find tutorials, resources, and libraries for almost any task.
+- Stuck on a problem? Resources like Stack Overflow and Python forums have answers.
+
+---
+
+![Most Popular Programming Languages-1965/2024](https://www.youtube.com/watch?v=xOW3Cehg_qg)
+
 
 2. **Basic Syntax and Structure**
    - Writing your first Python program.
