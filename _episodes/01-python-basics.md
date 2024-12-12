@@ -35,7 +35,7 @@ keypoints:
 
 ![Abstraction of Programming Languages](../assets/img/programming-language.png) 
   
-- It was created in the late 1980s by **Guido van Rossum** and emphasizes **readability** and **simplicity**, making it one of the most popular languages today.
+- It was created in the late 1980s by **Guido van Rossum** and emphasizes **readability** and **simplicity**, making it one of the most popular languages today (You are resercher/scientist not programmer!).
 
 #### Hello, World, in Different Languages
 
@@ -104,6 +104,9 @@ print("Hello, World!")
 #### In-Demand Skill
   - Python ranks among the most popular programming languages in the world.
   - Companies like Google, Netflix, and NASA use Python, making it a valuable skill in the job market.
+
+##### Most Popular Programming Languages from 1965- 2024
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_" frameborder="0" allowfullscreen></iframe>
     
 #### Rich Ecosystem/Extensive Libraries
 - Python has thousands of libraries and frameworks to help you:
@@ -121,8 +124,10 @@ print("Hello, World!")
 #### Platform-independent
 - Python code can run on multiple operating systems, including Windows, Linux, and Mac operating systems.
 
-#### Most Popular Programming Languages from 1965- 2024
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_" frameborder="0" allowfullscreen></iframe>
+####  Efficent in development
+  - rapid development, prototyping, and good for experimenting.
+
+
 
 ### Downsides of Python
   
