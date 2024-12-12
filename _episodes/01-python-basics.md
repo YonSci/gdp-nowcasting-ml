@@ -58,14 +58,79 @@ keypoints:
 - With millions of developers worldwide, you’ll find tutorials, resources, and libraries for almost any task.
 - Stuck on a problem? Resources like Stack Overflow and Python forums have answers.
 
----
+#### Open source
+ - Python is an open-source language, meaning it’s freely available for use and modification.
 
+#### Platform-independent
+- Python code can run on multiple operating systems, including Windows, Linux, and Mac operating systems.
+
+#### "Hello, World!" in Different Languages
+
+Assembly Language
+```
+section  data
+    hello db 'Hello, World!',10
+    len equ $ - hello
+
+section  text
+    global _start
+
+_start:
+    ; write our string to stdout
+    mov eax, 4         ; sys_write
+    mov ebx, 1         ; file descriptor 1 (stdout)
+    mov ecx, hello     ; message to write
+    mov edx, len       ; message length
+    int 0x80           ; syscall
+    ; exit
+    mov eax, 1         ; sys_exit
+    xor ebx, ebx       ; exit status 0
+    int 0x80           ; syscall
+```
+
+Java Language
+
+```java 
+public class HelloWorld {
+    public static void main(String[] args) {
+        System out println("Hello, World!");
+    }
+}
+```
+
+C Language
+
+```c
+#include <stdio h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+R Language
+```python 
+print("Hello, World!")
+```
+
+Python Language
+```python 
+print("Hello, World!")
+```
+
+#### Most Popular Programming Languages from 1965- 2024
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### Downsides of Python
+  
+  - It's `slow`:
+    - Python code is interpreted during run time using CPython (line by line) rather than being compiled and executed by the compiler such as Java, C, C++, & Frotran.
+    - Dynamically typed language
+
+---
 
 
-[Most Popular Programming Languages-1965/2024](https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_)
 
 
 2. **Basic Syntax and Structure**
