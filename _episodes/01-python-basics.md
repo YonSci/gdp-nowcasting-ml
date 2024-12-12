@@ -148,6 +148,15 @@ print("Hello, World!")
 
 ### Basic Syntax and Structure
    - Writing your first Python program.
+     
+     ```python
+     # print(): A built-in function used to display output on the screen.
+     # ("") The text inside the parentheses in double quotes called a string.
+     print("Hello, World!")
+     ```
+
+     
+
    - Python indentation rules.
    - Comments and documentation.
 
