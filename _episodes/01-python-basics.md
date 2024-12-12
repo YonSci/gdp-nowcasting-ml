@@ -134,7 +134,7 @@ print("Hello, World!")
 - Python code can run on multiple operating systems, including Windows, Linux, and Mac operating systems.
 
 ####  Efficent in development
-  - rapid development, prototyping, and good for experimenting.
+  - Rapid development, prototyping, and good for experimenting.
 
 
 
