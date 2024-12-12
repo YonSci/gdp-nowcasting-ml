@@ -31,7 +31,9 @@ keypoints:
    
 ### What is Python?
 
-- Python is a **beginner-friendly** (syntax is simple and intuitive, similar to plain English) **versatile**, & **High-Level Language** that is widely used across various fields, including web development, data analysis, artificial intelligence, and more.
+- Python is a **beginner-friendly** (syntax is simple and intuitive, similar to plain English) **versatile**, & **high-level language** that is widely used across various fields, including web development, data analysis, artificial intelligence, and more.
+
+[Abstraction of Programming Languages](../assets/img/programming-language.png) 
   
 - It was created in the late 1980s by **Guido van Rossum** and emphasizes **readability** and **simplicity**, making it one of the most popular languages today.
 
