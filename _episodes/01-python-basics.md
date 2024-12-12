@@ -519,6 +519,7 @@ print(f"Area: {area}, Perimeter: {perimeter}")
 
 ---
 ### Error Handling
+
 #### Common Python Errors
 
 - Python errors, also called `exceptions`, occur when something goes wrong during the execution of your program.  
@@ -574,7 +575,7 @@ print(numbers[3])  # Accessing an index that doesn't exist
 print(numbers[2])  
 ```
 
-### Debugging basics
+### Debugging Basics
 
 - Debugging helps `identify` and `fix` errors in your program.  
 - Python provides tools like `try-except` for error handling.
