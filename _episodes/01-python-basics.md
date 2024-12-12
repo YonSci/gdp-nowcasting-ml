@@ -214,10 +214,71 @@ print(number)
 ---
 
 ### Variables and Data Types
-   - Declaring variables.
-   - Exploring data types: `int`, `float`, `str`, `bool`, and `list`.
+#### Declaring variables
+
+- In Python, you can create a variable by simply assigning a value to it using the `=` operator. 
+- Python is dynamically typed, variables are created the moment you assign a value to them. You don’t need to declare the variable type explicitly.
+
+##### Declaring and Print variables
+
+```python
+name = "yonas"      # String type
+print("Name:", name)
+```
+
+```python
+age = 25             # Integer type
+print("Age:", age)
+```
+
+```python
+height = 5.7         # Float type
+print("Height:", height)
+```
+
+```python
+is_student = True    # Boolean type
+print("Is student:", is_student)
+```
+
+#### Exploring data types
+
+- Python provides various `built-in data types`.  
+- The `type()` function is used to determine the type of a variable or value.  
+
+```python
+# Integer example
+number = 42
+print("The type of", number, "is", type(number))
+```
+
+```python
+# Float example
+pi = 3.14
+print("The type of", pi, "is", type(pi))
+```
+
+```python
+# String example
+message = "Hello, Python!"
+print("The type of", message, "is", type(message))
+```
+
+```python
+# Boolean example
+is_sunny = False
+print("The type of", is_sunny, "is", type(is_sunny))
+```
+
+```python
+# List example
+colors = ["red", "green", "blue"]
+print("The type of", colors, "is", type(colors))
+```
 
 ---
+
+
 
 ### Operators
    - Arithmetic, comparison, and logical operators.
