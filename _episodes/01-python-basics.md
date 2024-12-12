@@ -455,8 +455,67 @@ for num in range(1, 6):  # range(start, stop) generates numbers from start to st
 ---
 
 ### Functions
-   - Defining and calling functions.
-   - Function arguments and return values.
+#### Defining and Calling Functions
+
+- A function is a `reusable` block of code that performs a `specific task`.  
+- Defining a Function: Use the `def` keyword followed by the function name and parentheses.
+- Calling a Function: Use the function name followed by parentheses, optionally passing arguments.
+- Arguments: Functions can accept inputs to make them dynamic.
+- Return Values: Functions can return a result using the `return` keyword.  
+
+##### Function without a Parameter
+
+```python 
+# Define the function
+def greet():
+    # This function prints a greeting message
+    print("Hello, welcome to the training!")
+
+# Call the function
+greet()  # Output: Hello, welcome to the training!
+```
+
+##### Function with a Parameter
+
+```python 
+# Define the function
+def greet_user(name):
+
+    # This function greets the user by their name
+    print(f"Hello, {name}! Welcome to the training.")
+
+# Call the function with an argument
+greet_user("Yonas")  # Output: Hello, Yonas! Welcome to the training.
+```
+
+```python
+# Define the function
+def add_numbers(a, b):
+
+    # This function returns the sum of two numbers
+    return a + b
+
+# Call the function and store the result
+
+result = add_numbers(3, 5)  
+print(f"The sum is: {result}")  
+```
+
+##### Returning Multiple Values 
+```python
+# Define the function
+def calculate_area_and_perimeter(length, width):
+
+    # This function calculates the area and perimeter of a rectangle
+    area = length * width
+    perimeter = 2 * (length + width)
+    return area, perimeter  # Return both values
+
+# Call the function and unpack the results
+area, perimeter = calculate_area_and_perimeter(5, 3)
+
+print(f"Area: {area}, Perimeter: {perimeter}")
+```
 
 ---
 ### Error Handling
@@ -471,8 +530,10 @@ for num in range(1, 6):  # range(start, stop) generates numbers from start to st
 ---
 
 ## Exercise
-1. Write a script to calculate the area of a rectangle, given its length and width.
-2. Create a loop that prints all the odd numbers between 1 and 20.
-3. Define a function that takes two numbers and returns their sum.
+
+1. Create a loop that prints all the odd numbers between 1 and 20.
+2. Write a function that takes a number and returns its square.
+3. Create a function that takes two numbers and returns their average.
+4. Write a function with a default argument that prints a farewell message (e.g., "Goodbye, Guest!").
 
 ---
