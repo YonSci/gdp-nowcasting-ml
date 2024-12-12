@@ -369,10 +369,89 @@ print("NOT operator:", not a)   # Logical NOT
 
 ---
 
-### Control Structures
-   - `if`, `elif`, and `else` statements.
-   - Loops: `for` and `while`.
+### Control Structures  
 
+1) If-else Statement
+2) While Loop
+3) For Loop
+
+#### if-else Statement
+
+- Python evaluates a condition, and based on the result (True/False), it executes one of the code blocks.
+
+```python
+# Checking if a number is positive or negative
+
+number = 5  # Assign a number to the variable 'number'
+
+if number > 0:
+
+    # This block will run if the condition (number > 0) is True
+    print(f"The number {number} is positive.")
+
+else:
+
+    # This block will run if the condition (number > 0) is False
+    print(f"The number {number} is negative.")
+```
+
+####  Nested if-else
+
+- Python evaluates conditions sequentially, stopping once a condition is met.
+
+```python
+# Checking if a number is positive, negative, or zero
+
+number = -3  # Change the value to test other cases
+
+if number > 0:
+    print(f"The number {number} is positive.")
+
+elif number == 0:
+    print("The number is zero.")
+
+else:
+    print(f"The number {number} is negative.")
+```
+
+#### while Loop
+
+- The while loop repeats a block of code as long as its condition is True.  
+- Used for looping until a condition is False.  
+
+```python
+# Start with the number 1
+number = 1
+
+while number <= 5:  # The loop runs as long as 'number' is less than or equal to 5
+
+    print(number)  # Print the current value of 'number'
+
+    number += 1  # Increment 'number' by 1 in each iteration
+```
+
+
+#### for Loop
+
+- Used for looping over a sequence (like a list, range, or string)    
+
+```python
+
+# Print each fruit in the list
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+
+    # Loop through each element in the list 'fruits'
+    print(f"I like {fruit}")
+```
+
+```python
+# Print numbers from 1 to 5
+
+for num in range(1, 6):  # range(start, stop) generates numbers from start to stop-1
+    print(num)
+```
 ---
 
 ### Functions
