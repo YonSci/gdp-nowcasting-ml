@@ -29,11 +29,13 @@ keypoints:
 1. **Introduction to Python**
 2. **Basic Syntax and Structure**
 3. **Variables and Data Types**
-4. **Operators**
-5. **Control Structures**
-6. **Functions**
-7. **Error Handling**
-8. **Exercise**
+4. **Lists, Dictionaries, and Tuples**
+5. **Operators**
+6. **Control Structures**
+7. **Functions**
+8. **Error Handling**
+9. **Modules**
+10. **Exercise**
 
 ---
 
@@ -213,7 +215,13 @@ print(number)
 #### Declaring variables
 
 - In Python, you can create a variable by simply assigning a value to it using the `=` operator. 
-- Python is dynamically typed, variables are created the moment you assign a value to them. You don’t need to declare the variable type explicitly.
+- Python is dynamically typed, variables are created the moment you assign a value to them. You don’t need to declare the variable type explicitly.  
+- Variable names in Python can contain alphanumerical characters  
+  - a-z, A-Z, 0-9 and some special characters such as _.
+- Variable names must start with a letter.  
+- By convention, variable names start with a `lower-case letter`  
+- There are a number of Python `keywords` that cannot be used as variable names.  Some of the keywords are:
+  - `and`, `as`, `assert`, `break`, `class`, `continue`, `def`, `del`, `elif`, `else`, `except`, `exec`, `finally`, `for`, `from`, `global`, `if`, `import`, `in`, `is`, `lambda`, `not`, `or`, `pass`, `print`, `raise`, `return`, `try`, `while`, `with`, `yield`
 
 ##### Declaring and Print variables
 
@@ -236,6 +244,14 @@ print("Height:", height)
 is_student = True    # Boolean type
 print("Is student:", is_student)
 ```
+
+```python
+x = 1.0 - 1.0j   # Complex numbers
+print("Complex numbers:", x)
+```
+
+
+
 
 #### Exploring data types
 
@@ -271,6 +287,171 @@ print("The type of", is_sunny, "is", type(is_sunny))
 colors = ["red", "green", "blue"]
 print("The type of", colors, "is", type(colors))
 ```
+
+---
+
+### Lists, Dictionaries, and Tuples
+
+#### Lists
+
+- A list is a collection of items that are ordered, changeable, and allows duplicates.  
+- Lists are defined using square brackets [].
+
+##### Creating a List
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+# Print the list
+print(fruits)  
+```
+##### Accessing List Elements
+
+```python
+print(fruits[0])  
+print(fruits[-1]) 
+```
+
+##### Modifying a List
+
+```python
+fruits[1] = "blueberry"
+print(fruits)  
+```
+
+##### List Methods
+
+```python
+# Add an item to the end of the list
+fruits.append("orange")
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry', 'orange']
+
+# Remove an item by value
+fruits.remove("cherry")
+print(fruits)  # Output: ['apple', 'blueberry', 'orange']
+
+# Insert an item at a specific index
+fruits.insert(1, "banana")
+print(fruits)  # Output: ['apple', 'banana', 'blueberry', 'orange']
+
+# Sort the list
+fruits.sort()
+print(fruits)  # Output: ['apple', 'banana', 'blueberry', 'orange']
+```
+
+#### Dictionaries
+
+- A dictionary is a collection of key-value pairs.  
+- It is unordered, changeable, and does not allow duplicate keys.  
+- Dictionaries are defined using curly braces {}.
+
+##### Creating a Dictionary
+
+```python
+# Define a dictionary with information about a book
+book = {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949
+}
+
+# Print the dictionary
+print(book) 
+```
+##### Accessing Values by Key
+
+```python
+print(book["title"])  
+```
+
+##### Modifying a Dictionary
+
+```python
+# Change the value of an existing key
+book["year"] = 1950
+print(book) 
+
+# Add a new key-value pair
+book["genre"] = "Dystopian"
+print(book)  
+```
+##### Dictionary Methods
+
+```python
+# Get all keys
+print(book.keys()) 
+
+# Get all values
+print(book.values())  
+
+# Remove a key-value pair
+book.pop("genre")
+print(book)
+```
+
+#### Tuples
+
+- A tuple is a collection of items that are ordered and immutable (unchangeable).
+- Tuples are defined using parentheses ().
+
+##### Creating a Tuple
+
+```python
+# Define a tuple
+coordinates = (10, 20, 30)
+
+# Print the tuple
+print(coordinates)  
+```
+
+##### Accessing Tuple Elements
+
+```python
+# Access elements by index
+print(coordinates[0])
+
+print(coordinates[-1]) 
+```
+
+##### Tuple Immutability
+
+- Tuples cannot be changed after creation
+
+```python
+# Attempting to modify a tuple results in an error
+coordinates[0] = 15  
+```
+
+##### Unpacking a Tuple
+ - Unpack tuple into variables
+```python
+x, y, z = coordinates
+
+print(x, y, z)  
+```
+
+##### Tuple Methods
+
+```python
+# Get the length of a tuple
+print(len(coordinates))  
+
+# Count occurrences of an element
+print(coordinates.count(20))  
+
+# Find the index of an element
+print(coordinates.index(30))  
+```
+
+#### Summary of Differences:  Lists, Dictionaries, and Tuples
+
+| Feature       | List                  | Dictionary               | Tuple             |
+|---------------|-----------------------|--------------------------|-------------------|
+| **Syntax**    | `[]`                  | `{}`                     | `()`              |
+| **Mutable**   | Yes                   | Yes                      | No                |
+| **Ordered**   | Yes (since Python 3.7)| Yes (since Python 3.7)   | Yes               |
+| **Duplicates**| Yes                   | No (keys must be unique) | Yes               |
+
 
 ---
 
@@ -613,8 +794,16 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}")
 ```
+---
+
+
+
+### Modules
+
+
 
 ---
+
 
 ## Exercise
 
