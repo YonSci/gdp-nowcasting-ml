@@ -519,21 +519,111 @@ print(f"Area: {area}, Perimeter: {perimeter}")
 
 ---
 ### Error Handling
-   - Common Python errors.
-   - Debugging basics.
+#### Common Python Errors
 
----
-### Conclusion and Wrap-Up
-   - Recap of key concepts.
-   - Additional resources for further learning.
+- Python errors, also called `exceptions`, occur when something goes wrong during the execution of your program.  
+- Understanding these errors is key to debugging.  
+
+##### SyntaxError
+
+- SyntaxError occurs when the Python code violates the syntax rules.
+ 
+```python
+# print("Hello  # Missing closing quotation mark
+
+print("Hello")  # Corrected version
+```
+
+##### NameError
+
+- NameError happens when you use a variable or function that hasn’t been defined.
+
+```python
+print(value)  # Trying to print a variable that hasn't been defined
+
+# Corrected version:
+value = 10
+print(value)  # Output: 10
+```
+
+##### TypeError
+
+- TypeError occurs when an operation is performed on incompatible data types.
+  
+```python
+number = 5
+text = "hello"
+
+print(number + text)  # Trying to add a number to a string
+
+# Corrected version:
+print(f"{number} {text}")  # Output: 5 hello
+
+```
+
+##### IndexError
+
+- IndexError occurs when you try to access an index that’s out of range in a list or similar data structure.
+
+```python
+numbers = [1, 2, 3]
+
+print(numbers[3])  # Accessing an index that doesn't exist
+
+# Corrected version:
+print(numbers[2])  
+```
+
+### Debugging basics
+
+- Debugging helps `identify` and `fix` errors in your program.  
+- Python provides tools like `try-except` for error handling.
+  - We prevent the program from crashing abruptly when an exception occurs.
+  - `Graceful Recovery`: We can provide informative error messages or take alternative actions to recover from the error.
+
+#### Catch a specific type of error 
+
+```python
+try:
+    result = 10 / 0  # Division by zero causes ZeroDivisionError
+
+except ZeroDivisionError: # except block catches specific errors and prevents the program from crashing.
+    print("Error: Cannot divide by zero!")
+```
+
+#### Catch different types of errors
+
+```python
+try:
+    value = int("text")  # This will cause a ValueError
+except ValueError:
+    print("Error: Cannot convert text to an integer!")
+except TypeError:
+    print("Error: There was a type mismatch!")
+```
+
+#### Catch any error
+
+- Using `Exception` catches any type of error.  
+- The variable `e` contains information about the error.  
+
+```python
+try:
+    result = 10 / 0  # This will cause a ZeroDivisionError
+except Exception as e:
+    print(f"An error occurred: {e}")
+```
 
 ---
 
 ## Exercise
 
-1. Create a loop that prints all the odd numbers between 1 and 20.
-2. Write a function that takes a number and returns its square.
-3. Create a function that takes two numbers and returns their average.
-4. Write a function with a default argument that prints a farewell message (e.g., "Goodbye, Guest!").
+1. Create a loop that prints all the odd numbers between 1 and 20.  
+2. Write a function that takes a number and returns its square.  
+3. Create a function that takes two numbers and returns their average.  
+4. Write a function with a default argument that prints a farewell message (e.g., "Goodbye, Guest!").  
+5. Write a program that handles a ValueError when converting user input to an integer.  
+6. Use a try-except block to handle a FileNotFoundError when opening a non-existent file.  
+7. Debug a program by printing variable values at different points.  
 
 ---
