@@ -33,8 +33,7 @@ keypoints:
 5. **Control Structures**
 6. **Functions**
 7. **Error Handling**
-8. **Conclusion and Wrap-Up**
-9. **Exercise**
+8. **Exercise**
 
 ---
 
