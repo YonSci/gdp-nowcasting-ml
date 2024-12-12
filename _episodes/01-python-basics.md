@@ -33,40 +33,11 @@ keypoints:
 
 - Python is a **beginner-friendly** (syntax is simple and intuitive, similar to plain English) **versatile**, & **high-level language** that is widely used across various fields, including web development, data analysis, artificial intelligence, and more.
 
-[Abstraction of Programming Languages](../assets/img/programming-language.png) 
+![Abstraction of Programming Languages](../assets/img/programming-language.png) 
   
 - It was created in the late 1980s by **Guido van Rossum** and emphasizes **readability** and **simplicity**, making it one of the most popular languages today.
 
-### Key Features of Python:
-
-#### Versatility/Multi-Purpose 
-- Python can be used for wide range of applications:
-   - Building websites.
-   - Automating tasks.
-   - Analyzing data.
-   - Training machine learning models.
-
-#### In-Demand Skill
-  - Python ranks among the most popular programming languages in the world.
-  - Companies like Google, Netflix, and NASA use Python, making it a valuable skill in the job market.
-    
-#### Rich Ecosystem/Extensive Libraries
-- Python has thousands of libraries and frameworks to help you:
-   - Work with data: Pandas, NumPy.
-   - Create visualizations: Matplotlib, Seaborn.
-   - Build machine learning models: Scikit-learn, TensorFlow.
-
-#### Collaboration and Community Support/Large Community
-- With millions of developers worldwide, you’ll find tutorials, resources, and libraries for almost any task.
-- Stuck on a problem? Resources like Stack Overflow and Python forums have answers.
-
-#### Open source
- - Python is an open-source language, meaning it’s freely available for use and modification.
-
-#### Platform-independent
-- Python code can run on multiple operating systems, including Windows, Linux, and Mac operating systems.
-
-#### "Hello, World!" in Different Languages
+#### Hello, World, in Different Languages
 
 Assembly Language
 ```
@@ -121,6 +92,35 @@ Python Language
 print("Hello, World!")
 ```
 
+### Key Features of Python:
+
+#### Versatility/Multi-Purpose 
+- Python can be used for wide range of applications:
+   - Building websites.
+   - Automating tasks.
+   - Analyzing data.
+   - Training machine learning models.
+
+#### In-Demand Skill
+  - Python ranks among the most popular programming languages in the world.
+  - Companies like Google, Netflix, and NASA use Python, making it a valuable skill in the job market.
+    
+#### Rich Ecosystem/Extensive Libraries
+- Python has thousands of libraries and frameworks to help you:
+   - Work with data: Pandas, NumPy.
+   - Create visualizations: Matplotlib, Seaborn.
+   - Build machine learning models: Scikit-learn, TensorFlow.
+
+#### Collaboration and Community Support/Large Community
+- With millions of developers worldwide, you’ll find tutorials, resources, and libraries for almost any task.
+- Stuck on a problem? Resources like Stack Overflow and Python forums have answers.
+
+#### Open source
+ - Python is an open-source language, meaning it’s freely available for use and modification.
+
+#### Platform-independent
+- Python code can run on multiple operating systems, including Windows, Linux, and Mac operating systems.
+
 #### Most Popular Programming Languages from 1965- 2024
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xOW3Cehg_qg?si=dR6bCJjmc6yTFPR_" frameborder="0" allowfullscreen></iframe>
 
@@ -131,9 +131,6 @@ print("Hello, World!")
     - Dynamically typed language
 
 ---
-
-
-
 
 2. **Basic Syntax and Structure**
    - Writing your first Python program.
