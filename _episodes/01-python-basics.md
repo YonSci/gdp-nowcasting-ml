@@ -276,9 +276,9 @@ print("The type of", colors, "is", type(colors))
 ---
 
 ### Operators
-1) Arithmetic Operators
-2) Comparison Operators
-3) Logical Operators
+1) Arithmetic Operators  
+2) Comparison Operators  
+3) Logical Operators  
 
 #### Arithmetic Operators
 - Arithmetic operators are used to perform mathematical operations  
