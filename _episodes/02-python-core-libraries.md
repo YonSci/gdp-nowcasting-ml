@@ -31,6 +31,7 @@ keypoints:
 
 - `NumPy` stands for "Numerical Python" and provides `fast`, `efficient`, and `flexible` array operations.  
 - The core object in NumPy is the `ndarray` (N-dimensional array).
+- Designed for scientific computation: useful `linear algebra`, `Fourier transform`, and `random number capabilities` etc.
 
 
 #### Import the NumPy library
@@ -59,6 +60,13 @@ print(arr)
 arr_2d = np.array([[1, 2], [3, 4]])
 print(arr_2d)
 ```
+
+###### Create a 3D Arrays
+
+```python
+c = np.array([[[1,1,2], [2,3,3]], [[1,1,1], [1,1,1]], [[1,1,1], [1,1,1]]])
+```
+
 ##### Creating Arrays with NumPy Functions
 
 ###### Create an array of zeros
@@ -75,6 +83,15 @@ ones = np.ones((3, 2))  # 3 rows, 2 columns
 print(ones)
 ```
 
+###### Random numbers
+
+```python
+a = np.random.rand(4)       # uniform in [0, 1]
+
+b = np.random.randn(4)      # Gaussian
+```
+
+
 ###### Create an array with a range of numbers
 
 ```python
@@ -88,6 +105,9 @@ print(range_arr)
 linspace_arr = np.linspace(0, 1, 5)  # Start at 0, stop at 1, 5 evenly spaced values
 print(linspace_arr)
 ```
+
+
+
 
 #### Basic Array Operations
 
@@ -131,7 +151,6 @@ arr = np.array([10, 20, 30, 40])
 print(arr[0])  # First element
 print(arr[-1])  # Last element
 ```
-
 
 ###### Access elements of a 2D array
 
@@ -195,6 +214,14 @@ row = np.array([1, 2, 3])
 print(arr_2d + row)
 ```
 
+#### Asking For Help
+
+```python
+np.add?
+np.array?
+np.arr*?
+np.con*?
+```
 
 ---
 
@@ -627,8 +654,9 @@ print(cleaned_df)
 4) Sort the DataFrame by Stock in ascending order.
 5) Create a DataFrame with some missing values and write code to:    
    - Replace missing values with "Not Available".    
-   - Remove rows with missing values.    
-6) Create a 1D array of integers from 5 to 15.  
+   - Remove rows with missing values.  
+   
+6) Create a 1D array of integers from 5 to 15.    
 7) Create a 2D array of shape (3, 3) filled with ones.  
 8) Multiply all elements in the array [2, 4, 6, 8] by 3.  
 9) Add the arrays [1, 2, 3] and [4, 5, 6].  
