@@ -684,7 +684,7 @@ plt.ylabel("Y-axis")           # Add a Y-axis label
 plt.show()                     # Display the plot
 ```
 
-![Line Plot one](../assets/imag/line1.pmg)
+![Line Plot one](../assets/imag/line1.png)
 
 ##### Customizing the Line Plot
 
