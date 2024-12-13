@@ -223,6 +223,12 @@ np.arr*?
 np.con*?
 ```
 
+### Key Points:
+
+- NumPy arrays are efficient for numerical computations.    
+- Perform operations like addition, multiplication, and broadcasting directly on arrays.    
+- Use slicing and indexing to access or modify specific elements.    
+
 ---
 
 ## Pandas
@@ -637,10 +643,178 @@ print(cleaned_df)
 
 ## Matplotlib
 
+### Agenda
 
+- Learn the basics of the Matplotlib library.      
+- Understand how to create various types of plots (line, bar, scatter, etc.).    
+- Customize plots with titles, labels, legends, and styles.    
+- Save plots as image files.  
+
+### Introduction to Matplotlib 
+
+- Matplotlib is a popular library for creating `static`, `animated`, and `interactive` visualizations in Python.  
+- The core component is the `pyplot` module, often imported as plt.  
+- You can create a wide variety of plots, including `line plots`, `bar charts`, `histograms`, `scatter plots`, and more.  
+
+#### Importing Matplotlib
+
+```python
+# Import Matplotlib's pyplot module
+import matplotlib.pyplot as plt
+
+# Check the Matplotlib version
+print(plt.__version__)
+```
+
+#### Line Plot
+
+##### Creating a Simple Line Plot
+
+```python
+# Data for the plot
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+# Create a line plot
+plt.plot(x, y)
+plt.title("Simple Line Plot")  # Add a title
+plt.xlabel("X-axis")           # Add an X-axis label
+plt.ylabel("Y-axis")           # Add a Y-axis label
+plt.show()                     # Display the plot
+```
+
+##### Customizing the Line Plot
+
+```python
+# Customize line style, color, and markers
+plt.plot(x, y, color="red", linestyle="--", marker="o", label="Data")
+plt.title("Customized Line Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.legend()  # Add a legend
+plt.grid(True)  # Add grid lines
+plt.show()
+```
+
+#### Bar Chart
+
+##### Creating a Bar Chart
+
+```python
+# Data for the bar chart
+categories = ["A", "B", "C", "D"]
+values = [5, 7, 8, 6]
+
+# Create a bar chart
+plt.bar(categories, values, color="blue")
+plt.title("Bar Chart")
+plt.xlabel("Categories")
+plt.ylabel("Values")
+plt.show()
+```
+
+##### Horizontal Bar Chart
+
+```python
+# Create a horizontal bar chart
+plt.barh(categories, values, color="green")
+plt.title("Horizontal Bar Chart")
+plt.xlabel("Values")
+plt.ylabel("Categories")
+plt.show()
+```
+
+#### Scatter Plot
+
+##### Creating a Scatter Plot
+
+```python
+# Data for the scatter plot
+x = [5, 7, 8, 7, 2, 17, 2, 9, 4, 11]
+y = [99, 86, 87, 88, 100, 86, 103, 87, 94, 78]
+
+# Create a scatter plot
+plt.scatter(x, y, color="purple", marker="x")
+plt.title("Scatter Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+```
+
+#### Histogram
+
+##### Creating a Histogram
+
+```python
+# Data for the histogram
+data = [22, 87, 5, 43, 56, 73, 55, 54, 11, 20, 51, 5, 79, 31, 27]
+
+# Create a histogram
+plt.hist(data, bins=5, color="orange", edgecolor="black")
+plt.title("Histogram")
+plt.xlabel("Data")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+#### Pie Chart
+
+##### Creating a Pie Chart
+
+```python
+# Data for the pie chart
+sizes = [30, 20, 35, 15]
+labels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# Create a pie chart
+plt.pie(sizes, labels=labels, autopct="%1.1f%%", startangle=90)
+plt.title("Pie Chart")
+plt.show()
+```
+
+#### Saving a Plot
+
+
+##### Saving a Plot as an Image
+
+```python
+# Create a plot
+plt.plot(x, y)
+plt.title("Line Plot")
+
+# Save the plot as a PNG file
+plt.savefig("line_plot.png")
+
+# Save the plot as a high-quality image
+plt.savefig("line_plot_high_res.png", dpi=300)
+
+# Display the plot
+plt.show()
+```
+
+### Key Points:
+
+- Matplotlib provides tools for creating a variety of `plots` and `visualizations`.  
+- Use `plt.plot()` for line plots, `plt.bar()` for bar charts, `plt.scatter()` for scatter plots, and `plt.hist()` for histograms.  
+- Customize plots with `titles`, `axis` `labels`, `legends`, and `grid lines`.  
+- Save your plots using `plt.savefig()` in various formats.
+  
 ---
 
 ## Exercise
+
+### Numpy
+
+1) Create a 1D array of integers from 5 to 15.  
+2) Create a 2D array of shape (3, 3) filled with ones.  
+3) Multiply all elements in the array [2, 4, 6, 8] by 3.  
+4) Add the arrays [1, 2, 3] and [4, 5, 6].  
+5) Access the last row of the array [[1, 2, 3], [4, 5, 6], [7, 8, 9]].  
+6) Slice the array np.arange(10) to get only even numbers.  
+7) Reshape the array np.arange(12) into a (3, 4) array.  
+8) Flatten the reshaped array back into 1D.    
+
+### Pandas
 
 1) Create a Pandas Series with the following data: [100, 200, 300]. Assign the indices as ["X", "Y", "Z"].  
 2) Create a DataFrame with columns Product, Price, and Stock using the following data:
@@ -656,11 +830,10 @@ print(cleaned_df)
    - Replace missing values with "Not Available".    
    - Remove rows with missing values.  
    
-6) Create a 1D array of integers from 5 to 15.    
-7) Create a 2D array of shape (3, 3) filled with ones.  
-8) Multiply all elements in the array [2, 4, 6, 8] by 3.  
-9) Add the arrays [1, 2, 3] and [4, 5, 6].  
-10) Access the last row of the array [[1, 2, 3], [4, 5, 6], [7, 8, 9]].  
-11) Slice the array np.arange(10) to get only even numbers.  
-12) Reshape the array np.arange(12) into a (3, 4) array.  
-13) Flatten the reshaped array back into 1D.    
+### Matplotlib
+
+1) Create a line plot for x = [1, 2, 3, 4, 5] and y = [10, 20, 25, 30, 35]. Customize the plot by changing the line color, adding markers, and a legend.
+2) Create a bar chart for categories ["Math", "Science", "History", "English"] and values [85, 90, 75, 80]. Add a title, and X and Y axis labels.
+3) Plot x = [10, 20, 30, 40, 50] and y = [5, 15, 25, 35, 45] as a scatter plot. Change the marker style and color.
+4) Create a histogram for the dataset [5, 7, 8, 9, 5, 3, 4, 5, 7, 8, 9, 10] with 4 bins.
+5) Create a pie chart for sizes = [40, 30, 20, 10] with labels ["A", "B", "C", "D"]  
