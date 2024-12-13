@@ -648,12 +648,13 @@ print(cleaned_df)
 - Learn the basics of the Matplotlib library.      
 - Understand how to create various types of plots (line, bar, scatter, etc.).    
 - Customize plots with titles, labels, legends, and styles.    
-- Save plots as image files.  
+- Save plots as image files (PNG, PDF, SVG, EPS, and PGF.).  
 
 ### Introduction to Matplotlib 
 
-- Matplotlib is a popular library for creating `static`, `animated`, and `interactive` visualizations in Python.  
-- The core component is the `pyplot` module, often imported as plt.  
+- Matplotlib is a python 2D and 3D plotting library which produces scientific figures and publication quality figures.
+- The core component is the `pyplot` module, often imported as plt.
+- It is modeled closely after "Matlab™". Therefore, the majority of plotting commands in pyplot have Matlab™ analogs with similar arguments.
 - You can create a wide variety of plots, including `line plots`, `bar charts`, `histograms`, `scatter plots`, and more.  
 
 #### Importing Matplotlib
@@ -772,8 +773,145 @@ plt.title("Pie Chart")
 plt.show()
 ```
 
-#### Saving a Plot
+#### Subplots
+- Subplots allow you to create multiple plots in a single figure.  
+- Use `plt.subplot()` for simple grids and `plt.subplots()` for more control.
 
+##### Creating Simple Subplots
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for plots
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Create subplots
+plt.subplot(2, 1, 1)  # 2 rows, 1 column, 1st subplot
+plt.plot(x, y1, label="sin(x)", color="blue")
+plt.title("Sine Wave")
+plt.legend()
+
+plt.subplot(2, 1, 2)  # 2 rows, 1 column, 2nd subplot
+plt.plot(x, y2, label="cos(x)", color="red")
+plt.title("Cosine Wave")
+plt.legend()
+
+plt.tight_layout()  # Adjust layout to avoid overlapping
+plt.show()
+```
+
+##### Using plt.subplots() for More Control
+
+```python
+# Create a figure with multiple subplots
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+# Sine wave
+axes[0, 0].plot(x, y1, color="blue")
+axes[0, 0].set_title("Sine Wave")
+
+# Cosine wave
+axes[0, 1].plot(x, y2, color="red")
+axes[0, 1].set_title("Cosine Wave")
+
+# Exponential
+y3 = np.exp(x / 10)
+axes[1, 0].plot(x, y3, color="green")
+axes[1, 0].set_title("Exponential Function")
+
+# Logarithmic
+y4 = np.log(x + 1)
+axes[1, 1].plot(x, y4, color="purple")
+axes[1, 1].set_title("Logarithmic Function")
+
+# Add overall titles and adjust layout
+fig.suptitle("Multiple Plots in One Figure", fontsize=16)
+plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust space for the title
+plt.show()
+```
+
+#### 3D Plots (Optional)
+
+- Matplotlib provides 3D plotting functionality through the mpl_toolkits.mplot3d module.  
+- Use ax.plot_surface() for surface plots and ax.scatter() for 3D scatter plots.
+
+##### 3D Line Plot
+```python
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data for a 3D line
+z = np.linspace(0, 1, 100)
+x = z * np.sin(25 * z)
+y = z * np.cos(25 * z)
+
+# Create a 3D plot
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection="3d")
+
+ax.plot(x, y, z, label="3D Spiral", color="blue")
+ax.set_title("3D Line Plot")
+ax.set_xlabel("X-axis")
+ax.set_ylabel("Y-axis")
+ax.set_zlabel("Z-axis")
+ax.legend()
+
+plt.show()
+```
+
+##### 3D Surface Plot
+
+```python
+# Create data for a surface plot
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+x, y = np.meshgrid(x, y)
+z = np.sin(np.sqrt(x**2 + y**2))
+
+# Create a 3D surface plot
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection="3d")
+
+surf = ax.plot_surface(x, y, z, cmap="viridis")
+fig.colorbar(surf)  # Add a color bar for reference
+ax.set_title("3D Surface Plot")
+ax.set_xlabel("X-axis")
+ax.set_ylabel("Y-axis")
+ax.set_zlabel("Z-axis")
+
+plt.show()
+```
+
+##### 3D Scatter Plot
+
+```python
+# Create random 3D data
+np.random.seed(42)
+x = np.random.rand(50)
+y = np.random.rand(50)
+z = np.random.rand(50)
+
+# Create a 3D scatter plot
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection="3d")
+
+ax.scatter(x, y, z, color="red", marker="o", label="Data Points")
+ax.set_title("3D Scatter Plot")
+ax.set_xlabel("X-axis")
+ax.set_ylabel("Y-axis")
+ax.set_zlabel("Z-axis")
+ax.legend()
+
+plt.show()
+```
+
+
+
+#### Saving a Plot
 
 ##### Saving a Plot as an Image
 
@@ -832,8 +970,8 @@ plt.show()
    
 ### Matplotlib
 
-1) Create a line plot for x = [1, 2, 3, 4, 5] and y = [10, 20, 25, 30, 35]. Customize the plot by changing the line color, adding markers, and a legend.
-2) Create a bar chart for categories ["Math", "Science", "History", "English"] and values [85, 90, 75, 80]. Add a title, and X and Y axis labels.
-3) Plot x = [10, 20, 30, 40, 50] and y = [5, 15, 25, 35, 45] as a scatter plot. Change the marker style and color.
-4) Create a histogram for the dataset [5, 7, 8, 9, 5, 3, 4, 5, 7, 8, 9, 10] with 4 bins.
-5) Create a pie chart for sizes = [40, 30, 20, 10] with labels ["A", "B", "C", "D"]  
+1) Create a line plot for x = [1, 2, 3, 4, 5] and y = [10, 20, 25, 30, 35]. Customize the plot by changing the line color, adding markers, and a legend.  
+2) Create a bar chart for categories ["Math", "Science", "History", "English"] and values [85, 90, 75, 80]. Add a title, and X and Y axis labels.  
+3) Plot x = [10, 20, 30, 40, 50] and y = [5, 15, 25, 35, 45] as a scatter plot. Change the marker style and color.  
+4) Create a histogram for the dataset [5, 7, 8, 9, 5, 3, 4, 5, 7, 8, 9, 10] with 4 bins.  
+5) Create a pie chart for sizes = [40, 30, 20, 10] with labels ["A", "B", "C", "D"]    
