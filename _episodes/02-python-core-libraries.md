@@ -20,6 +20,8 @@ keypoints:
 
 ## Pandas
 
+### Agenda 
+
 - Learn the basics of the Pandas library.
 - Understand how to work with Series and DataFrames.
 - Perform data manipulation tasks like filtering, sorting, and aggregating.
@@ -27,10 +29,10 @@ keypoints:
   
 ### Introduction to Pandas
 
-- Pandas is a powerful library for data manipulation and analysis.  
+- `Pandas` is a powerful library for `data manipulation` and `analysis`.  
 - The two main data structures are:  
- - Series: A one-dimensional labeled array.   
- - DataFrame: A two-dimensional table-like data structure.  
+   - `Series`: A one-dimensional labeled array.   
+   - `DataFrame`: A two-dimensional table-like data structure.  
 
 #### Import the Pandas library
 ```python
@@ -82,13 +84,35 @@ df.head()
 df.tail()
 ```
 
+####  Display DataFrame information
+
+```python
+df.info()
+```
+
+#### Display the data types 
+
+```python
+df.dtypes
+```
+
+####  Display statistical summary of DataFrame
+
+```python
+df.describe()
+```
+
 #### Display the DataFrame index and columns
 
 - Use DataFrame.index or DataFrame.columns to get the DataFrame index and columns
 
+##### Get the DataFrame index
 ```python
 df.index
+```
 
+##### Get the DataFrame columns
+```python
 df.columns
 ```
 
@@ -103,6 +127,62 @@ print(df.loc[1])
 # Accessing rows using iloc
 print(df.iloc[2]) 
 ```
+
+#### Adding New Columns
+
+```python
+df['Experience'] = np.random.randint(1, 5, size=len(df))
+
+df.head()
+```
+
+#### Dropping Columns
+
+- Use the `drop()` method to remove columns.  
+- Specify `axis=1` to indicate columns.    
+- Use `inplace=True` to modify the DataFrame directly (optional).  
+
+```python
+# Dropping a Single Column
+df_dropped = df.drop("City", axis=1)
+print(df_dropped)
+
+# Alternatively, drop in place (modifies the original DataFrame)
+df.drop("City", axis=1, inplace=True)
+print(df)
+
+```
+
+```python
+# Dropping Multiple Columns
+df = pd.DataFrame(data)  # Recreate the original DataFrame
+df_dropped = df.drop(["Age", "City"], axis=1)
+print(df_dropped)
+```
+
+#### Dropping Rows
+
+- Use the `drop()` method to remove rows.  
+- Specify `axis=0` to indicate rows (default behavior).    
+- Use `inplace=True` to modify the DataFrame directly (optional).  
+
+```python
+# Drop the row with index 1
+df_dropped = df.drop(1, axis=0)
+print(df_dropped)
+
+# Alternatively, drop in place
+df.drop(1, axis=0, inplace=True)
+print(df)
+```
+
+```python
+# Drop multiple rows
+df = pd.DataFrame(data)  # Recreate the original DataFrame
+df_dropped = df.drop([0, 2], axis=0)
+print(df_dropped)
+```
+
 
 ### Reading and Writing Data
 
