@@ -15,8 +15,59 @@ keypoints:
 
 # Python Core Libraries
 
+---
+
 ## NumPy
 
+### Agenda 
+
+- Learn the basics of `NumPy`, a library for `numerical computing` in Python.  
+- Understand and `create arrays`, the core data structure in NumPy.  
+- Perform basic `mathematical operations` on arrays.  
+- Learn advanced operations like `reshaping`, `slicing`, and `broadcasting`.    
+
+
+### Introduction to NumPy
+
+- `NumPy` stands for "Numerical Python" and provides `fast`, `efficient`, and `flexible` array operations.  
+- The core object in NumPy is the `ndarray` (N-dimensional array).
+
+
+#### Import the NumPy library
+
+```python
+import numpy as np
+
+# Check the version of NumPy
+print(np.__version__)
+```
+
+#### Creating NumPy Arrays
+
+##### Creating Arrays from Lists
+
+##### Creating Arrays with NumPy Functions
+
+#### Basic Array Operations
+
+##### Mathematical Operations
+
+##### Array Properties
+
+#### Indexing and Slicing
+
+##### Indexing
+
+##### Slicing
+
+#### Reshaping Arrays
+
+##### Changing the Shape of an Array
+
+#### Broadcasting
+
+
+---
 
 ## Pandas
 
@@ -422,9 +473,12 @@ print(cleaned_df)
 | **Specific Rows and Columns**| `df.loc[[rows], [columns]]`            | Label-based row/column selection.      |
 | **Filtering Rows**           | `df[condition]`                        | Filter rows based on conditions.       |
 
+---
 
 ## Matplotlib
 
+
+---
 
 ## Exercise
 
@@ -440,5 +494,12 @@ print(cleaned_df)
 4) Sort the DataFrame by Stock in ascending order.
 5) Create a DataFrame with some missing values and write code to:  
    - Replace missing values with "Not Available".  
-   - Remove rows with missing values    
-
+   - Remove rows with missing values
+6) Create a 1D array of integers from 5 to 15.
+7) Create a 2D array of shape (3, 3) filled with ones.
+8) Multiply all elements in the array [2, 4, 6, 8] by 3.
+9) Add the arrays [1, 2, 3] and [4, 5, 6].
+10) Access the last row of the array [[1, 2, 3], [4, 5, 6], [7, 8, 9]].
+11) Slice the array np.arange(10) to get only even numbers.
+12) Reshape the array np.arange(12) into a (3, 4) array.
+13) Flatten the reshaped array back into 1D.  
