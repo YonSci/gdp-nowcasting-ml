@@ -46,25 +46,154 @@ print(np.__version__)
 
 ##### Creating Arrays from Lists
 
+###### Create a 1D array
+
+```python
+arr = np.array([1, 2, 3, 4])
+print(arr)
+```
+
+###### Create a 2D array
+
+```python
+arr_2d = np.array([[1, 2], [3, 4]])
+print(arr_2d)
+```
 ##### Creating Arrays with NumPy Functions
+
+###### Create an array of zeros
+
+```python
+zeros = np.zeros((2, 3))  # 2 rows, 3 columns
+print(zeros)
+```
+
+###### Create an array of ones
+
+```python
+ones = np.ones((3, 2))  # 3 rows, 2 columns
+print(ones)
+```
+
+###### Create an array with a range of numbers
+
+```python
+range_arr = np.arange(0, 10, 2)  # Start at 0, stop before 10, step by 2
+print(range_arr)
+```
+
+###### Create an array with evenly spaced numbers
+
+```python
+linspace_arr = np.linspace(0, 1, 5)  # Start at 0, stop at 1, 5 evenly spaced values
+print(linspace_arr)
+```
 
 #### Basic Array Operations
 
 ##### Mathematical Operations
 
+###### Perform basic math operations
+
+```python
+arr = np.array([1, 2, 3, 4])
+print(arr + 2)  # Add 2 to each element
+print(arr * 3)  # Multiply each element by 3
+```
+
+##### Perform element-wise operations with another array
+
+```python
+arr2 = np.array([5, 6, 7, 8])
+print(arr + arr2)  # Element-wise addition
+print(arr * arr2)  # Element-wise multiplication
+```
+
 ##### Array Properties
+
+##### Get properties of an array
+
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr.shape)  # Shape of the array (rows, columns)
+print(arr.size)   # Total number of elements
+print(arr.dtype)  # Data type of elements
+```
 
 #### Indexing and Slicing
 
 ##### Indexing
 
+###### Access elements of a 1D array
+
+```python
+arr = np.array([10, 20, 30, 40])
+print(arr[0])  # First element
+print(arr[-1])  # Last element
+```
+
+
+###### Access elements of a 2D array
+
+```python
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr_2d[0, 1])  # Element in first row, second column
+print(arr_2d[1, 2])  # Element in second row, third column
+```
+
 ##### Slicing
+
+###### Slice a 1D array
+
+```python
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[1:4])  # Elements from index 1 to 3
+print(arr[:3])   # First three elements
+```
+
+###### Slice a 2D array
+
+```python
+arr_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(arr_2d[:2, 1:])  # First two rows, columns 2 and 3
+print(arr_2d[1:, :2])  # Last two rows, first two columns
+```
 
 #### Reshaping Arrays
 
 ##### Changing the Shape of an Array
 
+###### Reshape a 1D array to a 2D array
+
+```python
+arr = np.arange(1, 10)
+reshaped = arr.reshape(3, 3)  # 3 rows, 3 columns
+print(reshaped)
+```
+
+###### Flatten a 2D array back to 1D
+
+```python
+flattened = reshaped.flatten()
+print(flattened)
+```
+
 #### Broadcasting
+
+- Broadcasting allows operations between arrays of different shapes.
+  
+##### Add a scalar to a 2D array
+
+```python
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr_2d + 10)
+```
+##### Add a 1D array to a 2D array
+
+```python
+row = np.array([1, 2, 3])
+print(arr_2d + row)
+```
 
 
 ---
@@ -129,9 +258,13 @@ print(df)
 
 - Use `DataFrame.head()` and `DataFrame.tail()` to view the top and bottom rows of the frame respectively
 
+##### Print the head of the DataFrame
 ```python
 df.head()
+```
 
+##### Print the tail of the DataFrame
+```python
 df.tail()
 ```
 
@@ -492,14 +625,14 @@ print(cleaned_df)
 
 3) Filter rows in the DataFrame where Price > 600.  
 4) Sort the DataFrame by Stock in ascending order.
-5) Create a DataFrame with some missing values and write code to:  
-   - Replace missing values with "Not Available".  
-   - Remove rows with missing values
-6) Create a 1D array of integers from 5 to 15.
-7) Create a 2D array of shape (3, 3) filled with ones.
-8) Multiply all elements in the array [2, 4, 6, 8] by 3.
-9) Add the arrays [1, 2, 3] and [4, 5, 6].
-10) Access the last row of the array [[1, 2, 3], [4, 5, 6], [7, 8, 9]].
-11) Slice the array np.arange(10) to get only even numbers.
-12) Reshape the array np.arange(12) into a (3, 4) array.
-13) Flatten the reshaped array back into 1D.  
+5) Create a DataFrame with some missing values and write code to:    
+   - Replace missing values with "Not Available".    
+   - Remove rows with missing values.    
+6) Create a 1D array of integers from 5 to 15.  
+7) Create a 2D array of shape (3, 3) filled with ones.  
+8) Multiply all elements in the array [2, 4, 6, 8] by 3.  
+9) Add the arrays [1, 2, 3] and [4, 5, 6].  
+10) Access the last row of the array [[1, 2, 3], [4, 5, 6], [7, 8, 9]].  
+11) Slice the array np.arange(10) to get only even numbers.  
+12) Reshape the array np.arange(12) into a (3, 4) array.  
+13) Flatten the reshaped array back into 1D.    
