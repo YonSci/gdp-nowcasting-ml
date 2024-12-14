@@ -879,7 +879,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-# Display the GDP Plot
+### Display the GDP Plot
 
 ![GDP Plot](../assets/img/gdp-example1.png)
 
