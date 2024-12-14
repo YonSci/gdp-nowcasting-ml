@@ -1,7 +1,7 @@
 ---
 title: Python Development Environment
-teaching: 1
-exercises: 1
+teaching: 130
+exercises: 130
 questions:
 - "How to install Python?"
 - "How to use conda and pip package managers?"
