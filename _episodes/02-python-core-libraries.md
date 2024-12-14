@@ -717,7 +717,7 @@ plt.xlabel("Categories")
 plt.ylabel("Values")
 plt.show()
 ```
-[Bar Plot one](../assets/img/bar1.png)
+![Bar Plot one](../assets/img/bar1.png)
 
 ##### Horizontal Bar Chart
 
@@ -729,7 +729,7 @@ plt.xlabel("Values")
 plt.ylabel("Categories")
 plt.show()
 ```
-[Bar Plot two](../assets/img/bar2.png)
+![Bar Plot two](../assets/img/bar2.png)
 
 #### Scatter Plot
 
@@ -747,7 +747,7 @@ plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
 ```
-[Scatter Plot two](../assets/img/sct1.png)
+![Scatter Plot two](../assets/img/sct1.png)
 
 #### Histogram
 
@@ -764,7 +764,7 @@ plt.xlabel("Data")
 plt.ylabel("Frequency")
 plt.show()
 ```
-[Histogram Plot two](../assets/img/hst1.png)
+![Histogram Plot two](../assets/img/hst1.png)
 
 #### Pie Chart
 
@@ -780,7 +780,7 @@ plt.pie(sizes, labels=labels, autopct="%1.1f%%", startangle=90)
 plt.title("Pie Chart")
 plt.show()
 ```
-[Pie Plot two](../assets/img/pie1.png)
+![Pie Plot two](../assets/img/pie1.png)
 
 #### Subplots
 - Subplots allow you to create multiple plots in a single figure.  
@@ -812,7 +812,7 @@ plt.tight_layout()  # Adjust layout to avoid overlapping
 plt.show()
 ```
 
-[Subplots Plot two](../assets/img/sub1.png)
+![Subplots Plot two](../assets/img/sub1.png)
 
 
 ##### Using plt.subplots() for More Control
@@ -844,7 +844,7 @@ fig.suptitle("Multiple Plots in One Figure", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust space for the title
 plt.show()
 ```
-[Subplots Plot two](../assets/img/sub1.png)
+![Subplots Plot two](../assets/img/sub1.png)
 
 #### 3D Plots (Optional)
 
