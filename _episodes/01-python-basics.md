@@ -1,7 +1,7 @@
 ---
 title: Python Basics
-teaching: 1
-exercises: 1
+teaching: 130
+exercises: 130
 questions:
 - "What is Python, and why is it popular?"
 - "How do you declare a variable in Python?"
