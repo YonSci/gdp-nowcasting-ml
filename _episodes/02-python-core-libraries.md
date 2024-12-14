@@ -1,15 +1,19 @@
 ---
 title: Python Core Libraries
-teaching: 30
-exercises: 30
+teaching: 130
+exercises: 130
 questions:
-- "What is Python, and why is it popular?"
+- "What are the basics of Numpy?"
+- "What are the basics of Pandas?"
+- "What are the basics of Matplotlib?"
 objectives:
-- "Learn the basics of the Pandas library."
-
+- "Learn the basics of Numpy."
+- "Learn the basics of Pandas"
+- "Learn the basics of Matplotlib."
 keypoints:
+- "`NumPy` provides `fast`, `efficient`, and `flexible` array operations. "
 - "Pandas is a powerful library for data manipulation and analysis."
-
+- "Matplotlib is a python 2D and 3D plotting library which produces scientific figures and publication quality figures."
 
 ---
 
@@ -105,9 +109,6 @@ print(range_arr)
 linspace_arr = np.linspace(0, 1, 5)  # Start at 0, stop at 1, 5 evenly spaced values
 print(linspace_arr)
 ```
-
-
-
 
 #### Basic Array Operations
 
@@ -698,6 +699,7 @@ plt.legend()  # Add a legend
 plt.grid(True)  # Add grid lines
 plt.show()
 ```
+![Line Plot two](../assets/img/line2.png)
 
 #### Bar Chart
 
@@ -715,6 +717,7 @@ plt.xlabel("Categories")
 plt.ylabel("Values")
 plt.show()
 ```
+[Bar Plot one](../assets/img/bar1.png)
 
 ##### Horizontal Bar Chart
 
@@ -726,6 +729,7 @@ plt.xlabel("Values")
 plt.ylabel("Categories")
 plt.show()
 ```
+[Bar Plot two](../assets/img/bar2.png)
 
 #### Scatter Plot
 
@@ -743,6 +747,7 @@ plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
 ```
+[Scatter Plot two](../assets/img/sct1.png)
 
 #### Histogram
 
@@ -759,6 +764,7 @@ plt.xlabel("Data")
 plt.ylabel("Frequency")
 plt.show()
 ```
+[Histogram Plot two](../assets/img/hst1.png)
 
 #### Pie Chart
 
@@ -774,6 +780,7 @@ plt.pie(sizes, labels=labels, autopct="%1.1f%%", startangle=90)
 plt.title("Pie Chart")
 plt.show()
 ```
+[Pie Plot two](../assets/img/pie1.png)
 
 #### Subplots
 - Subplots allow you to create multiple plots in a single figure.  
@@ -790,7 +797,7 @@ x = np.linspace(0, 10, 100)
 y1 = np.sin(x)
 y2 = np.cos(x)
 
-# Create subplots
+# Create subplot
 plt.subplot(2, 1, 1)  # 2 rows, 1 column, 1st subplot
 plt.plot(x, y1, label="sin(x)", color="blue")
 plt.title("Sine Wave")
@@ -804,6 +811,9 @@ plt.legend()
 plt.tight_layout()  # Adjust layout to avoid overlapping
 plt.show()
 ```
+
+[Subplots Plot two](../assets/img/sub1.png)
+
 
 ##### Using plt.subplots() for More Control
 
@@ -834,6 +844,7 @@ fig.suptitle("Multiple Plots in One Figure", fontsize=16)
 plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust space for the title
 plt.show()
 ```
+[Subplots Plot two](../assets/img/sub1.png)
 
 #### 3D Plots (Optional)
 
