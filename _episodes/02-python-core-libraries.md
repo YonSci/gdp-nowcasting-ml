@@ -846,6 +846,43 @@ plt.show()
 ```
 ![Subplots Plot two](../assets/img/sub1.png)
 
+
+### Generate and plot synthetic GDP data 
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate synthetic GDP data
+np.random.seed(42)  # For reproducibility
+years = np.arange(2000, 2023)  # 2000 to 2022
+gdp = np.cumsum(np.random.uniform(0.5, 5, len(years))) + 100  # Cumulative GDP growth starting at 100
+
+# Create a DataFrame
+gdp_data = pd.DataFrame({"Year": years, "GDP": gdp})
+
+# Plot the data
+plt.figure(figsize=(10, 6))
+plt.plot(gdp_data["Year"], gdp_data["GDP"], marker="o", linestyle="-", color="blue", label="GDP Growth")
+
+# Adding plot details
+plt.title("Annual GDP Growth (2000-2022)", fontsize=16)
+plt.xlabel("Year", fontsize=12)
+plt.ylabel("GDP (in Billion $)", fontsize=12)
+plt.grid(True, linestyle="--", alpha=0.6)
+plt.legend(fontsize=12)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+```
+
+# Display the GDP Plot
+
+![GDP Plot](../assets/img/gdp-example1.png)
+
 #### 3D Plots (Optional)
 
 - Matplotlib provides 3D plotting functionality through the mpl_toolkits.mplot3d module.  
@@ -876,6 +913,8 @@ ax.legend()
 plt.show()
 ```
 
+![3D Line Plot](../assets/img/3d-line.png)
+
 ##### 3D Surface Plot
 
 ```python
@@ -899,6 +938,8 @@ ax.set_zlabel("Z-axis")
 plt.show()
 ```
 
+![3D Surface Plot](../assets/img/3d-surface.png)
+
 ##### 3D Scatter Plot
 
 ```python
@@ -921,8 +962,7 @@ ax.legend()
 
 plt.show()
 ```
-
-
+![3D Surface Plot](../assets/img/3d-scater.png)
 
 #### Saving a Plot
 
@@ -987,4 +1027,5 @@ plt.show()
 2) Create a bar chart for categories ["Math", "Science", "History", "English"] and values [85, 90, 75, 80]. Add a title, and X and Y axis labels.  
 3) Plot x = [10, 20, 30, 40, 50] and y = [5, 15, 25, 35, 45] as a scatter plot. Change the marker style and color.  
 4) Create a histogram for the dataset [5, 7, 8, 9, 5, 3, 4, 5, 7, 8, 9, 10] with 4 bins.  
-5) Create a pie chart for sizes = [40, 30, 20, 10] with labels ["A", "B", "C", "D"]    
+5) Create a pie chart for sizes = [40, 30, 20, 10] with labels ["A", "B", "C", "D"]  
+6) Import your annual GDP data into a Pandas DataFrame and visualize the data using Matplotlib.  
