@@ -1,16 +1,13 @@
-
 ---
 title: Exploratory Data Analysis (EDA)
 teaching: 130
 exercises: 130
 questions:
 - "What are the basics of Numpy?"
-
 objectives:
 - "Understand the purpose and importance of EDA in the data analysis pipeline."
 - "Learn how to use Python libraries for EDA."
 - "To gain insights into the data by summarizing its main characteristics."
-
 keypoints:
 - "To understand the structure and contents of the dataset."
 
