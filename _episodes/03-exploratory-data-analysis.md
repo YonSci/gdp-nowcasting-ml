@@ -698,7 +698,7 @@ sns.pairplot(gdp_gt_dt, corner=True)
 plt.show()
 ```
 
-![bivarite bivariate-pair1](../assets/bivariate-pair1.png)
+![bivarite bivariate-pair1](../assets/img/bivariate-pair1.png)
 
 
 #### Bivariate Pair plot (2)
@@ -725,7 +725,7 @@ sns.pairplot(gdp_gt_dt,
 plt.show()
 ```
 
-![bivarite bivariate-pair2](../assets/bivariate-pair2.png)
+![bivarite bivariate-pair2](../assets/img/bivariate-pair2.png)
 
 ## Automatic EDA Tools
 
@@ -734,5 +734,5 @@ stdf = st.dfSummary(gdp_gt_dt)
 stdf
 ```
 
-![dfSummary.png](../assets/dfSummary.png)
+![dfSummary.png](../assets/img/dfSummary.png)
 ## Exercise
