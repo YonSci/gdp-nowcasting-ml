@@ -36,17 +36,14 @@ keypoints:
   - Correlation Analysis
   - Bivariate Relationships (Bivariate Scatter and Pair Plot )
   - Automatic EDA Tools
-
+ 
+## Importing Libraries
 
 - Before diving into data analysis, it's essential to import the necessary Python libraries that provide functionalities for `data manipulation`, `visualization`, and `interactive features`.    
 
 - Commonly used libraries include `Pandas` for data handling, `NumPy` for numerical operations, `Matplotlib` and `Seaborn` for plotting, and `Ipywidgets` for interactive widgets.  
 
 - Use `standard aliases` for libraries to maintain consistency and readability.  
-
- 
-
-## Importing Libraries
 
 ```python
 # Import pandas and numpy
