@@ -66,7 +66,7 @@ import summarytools as st
 gdp_df = pd.read_csv('gdp_gt_data.csv')
 ```
 
-## ## Data Understanding/Explore the DataFrame
+## Data Understanding/Explore the DataFrame
 
 ```python
 # Display the shape of the data frame
@@ -328,6 +328,32 @@ plt.show()
 ```
 
 ## Time Series with dropdown widget
+
+```python
+# Create a function to plot the time series
+def plot_time_series(column):
+    plt.figure(figsize=(10, 6))
+    gdp_gt_dt[column].plot()
+    plt.title(f'{column}')
+    plt.xlabel('Date')
+    plt.ylabel(column)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+# Create a dropdown widget for selecting the column
+column_selector = widgets.Dropdown(
+    options=gdp_gt_dt.columns,
+    description='Column:',
+    disabled=False,
+)
+
+# Link the dropdown widget to the plot_time_series function
+interactive_plot = widgets.interactive_output(plot_time_series, {'column': column_selector})
+
+# Display the widget and the interactive plot
+display(column_selector, interactive_plot)
+```
 
 ## Correlation Analysis
 
