@@ -118,13 +118,31 @@ gdp_df.columns
 
 - This step helps in identifying any anomalies or outliers in the data.
 
-  - mean: The average value.  
+  - `mean`: The average value.  
   
-  - std: The standard deviation, indicating data dispersion.  
+  - `std`: The standard deviation, indicating data dispersion.  
   
-  - min and max: The minimum and maximum values.  
+  - `min` and `max`: The minimum and maximum values.  
   
-  - 25%, 50%, 75%: The 25th, 50th (median), and 75th percentiles.  
+  - `25%`, `50%`, `75%`: The 25th, 50th (median), and 75th percentiles.
+ 
+  - `Coefficient of variation (CV)` is a statistical measure that expresses the `extent of variability` in relation to the mean of the population.   
+
+    - **Comparing Variability Across Different Variables**: CV allows you to compare the relative variability between datasets or variables with different units or scales.  
+    
+    - High CV Values: Indicate that the data points are more **dispersed around the mean**.  
+    
+    - Low CV Values: Suggest that the data points are closely **clustered around the mean**.  
+   
+ - Skewness and Kurtosis  
+  
+  - Skewness refers to the **asymmetry of the distribution**.  
+      - Right-skewed (positive skew): Tail on the right side.  
+      - Left-skewed (negative skew): Tail on the left side. 
+
+  - Kurtosis measures the "tailedness" of the distribution.  
+
+  - Outlier Detection: Outliers appear as isolated bars in histograms or as long tails in density plots.  
 
 ```python
 # Drop the Date column
@@ -149,7 +167,19 @@ summary_stats.T
 
 - Histograms and density plots are essential tools for visualizing the distribution of a single variable.  
 
-- They help in understanding the frequency of data points and the underlying probability distribution.  
+- They help in understanding the frequency of data points and the underlying probability distribution.
+
+- Histograms and density plots are fundamental tools in Exploratory Data Analysis (EDA) for machine learning applications.  
+
+- **Histograms** display the **frequency of data points** within specified **intervals (bins)**, allowing you to see **how data is distributed across different value ranges**.  
+
+- **Density Plots** offer a smoothed, continuous estimate of the data's **probability density function**, providing a clear view of the **data's distribution shape**.  
+
+- Outlier Detection:   
+
+   - Outliers appear as isolated bars in histograms or as long tails in density plots.  
+
+    - Outliers can disproportionately influence model parameters, especially in models sensitive to extreme values (e.g., linear regression).  
 
 ```python
 # Extract the GDP column from the DataFrame
@@ -215,7 +245,20 @@ display(column_selector, interactive_plot)
 
 - Box plots are excellent for visualizing the distribution of data and identifying outliers.  
 
-- They summarize the data using five main statistics: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.  
+- They summarize the data using five main statistics: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
+
+- ### Box plots
+
+- Box plots are **graphical representations** used in Exploratory Data Analysis (EDA) to summarize and visualize the **distribution of a dataset**. 
+
+- They display the dataset's **central tendency**, **dispersion**, and **skewness**, and are particularly useful for detecting **outliers**.
+
+    - Minimum (Q0): The smallest data point excluding outliers.
+    - First Quartile (Q1): The median of the lower half of the dataset (25th percentile).
+    - Median (Q2): The middle value of the dataset (50th percentile).
+    - Third Quartile (Q3): The median of the upper half of the dataset (75th percentile).
+    - Maximum (Q4): The largest data point excluding outliers.
+- 
 
 
 ```python
