@@ -580,7 +580,7 @@ klib.corr_plot(gdp_gt_dt,
 ```python
 klib.corr_plot(gdp_gt_dt, 
                method='pearson',
-               threshold=0.6,
+               threshold=0.3,
                split='pos', # 'neg', 'low', 'high'
                figsize=(15,12),
                cmap='coolwarm',
@@ -596,7 +596,7 @@ klib.corr_plot(gdp_gt_dt,
 ```python
 klib.corr_plot(gdp_gt_dt, 
                method='pearson',
-               threshold=-0.8,
+               threshold=-0.1,
                split='neg', # 'neg', 'low', 'high', 'pos'
                figsize=(15,12),
                cmap='coolwarm',
