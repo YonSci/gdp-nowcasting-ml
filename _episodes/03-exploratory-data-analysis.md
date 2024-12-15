@@ -457,13 +457,12 @@ display(column_selector, interactive_plot)
 
 ### Correlation Table 
 
-- Correlation analysis measures the strength and direction of relationships between numerical variables, helping identify predictors or dependencies.
+- Correlation analysis measures the strength and direction of relationships between numerical variables, helping identify predictors or dependencies.  
   
-- - It measures the strength and direction of the linear relationship between two variables.   
+- It measures the strength and direction of the linear relationship between two variables.     
 
 - It helps in understanding how variables are related to each other, which is crucial for **feature selection** and **detecting multicollinearity**.
-- 
-
+  
 ```python
 klib.corr_mat(gdp_gt_dt)  
 ```
@@ -644,7 +643,7 @@ display(x_column_selector, y_column_selector, interactive_plot)
 
 - It creates a matrix of plots showing the relationship between each pair of variables in a dataset.
     
-    - **Diagonals: Often display univariate distributions (e.g., histograms, kernel density estimates) of each variable.
+    - **Diagonals**: Often display univariate distributions (e.g., histograms, kernel density estimates) of each variable.
     
     - **Off-Diagonals**: Show scatter plots of one variable against another.  
 
