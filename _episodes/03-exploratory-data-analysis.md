@@ -87,31 +87,38 @@ gdp_df = pd.read_csv('gdp_gt_data.csv')
 # Display the shape of the data frame
 gdp_df.shape
 ```
+![Data Shape](../assets/img/df-shape.png)
 
 ```python
 # Display the first few rows of the data frame
 gdp_df.head()
 ```
+![Data head](../assets/img/df-head.png)
 
 ```python
 # Display the last few rows of the data frame
 gdp_df.tail()
 ```
+![Data tail](../assets/img/df-tail.png)
 
 ```python
 # Display the data types of the columns
 gdp_df.dtypes
 ```
+![Data dtypes](../assets/img/df-dtypes.png)
 
 ```python
 # Display the information of the data frame
 gdp_df.info()
 ```
+![Data info](../assets/img/df-info.png)
 
 ```python
 # Display the column name of the data frame
 gdp_df.columns
 ```
+![Data columns](../assets/img/df-columns.png)
+
 ## Basic Statistical Summary
 
 - Generating summary statistics provides a quick overview of the central tendency, dispersion, and shape of the dataset’s distribution.   
@@ -162,6 +169,7 @@ summary_stats['CV'] = (gdp_gt_d.std() / gdp_gt_d.mean()) * 100
 
 summary_stats.T
 ```
+![Data df-summary](../assets/img/df-summary.png)
 
 ## Histogram and Density Plot
 
@@ -214,6 +222,8 @@ plt.tight_layout()
 # Display the plot
 plt.show()
 ```
+
+![Data hist](../assets/img/histogram.png)
 
 ## Histogram and Density plot with dropdown widget
 ```python
@@ -283,7 +293,7 @@ plt.tight_layout()
 # Display the plot
 plt.show()
 ```
-
+![Data box plot](../assets/img/boxplot.png)
 
 ## Box Plot with dropdown widget
 
@@ -347,6 +357,7 @@ plt.ylabel("GDP")
 # Display the plot
 plt.show()
 ```
+![Data violin](../assets/img/)
 
 ## Violin Plot with dropdown widget
 
@@ -425,6 +436,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Data ts](../assets/img/ts.png)
+
 ## Time Series with dropdown widget
 
 ```python
@@ -467,6 +480,9 @@ display(column_selector, interactive_plot)
 klib.corr_mat(gdp_gt_dt)  
 ```
 
+![Data corr](../assets/img/correlation-table.png)
+
+
 ### Correlation Heatmap
 
 - Heatmap Visualization: Use a heatmap to represent correlations visually.
@@ -480,6 +496,8 @@ sns.heatmap(gdp_gt_dt.corr(),
 plt.title('Correlation Heatmap')
 plt.show()
 ```
+![Data correlation-heatmap](../assets/img/correlation-heatmap1.png)
+
 ### Correlation Heatmap (Remove the second half)
 
 ```python
@@ -492,6 +510,8 @@ klib.corr_plot(gdp_gt_dt,
                )
 ```
 
+![Data correlation-heatmap](../assets/img/correlation-heatmap2.png)
+
 ### Correlation with target variables (1)
 
 ```python
@@ -499,6 +519,8 @@ klib.corr_mat(gdp_gt_dt,
               method='pearson',
               target='GDP')
 ```
+
+![Data corr-target1](../assets/img/corr-target1.png)
 
 ### Correlation with target variables (2)
 
@@ -515,6 +537,8 @@ klib.corr_plot(gdp_gt_dt,
                 ) 
 ```
 
+![Data corr-target2](../assets/img/corr-target2.png)
+
 ### Positive Correlations (Filter Insights)
 
 ```python
@@ -527,6 +551,10 @@ klib.corr_plot(gdp_gt_dt,
                linewidths=0.5,
                method='pearson') 
 ```
+
+
+![Data correlation-pos1](../assets/img/correlation-pos1.png)
+
 
 ### Negative Correlations (Filter Insights)
 
@@ -542,6 +570,9 @@ klib.corr_plot(gdp_gt_dt,
                )
 ```
 
+![Data correlation-neg1](../assets/img/correlation-neg1.png)
+
+
 ### Positive Correlation greater than certain threshold (Filter Insights)
 
 - Focus on correlations above a threshold (e.g., >0.5 or <-0.5) to reduce noise.
@@ -556,6 +587,8 @@ klib.corr_plot(gdp_gt_dt,
                linewidths=0.5)
 ```
 
+![Data correlation-pos2](../assets/img/correlation-pos2.png)
+
 ### Negative Correlation less than certain threshold (Filter Insights)
 
 - Focus on correlations above a threshold (e.g., >0.5 or <-0.5) to reduce noise.
@@ -569,6 +602,8 @@ klib.corr_plot(gdp_gt_dt,
                cmap='coolwarm',
                linewidths=0.5)
 ```
+
+![Data correlation-neg2](../assets/img/correlation-neg2.png)
 
 ## Bivariate Relationships (Bivariate Scatter and Pair Plot)
 
@@ -608,6 +643,8 @@ plt.ylabel("Economic Crisis", size=14)
 plt.show()
 ```
 
+![bivariate-bivariate-scatter1](../assets/img/bivariate-scatter1.png)
+
 ## Bivariate Scatter Plot with dropdown widget
 
 ```python
@@ -639,6 +676,7 @@ interactive_plot = widgets.interactive_output(plot_scatter, {'x_column': x_colum
 display(x_column_selector, y_column_selector, interactive_plot)
 ```
 
+
 ###  Bivariate Pair plot
 
 - It creates a matrix of plots showing the relationship between each pair of variables in a dataset.
@@ -659,6 +697,9 @@ sns.pairplot(gdp_gt_dt, corner=True)
 # Display the plot
 plt.show()
 ```
+
+![bivarite bivariate-pair1](../assets/bivariate-pair1.png)
+
 
 #### Bivariate Pair plot (2)
 ```python
@@ -684,6 +725,7 @@ sns.pairplot(gdp_gt_dt,
 plt.show()
 ```
 
+![bivarite bivariate-pair2](../assets/bivariate-pair2.png)
 
 ## Automatic EDA Tools
 
@@ -691,4 +733,6 @@ plt.show()
 stdf = st.dfSummary(gdp_gt_dt)
 stdf
 ```
+
+![dfSummary.png](../assets/dfSummary.png)
 ## Exercise
