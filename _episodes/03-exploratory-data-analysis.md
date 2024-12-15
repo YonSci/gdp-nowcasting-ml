@@ -243,22 +243,17 @@ display(column_selector, interactive_plot)
 
 ## Box Plots
 
-- Box plots are excellent for visualizing the distribution of data and identifying outliers.  
-
-- They summarize the data using five main statistics: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
-
-- ### Box plots
+- Box plots are excellent for visualizing the `distribution` of data and `identifying outliers`.  
 
 - Box plots are **graphical representations** used in Exploratory Data Analysis (EDA) to summarize and visualize the **distribution of a dataset**. 
 
 - They display the dataset's **central tendency**, **dispersion**, and **skewness**, and are particularly useful for detecting **outliers**.
 
-    - Minimum (Q0): The smallest data point excluding outliers.
-    - First Quartile (Q1): The median of the lower half of the dataset (25th percentile).
-    - Median (Q2): The middle value of the dataset (50th percentile).
-    - Third Quartile (Q3): The median of the upper half of the dataset (75th percentile).
-    - Maximum (Q4): The largest data point excluding outliers.
-- 
+    - Minimum (Q0): The smallest data point excluding outliers.  
+    - First Quartile (Q1): The median of the lower half of the dataset (25th percentile).  
+    - Median (Q2): The middle value of the dataset (50th percentile).  
+    - Third Quartile (Q3): The median of the upper half of the dataset (75th percentile).  
+    - Maximum (Q4): The largest data point excluding outliers.  
 
 
 ```python
@@ -319,6 +314,19 @@ display(column_selector, interactive_box_plot)
 
 ## Violin Plot
 
+- They combine the features of a **box plot** and a **kernel density plot**, providing a more detailed representation of **data distribution**.  
+
+   - **Visualizing Data Distribution**  
+
+   - **Multiple Peaks Identification**: Violin plots can reveal if a dataset has multiple modes, which might not be apparent in other plot types.  
+
+   - **Box Plot Elements Included**: Inside the violin shape, there's often a box plot that shows the median, interquartile range (IQR), and sometimes outliers.  
+
+   - **Assessing Skewness and Kurtosis**  
+
+   - **Outlier Detection**  
+
+
 ```python
 # Extract the GDP column from the DataFrame
 gdp = gdp_gt_d['GDP']
@@ -365,6 +373,17 @@ display(column_selector, interactive_plot)
 ```
 
 ## Time Series Plot 
+
+- Time Series Plots are essential tools in Exploratory Data Analysis (EDA) for machine learning applications involving temporal data.   
+
+    -  Visualizing Temporal Trends.  
+
+    - Identifying Seasonality and Cyclic Patterns.  
+
+    - Spotting Anomalies and Outliers.  
+
+    - Assessing Stationarity.  
+
 
 ```python
 
@@ -439,6 +458,10 @@ display(column_selector, interactive_plot)
 ### Correlation Table 
 
 - Correlation analysis measures the strength and direction of relationships between numerical variables, helping identify predictors or dependencies.
+  
+- - It measures the strength and direction of the linear relationship between two variables.   
+
+- It helps in understanding how variables are related to each other, which is crucial for **feature selection** and **detecting multicollinearity**.
 - 
 
 ```python
@@ -552,6 +575,16 @@ klib.corr_plot(gdp_gt_dt,
 
 ### Bivariate Scatter Plot
 
+
+- They are used to visualize the relationship between two numerical variables by plotting one variable along the x-axis and the other along the y-axis.     
+
+- **Visualizing Relationships Between Variables** (Identifying Correlations): allow you to see the nature of the relationship between two variables whether it's **linear**, **non-linear**, **exponential** etc.  
+
+- **Selecting the appropriate modeling techniques**: linear patterns can be modeled using linear models, non-linear relationship can be modeled using non-linear regression etc.  
+
+- **Identifying Outliers and Anomalies**: Data points that fall far outside the general pattern of the data.   
+
+
 ```python
 # Create a new figure for the plot with a specified size
 plt.figure(figsize=(10, 6))
@@ -608,6 +641,14 @@ display(x_column_selector, y_column_selector, interactive_plot)
 ```
 
 ###  Bivariate Pair plot
+
+- It creates a matrix of plots showing the relationship between each pair of variables in a dataset.
+    
+    - **Diagonals: Often display univariate distributions (e.g., histograms, kernel density estimates) of each variable.
+    
+    - **Off-Diagonals**: Show scatter plots of one variable against another.  
+
+- It provide a comprehensive overview of the interactions between variables, helping to uncover **patterns**, **correlations**, and potential **anomalies** in the data.  
 
 #### Bivariate Pair plot (1)
 ```python
