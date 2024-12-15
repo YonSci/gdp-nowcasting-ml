@@ -37,6 +37,15 @@ keypoints:
   - Bivariate Relationships (Bivariate Scatter and Pair Plot )
   - Automatic EDA Tools
 
+
+- Before diving into data analysis, it's essential to import the necessary Python libraries that provide functionalities for `data manipulation`, `visualization`, and `interactive features`.    
+
+- Commonly used libraries include `Pandas` for data handling, `NumPy` for numerical operations, `Matplotlib` and `Seaborn` for plotting, and `Ipywidgets` for interactive widgets.  
+
+- Use `standard aliases` for libraries to maintain consistency and readability.  
+
+ 
+
 ## Importing Libraries
 
 ```python
@@ -61,12 +70,21 @@ import summarytools as st
 
 ## Load Example Data
 
+- Loading data into your environment is the first step in any data analysis task.
+
+- It's crucial to understand the structure and content of your dataset before proceeding with analysis.  
+
 ```python
 # Load the data from CSV files
 gdp_df = pd.read_csv('gdp_gt_data.csv')
 ```
 
 ## Data Understanding/Explore the DataFrame
+
+- Understanding the structure and content of your DataFrame is vital.
+
+- This involves examining the `dimensions`, `data types`, and a `preview` of the data to identify any immediate issues or areas that require attention.
+
 
 ```python
 # Display the shape of the data frame
@@ -99,6 +117,18 @@ gdp_df.columns
 ```
 ## Basic Statistical Summary
 
+- Generating summary statistics provides a quick overview of the central tendency, dispersion, and shape of the dataset’s distribution.   
+
+- This step helps in identifying any anomalies or outliers in the data.
+
+  - mean: The average value.  
+  
+  - std: The standard deviation, indicating data dispersion.  
+  
+  - min and max: The minimum and maximum values.  
+  
+  - 25%, 50%, 75%: The 25th, 50th (median), and 75th percentiles.  
+
 ```python
 # Drop the Date column
 gdp_gt_d = gdp_df.drop(columns=['Date'])
@@ -119,6 +149,10 @@ summary_stats.T
 ```
 
 ## Histogram and Density Plot
+
+- Histograms and density plots are essential tools for visualizing the distribution of a single variable.  
+
+- They help in understanding the frequency of data points and the underlying probability distribution.  
 
 ```python
 # Extract the GDP column from the DataFrame
@@ -181,6 +215,11 @@ display(column_selector, interactive_plot)
 ```
 
 ## Box Plots
+
+- Box plots are excellent for visualizing the distribution of data and identifying outliers.  
+
+- They summarize the data using five main statistics: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.  
+
 
 ```python
 # Extract the GDP column from the DataFrame
@@ -359,11 +398,16 @@ display(column_selector, interactive_plot)
 
 ### Correlation Table 
 
+- Correlation analysis measures the strength and direction of relationships between numerical variables, helping identify predictors or dependencies.
+- 
+
 ```python
 klib.corr_mat(gdp_gt_dt)  
 ```
 
 ### Correlation Heatmap
+
+- Heatmap Visualization: Use a heatmap to represent correlations visually.
 
 ```python
 plt.figure(figsize=(12, 8))
@@ -409,7 +453,7 @@ klib.corr_plot(gdp_gt_dt,
                 ) 
 ```
 
-### Positive Correlations
+### Positive Correlations (Filter Insights)
 
 ```python
 # Positive correlations
@@ -422,7 +466,7 @@ klib.corr_plot(gdp_gt_dt,
                method='pearson') 
 ```
 
-### Negative Correlations
+### Negative Correlations (Filter Insights)
 
 ```python
 # Negative correlations
@@ -436,7 +480,9 @@ klib.corr_plot(gdp_gt_dt,
                )
 ```
 
-### Positive Correlation greater than certain threshold
+### Positive Correlation greater than certain threshold (Filter Insights)
+
+- Focus on correlations above a threshold (e.g., >0.5 or <-0.5) to reduce noise.
 
 ```python
 klib.corr_plot(gdp_gt_dt, 
@@ -448,7 +494,9 @@ klib.corr_plot(gdp_gt_dt,
                linewidths=0.5)
 ```
 
-### Negative Correlation less than certain threshold
+### Negative Correlation less than certain threshold (Filter Insights)
+
+- Focus on correlations above a threshold (e.g., >0.5 or <-0.5) to reduce noise.
 
 ```python
 klib.corr_plot(gdp_gt_dt, 
