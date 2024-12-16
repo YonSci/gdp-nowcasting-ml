@@ -746,7 +746,9 @@ stdf
    - Display the first and last few rows of the dataset.
    - Check the dimensions (number of rows and columns).
    - Examine the data types of each column.  
+
 2) Calculate descriptive statistics for numerical columns (mean, median, standard deviation, etc.)?  
-3) Assess the distribution of data using skewness and kurtosis?         
-4) Create various plots to visualize data distributions and relationships?  
+3) Assess the distribution of data using skewness and kurtosis?            
+4) Create various plots to visualize data distributions and relationships?
+     
    
