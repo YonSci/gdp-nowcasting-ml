@@ -3,14 +3,17 @@ title: Exploratory Data Analysis (EDA)
 teaching: 130
 exercises: 130
 questions:
-- "What are the basics of Numpy?"
+- "What are the structure and content of the data?"
+- "What are the distributions and relationships of variables?"
+- "What patterns or trends can be identified through visualizations?"
 objectives:
 - "Understand the purpose and importance of EDA in the data analysis pipeline."
 - "Learn how to use Python libraries for EDA."
 - "To gain insights into the data by summarizing its main characteristics."
 keypoints:
 - "To understand the structure and contents of the dataset."
-
+- "Use descriptive statistics and visualizations to explore distributions and relationships."
+- Summarize findings and prepare data for modeling.
 ---
 
 # Exploratory Data Analysis (EDA)
@@ -357,7 +360,7 @@ plt.ylabel("GDP")
 # Display the plot
 plt.show()
 ```
-![Data violin](../assets/img/)
+![Data violin](../assets/img/violin.png)
 
 ## Violin Plot with dropdown widget
 
