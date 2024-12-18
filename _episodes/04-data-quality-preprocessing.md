@@ -99,6 +99,220 @@ keypoints:
 ---
 
 
+## Importing Libraries
+
+```python
+# Import pandas and numpy
+import pandas as pd
+import numpy as np
+
+# plotting libraries
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Import the datetime class from the datetime module
+from pandas.tseries.offsets import MonthEnd
+
+# Miissing data visualization
+import missingno
+
+# Interactive plotting libraries
+import plotly.graph_objs as go
+import plotly.express as px
+
+# Linear Regressor Methods
+from sklearn.linear_model import LinearRegression
+
+# Import the KNNImputer class
+from sklearn.impute import KNNImputer
+
+# import mice imputer
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
+
+# estimator models 
+from sklearn.linear_model import BayesianRidge
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.ensemble import ExtraTreesRegressor
+
+# Import Seasonal Trend decomposition using Loess (STL)
+from statsmodels.tsa.seasonal import STL
+
+from PIL import Image
+```
+
+## Load data
+
+```python
+# Load GDP data without missing data 
+gdpreal_govexp = pd.read_csv('gdpreal_govexp.csv')
+
+gdpreal_govexp.head()
+```
+
+## Prepare the data for analysis/plotting 
+  - Conver the Quarter column to datetime format  
+  -  Fix the index of the GDP Data  
+  - Convert 'RealGDP'  column to float
+    
+```python
+# Convert the 'Quarter' column to datetime format and adjust for quarter-end
+gdpreal_govexp['Quarter'] = pd.PeriodIndex(gdpreal_govexp['Quarter'], freq='Q').to_timestamp()
+
+# Fix the index of the GDP Data to the [3, 6, 9, 12] or [1, 4, 7, 10] intervals
+gdpreal_govexp['Quarter'] = gdpreal_govexp['Quarter'] + MonthEnd(3)
+
+# Convert 'RealGDP' to float (ensure clean data)
+gdpreal_govexp['RealGDP'] = gdpreal_govexp['RealGDP'].str.replace(',', '').astype(float)
+
+gdpreal_govexp.head()
+```
+
+
+## Plot the Real GDP data using Matplotlib
+
+```python
+plt.figure(figsize=(12, 6))
+plt.plot(
+    gdpreal_govexp['Quarter'],
+    gdpreal_govexp['RealGDP'],
+    marker='o',
+    linestyle='-',
+    color='blue',
+    label='Real GDP (Billion Naira)'
+)
+
+# Add titles and labels
+plt.title('Nigeria Real GDP (2010 Q1 - 2024 Q3)', fontsize=16)
+plt.xlabel('Quarter', fontsize=12)
+plt.ylabel('Real GDP (Billion Naira)', fontsize=12)
+
+# Improve y-axis ticks
+plt.yticks(fontsize=10)  # Reduce frequency and size of y-ticks
+plt.ticklabel_format(axis='y', style='plain')  # Prevent scientific notation on the y-axis
+
+# Grid, legend, and layout
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.xticks(rotation=45)
+plt.legend(fontsize=12)
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+```
+## Plot the Real GDP data using Plotly
+
+```python
+# Create the plot
+fig = go.Figure()
+
+# Add the Real GDP line plot
+fig.add_trace(go.Scatter(
+    x=gdpreal_govexp['Quarter'],
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines+markers',
+    marker=dict(symbol='circle'),
+    line=dict(dash='solid', color='blue'),
+    name='Real GDP (Billion Naira)'
+))
+
+# Add titles and labels
+fig.update_layout(
+    title='Nigeria Real GDP (2010 Q1 - 2024 Q3)',
+    xaxis_title='Quarter',
+    yaxis_title='Real GDP (Billion Naira)',
+    title_font_size=16,
+    xaxis=dict(tickangle=45),
+    yaxis=dict(tickformat=',', tickfont=dict(size=10)),
+    legend=dict(font=dict(size=12)),
+    margin=dict(l=20, r=20, t=40, b=20),
+    template='plotly_white',
+    width=1200,  # Set the width of the figure
+    height=600   # Set the height of the figure
+)
+
+# Add grid lines
+fig.update_xaxes(showgrid=True, gridwidth=0.5, gridcolor='LightGray')
+fig.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightGray')
+
+# Show the plot
+fig.show()
+```
+
+## Identifing Missing Values
+
+```python
+# Missing value in each coloumns
+mis_val = gdpreal_govexp.isnull().sum()
+
+# Percentage of missing values
+mis_val_percent = 100 * gdpreal_govexp.isnull().sum() / len(gdpreal_govexp)
+
+# Make a table with the results
+mis_val_table = pd.concat([mis_val, mis_val_percent], axis=1)
+
+# Rename the columns
+mis_val_table_df = mis_val_table.rename(
+columns = {0 : 'Missing Values', 1 : '% of Missing Values'})
+
+mis_val_table_df
+```
+
+## Load GDP data with missing data 
+```python
+# Load GDP data with missing data 
+gdpng_realdf_miss = pd.read_csv('gdpng_realdf_miss.csv')
+
+gdpng_realdf_miss.head()
+```
+
+## Identifing Missing Values
+
+```python
+# Missing value in each coloumns
+mis_val = gdpng_realdf_miss.isnull().sum()
+
+# Percentage of missing values
+mis_val_percent = 100 * gdpng_realdf_miss.isnull().sum() / len(gdpng_realdf_miss)
+
+# Make a table with the results
+mis_val_table = pd.concat([mis_val, mis_val_percent], axis=1)
+
+# Rename the columns
+mis_val_table_df = mis_val_table.rename(
+columns = {0 : 'Missing Values', 1 : '% of Missing Values'})
+
+mis_val_table_df
+```
+
+
+## Showing the distribution of missing values
+
+```python
+missingno.matrix(gdpng_realdf_miss,
+                 figsize=(12,6), 
+                 fontsize=12, 
+                 color= (0.27, 0.52, 1.0),
+                 sparkline=False,
+                 label_rotation=90)
+
+plt.title('Missing Values Matrix', fontsize=14)
+```
+
+### Basic methods using pandas functions
+
+1) Imputation with a single value (Constant Imputation)  
+   - This is the most straightforward approach. We impute a single value for all missing values.
+
+```python
+# Replace all NaN elements with 15000
+df_fill15k = gdpng_realdf_miss.fillna(15000)
+df_fill15k.head()
+```
+
 
 
 
