@@ -120,6 +120,7 @@ import missingno
 import plotly.graph_objs as go
 import plotly.express as px
 
+
 # Linear Regressor Methods
 from sklearn.linear_model import LinearRegression
 
@@ -141,11 +142,24 @@ from sklearn.ensemble import ExtraTreesRegressor
 # Import Seasonal Trend decomposition using Loess (STL)
 from statsmodels.tsa.seasonal import STL
 
+
 from PIL import Image
 ```
-[GDP data csv](gdpreal_govexp.csv)
+
+### Install important packages 
+```python
+pip install -U scikit-learn
+pip install statsmodels
+pip install pillow
+pip install plotly
+pip install missingno
+```
+
+
 
 ### Load data
+
+[GDP data csv](gdpreal_govexp.csv)
 
 ```python
 # Load GDP data without missing data 
@@ -243,6 +257,16 @@ fig.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightGray')
 fig.show()
 ```
 
+### Convert to the datetime and Set the index
+```python
+gdpreal_govexp['Quarter'] = pd.to_datetime(gdpreal_govexp['Quarter'])
+
+# Set 'Quarter' as the index
+gdpreal_govexp.set_index('Quarter', inplace=True)
+
+gdpreal_govexp.head()
+```
+
 ### Identifing Missing Values
 
 ```python
@@ -319,6 +343,16 @@ mis_val_table_df = mis_val_table.rename(
 columns = {0 : 'Missing Values', 1 : '% of Missing Values'})
 
 mis_val_table_df
+```
+
+###  Convert to the datetime and Set the index
+```python
+# Set 'Quarter' as the index
+gdpng_realdf_miss.set_index('Quarter', inplace=True)
+
+gdpng_realdf_miss.index = pd.to_datetime(gdpng_realdf_miss.index)
+
+gdpng_realdf_miss.head()
 ```
 
 ### Showing the distribution of missing values
