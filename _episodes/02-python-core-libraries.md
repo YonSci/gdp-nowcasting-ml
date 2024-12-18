@@ -406,6 +406,8 @@ print(df_dropped)
 
 - Pandas supports reading and writing data in multiple formats (CSV, Excel, JSON, etc.).
 
+![GDP data csv](gdpreal_govexp.csv)
+
 #### Read data from a CSV file
 ```python
 df = pd.read_csv("example.csv")
