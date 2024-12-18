@@ -143,7 +143,7 @@ from statsmodels.tsa.seasonal import STL
 
 from PIL import Image
 ```
-![GDP data csv](gdpreal_govexp.csv)
+[GDP data csv](gdpreal_govexp.csv)
 
 ### Load data
 
