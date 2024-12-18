@@ -331,6 +331,28 @@ missingno.matrix(gdpng_realdf_miss,
 plt.title('Missing Values Matrix', fontsize=14)
 ```
 
+### Get indices of missing values
+```python
+# Copy the dataframe that have missing value
+df_with_missing = gdpng_realdf_miss.copy()
+
+# Get indices of missing values
+missing_indices = df_with_missing[df_with_missing['RealGDP'].isnull()].index
+missing_indices
+```
+
+### Convert the 'Quarter' column to datetime
+
+```python
+gdpreal_govexp['Quarter'] = pd.to_datetime(gdpreal_govexp['Quarter'])
+
+# Set 'Quarter' as the index
+gdpreal_govexp.set_index('Quarter', inplace=True)
+
+gdpreal_govexp.head()
+```
+
+
 ### Basic methods using pandas functions
 
 #### Imputation with a single value (Constant Imputation)  
@@ -342,46 +364,712 @@ df_fill15k = gdpng_realdf_miss.fillna(15000)
 df_fill15k.head()
 ```
 
-#### Pandas Functions (fillna): Quickly fill with a fixed value or simple strategy.
-       - Mean, Median, & Mode Imputation: Simple statistical measures; however, may distort variability and distributions.
-         
+#### Plot the original GDP and with the imputed data using constant imputation method
+
+```
+trace_imputed = go.Scatter(
+    x=df_fill15k.index,
+    y=df_fill15k['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_fill15k['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Constant Imputation of Missing Values',
+    xaxis=dict(title='Year'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
+
+#### Fill each individual columns with a specific value
+
+
+```python
+df_fill_spec15k = gdpng_realdf_miss.fillna(value={"RealGDP": 15000})
+df_fill_spec15k.head()
+```
+
+#### Pandas Functions (fillna): 
+ - Quickly (imple statistical measures) fill with a fixed value or simple strategy, however, may distort variability and distributions.
+
+```python
+# Mean imputation
+df_fill_mean = gdpng_realdf_miss.fillna(gdpng_realdf_miss['RealGDP'].mean())
+df_fill_mean.head() 
+
+# Median imputation
+# df_fill_median = gdpng_realdf_miss.fillna(gdpng_realdf_miss['RealGDP'].median())
+# df_fill_median
+
+# Mode imputation
+# df_fill_mode = gdpng_realdf_miss.fillna(gdpng_realdf_miss['RealGDP'].mode()[0])
+# df_fill_mode
+
+# Maximum imputation
+# df_fill_max = gdpng_realdf_miss.fillna(gdpng_realdf_miss['RealGDP'].max())
+# df_fill_max
+
+# Minimum imputation
+# df_fill_min = gdpng_realdf_miss.fillna(gdpng_realdf_miss['RealGDP'].min())
+# df_fill_min
+```
+
+#### Plot the original GDP and with the imputed data using Mean imputation method
+
+```python
+trace_imputed = go.Scatter(
+    x=df_fill_mean.index,
+    y=df_fill_mean['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_fill_mean['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Mean Imputation of Missing Values',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='Real GDP (Billion Naira)'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
+
 #### Time-Series Oriented Approaches 
+
 ##### Forward or Backward Fill
 
-- Propagates the last known value forward or backward, suitable for time-ordered data.  
+- Fill missing values with a `forward` or `backward` fill methods.  
+- These methods replace missing values either with the **immediately preceding** observed value or the **subsequent** observed value (similar adjacent).
+
+Pros:
+   - Simple and easy to implement.  
+   - Does not require any model fitting.  
+   - Can be a reasonable assumption in certain time-series datasets.  
+Cons:
+   - It can introduce bias into the data if the assumption of similar adjacent values does not hold.  
+   - It does not consider the possible variability around the missing value.  
+   - It can lead to overestimation or underestimation of the data analysis.
+
+```python
+# Backward fill
+df_fill_bfill = gdpng_realdf_miss.bfill() 
+df_fill_bfill.head()
+
+# Forward fill
+# df_fill_ffill = gdpng_realdf_miss.ffill() 
+# df_fill_ffill
+```
+#### Plot the original GDP and with the imputed data using fill backward method
+
+```python
+trace_imputed = go.Scatter(
+    x=df_fill_bfill.index,
+    y=df_fill_bfill['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_fill_bfill['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Fill Forward Imputation of Missing Values',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
     
 #### Interpolation Methods
 
 ##### Linear Interpolation
- - Estimates missing values as points on a straight line between known values.
+
+- is an imputation technique that assumes a linear relationship between data points.  
+- is a method of **curve fitting** used to estimate the value between two known values.  
+- In the context of missing data, linear interpolation can be used to estimate the missing values by drawing a straight line between two points.  
+Pros
+ - Simple and fast.  
+ - It can provide a good estimate for the missing values when the data shows a linear trend.  
+
+Cons  
+ - It can provide poor estimates when the data does not show a linear trend.  
+ - It's not suitable for data with a seasonal pattern.
+
+```python
+linear_interpolation = Image.open('image/linear_interpolation.png')
+display(linear_interpolation)
+```
+```python
+df_interpolate = gdpng_realdf_miss.interpolate( method='linear')
+
+df_interpolate.head()
+```
+
+#### Plot the original GDP and with the imputed data using linear interpolation method
+
+```python
+trace_imputed = go.Scatter(
+    x=df_interpolate.index,
+    y=df_interpolate['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_interpolate['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Linear Interpolation Imputation of Missing Values',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
 
 ##### Polynomial Interpolation
 
- - Uses higher-order curves for more complex trends.
+ - is a method of estimating values between known data points using polynomials.  
+ - The idea is to find a polynomial of a certain degree that passes through all the given data points.   
+ - This polynomial can then be used to estimate values at intermediate points.
+
+
+```python
+df_interpolate_poly = gdpng_realdf_miss.interpolate(method='polynomial', order=5)
+df_interpolate_poly.head()
+```
+
+#### Plot the original GDP and with the imputed data using polynomial interpolation method
+
+
+```python
+trace_imputed = go.Scatter(
+    x=df_interpolate_poly.index,
+    y=df_interpolate_poly['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  
+)
+
+trace_non_missing = go.Scatter(
+    x= gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_interpolate_poly['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Polynomial Interpolation Imputation of Missing Values',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
 
 ##### Spline Interpolation
 
- - Employs piecewise functions for smoother fits, often better for continuous data.  
+- is a method of interpolating data points using **piecewise polynomials** called **splines**.       
+- Instead of fitting a single polynomial to all data points, spline interpolation fits multiple polynomials to subsets of the data points, ensuring smoothness at the boundaries where the polynomials meet.    
+
+Pros:
+  - Provides a smoother and more flexible fit than linear interpolation.    
+  - Does not suffer from the problem of overfitting that can occur with polynomial interpolation.    
+Cons:  
+  - More computationally intensive than linear interpolation.    
+  - Can create unrealistic estimates if the data is not smooth.    
+
+```python
+df_interpolate_spline = gdpng_realdf_miss.interpolate(method='spline', order=2)
+df_interpolate_spline.head()
+```
+
+#### Plot the original GDP and with the imputed data using spline interpolation method
+
+
+```python
+trace_imputed = go.Scatter(
+    x=df_interpolate_spline.index,
+    y=df_interpolate_spline['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_interpolate_spline['RealGDP'],
+    mode='markers',
+    name='Missing Indice',
+    marker=dict(color='red', size=6),
+    opacity=0.6  
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Spline Interpolation Imputation of Missing Values',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
     
 #### Model-Based Methods
       
 ##### Regression Imputation
  
  - Uses regression models to predict missing values based on other features.
+ - It can be used when the data is numeric and there is a **strong correlation** between the variable with missing values and other variables.
+
+
+```python
+# Copy the original data 
+df_with_missing = gdpng_realdf_miss.copy()
+df_with_missing.head()
+```
+
+```python
+# Drop the missing values 
+df_non_missing = df_with_missing.dropna()
+df_non_missing.head()
+```
+
+```python
+# Instantiate linear model
+model = LinearRegression()
+```
+
+```python
+# Reshape data for model fitting (sklearn requires 2D array for predictors)
+X = df_non_missing['Govexp'].values.reshape(-1, 1)
+Y = df_non_missing['RealGDP'].values
+
+X.shape, Y.shape
+```
+
+```python
+# Fit the model
+model.fit(X, Y)
+```
+
+```python
+# Predict missing RealGDP values using rainfall
+predicted_gdp = model.predict(df_with_missing.loc[missing_indices, "Govexp"].values.reshape(-1, 1))
+predicted_gdp
+```
+
+```python
+# Fill missing RealGDP values with predicted values
+df_with_missing.loc[missing_indices, "RealGDP"] = predicted_gdp
+df_with_missing.head()
+```
+
+
+#### Plot the original GDP and with the imputed data using regression interpolation method
+
+
+```python
+trace_imputed = go.Scatter(
+    x=df_with_missing.index,
+    y=df_with_missing['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_with_missing['RealGDP'],
+    mode='markers',
+    name='Missing Imputation',
+    marker=dict(color='red', size=10),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Regression based Imputation',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
   
 ##### K-Nearest Neighbors (KNN) Imputation
 
- - Replaces missing values with averages or other statistics from the most similar observations.
+- is a machine learning-based imputation technique that uses the **k-nearest neighbors** algorithm to estimate missing values in a dataset.   
+- Each sample's missing values are imputed using the mean value from n_neighbors nearest neighbors found in the training set.    
+- It calculates the distance between data points and uses the values of the k-nearest neighbors to impute missing values. 
+
+```python
+df_with_missing = gdpng_realdf_miss.copy()
+
+# Create an instance of the KNNImputer class
+knn_imputer = KNNImputer(n_neighbors=4,
+                         weights='distance') # uniform, distance 
+
+# Impute missing values using the KNN imputer
+df_knn_imputed = knn_imputer.fit_transform(df_with_missing)
+
+# Convert the imputed data to a DataFrame
+df_knn_imputed = pd.DataFrame(df_knn_imputed, 
+                              columns=df_with_missing.columns, 
+                              index=df_with_missing.index)
+
+df_knn_imputed.head()
+```
+
+#### Plot the original GDP and with the imputed data using KNN interpolation method
+
+
+```python
+trace_imputed = go.Scatter(
+    x=df_knn_imputed.index,
+    y=df_knn_imputed['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6 )
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  )
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_knn_imputed['RealGDP'],
+    mode='markers',
+    name='Missing Imputation',
+    marker=dict(color='red', size=10),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='K-Nearest Neighbors (KNN) based Imputation ',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
   
 ##### Multiple Imputation by Chained Equations (MICE)
 
- - Iteratively imputes multiple sets of plausible values, accounting for uncertainty and providing robust estimates.
+ - an **iterative imputation** technique that imputes missing values in a dataset by modeling each **feature with missing values** as a function of the **other features** in the dataset.  
+- It iteratively imputes missing values in each feature using different models based on the other features.    
+- It best suited for machine learning applications.      
+- It also considers uncertainty when imputing the missing data.    
+
+```python
+df_with_missing = gdpng_realdf_miss.copy()
+
+
+# Create an instance of the IterativeImputer class
+mice_imputer = IterativeImputer(
+estimator=RandomForestRegressor(), # BayesianRidge, LinearRegression, DecisionTreeRegressor, RandomForestRegressor, KNeighborsRegressor, ExtraTreesRegressor
+random_state=0, 
+initial_strategy='mean', # median, most_frequent, constant
+max_iter=30,
+verbose=0)
+
+
+# Impute missing values using the MICE imputer
+df_mice_imputed = mice_imputer.fit_transform(df_with_missing)
+
+df_mice_imputed = pd.DataFrame(df_mice_imputed,
+                               columns=df_with_missing.columns, 
+                               index=df_with_missing.index)
+
+df_mice_imputed.head()
+```
+
+#### Plot the original GDP and with the imputed data using MICE interpolation method
+
+```python
+df_with_missing = gdpng_realdf_miss.copy()
+trace_imputed = go.Scatter(
+    x=df_mice_imputed.index,
+    y=df_mice_imputed['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6 )
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  )
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_mice_imputed['RealGDP'],
+    mode='markers',
+    name='Missing Imputation',
+    marker=dict(color='red', size=10),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='MICE based Imputation',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
+
+
+
   
 ##### Seasonal Trend Decomposition using Loess (STL) Imputation
 
- - Decomposes a time series into seasonal, trend, and residual components, then estimates missing values more accurately by leveraging these patterns.  
+- Seasonal Trend decomposition using Loess (STL) is a statistical method for decomposing a time series into three components: **trend**, **seasonal**, and **remainder (random)**.
+   
+- STL imputation can be used when dealing with time series data that exhibits a seasonal pattern.    
+- It can be used for imputing missing data in a time series.     
+    - the missing values are initially estimated via interpolation to allow for STL decomposition.       
+    - afterward, the seasonal and trend components of the decomposed time series are extracted.       
+    - The missing values are then re-estimated by interpolating the trend component and re-adding the seasonal component.  
+  
+
+```python
+df_with_missing = df_with_missing.copy()
+
+stl = STL(df_with_missing["RealGDP"].interpolate(method="linear",
+                                                    limit_direction="both"), 
+                                                    seasonal=13)
+res = stl.fit()
+
+# Extract the seasonal and trend components
+seasonal_component = res.seasonal
+
+# Create the deseasonalised series
+df_deseasonalised = df_with_missing["RealGDP"] - seasonal_component
+
+# Interpolate missing values in the deseasonalised series
+df_deseasonalised_imputed = df_deseasonalised.interpolate(method="linear", limit_direction="both")
+
+# Add the seasonal component back to create the final imputed series
+df_imputed = df_deseasonalised_imputed + seasonal_component
+
+# Update the original dataframe with the imputed values
+df_with_missing.loc[missing_indices, "RealGDP"] = df_imputed[missing_indices]
+
+df_with_missing.head()  
+```
+
+#### Plot the original GDP and with the imputed data using STL interpolation method
 
 
+```python
+trace_imputed = go.Scatter(
+    x=df_with_missing.index,
+    y=df_with_missing['RealGDP'],
+    mode='lines',
+    name='Imputed Data',
+    line=dict(color='red'),
+    opacity=0.6 )
+
+trace_non_missing = go.Scatter(
+    x=gdpreal_govexp.index,
+    y=gdpreal_govexp['RealGDP'],
+    mode='lines',
+    name='Non-Missing Data',
+    line=dict(color='blue'),
+    opacity=0.6  )
+
+trace_missing_indice = go.Scatter(
+    x=missing_indices,
+    y=df_with_missing['RealGDP'],
+    mode='markers',
+    name='Missing Imputation',
+    marker=dict(color='red', size=10),
+    opacity=0.6  # Set the transparency level (0.0 to 1.0)
+)
+
+# Create the layout for the plot
+layout = go.Layout(
+    title='Seasonal Trend Decomposition using Loess (STL) based Imputation',
+    xaxis=dict(title='Year-Month'),
+    yaxis=dict(title='RealGDP'),
+    legend=dict(x=0, y=1)
+)
+
+# Create the figure and add the traces
+fig = go.Figure(data=[trace_imputed, trace_non_missing, trace_missing_indice], layout=layout)
+
+# Display the plot
+fig.show()
+```
 
 ---
 
