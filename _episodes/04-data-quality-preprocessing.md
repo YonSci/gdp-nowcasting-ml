@@ -43,7 +43,9 @@ keypoints:
         - Provides no insight into why data are missing.
       
    - **Imputation**: Replace missing values with estimated values derived from the available data.
-  - Why Impute?: Preserves dataset size, potentially reduces bias, and retains the integrity of relationships among variables (if done correctly).  
+  - Why Impute?: Preserves dataset size, potentially reduces bias, and retains the integrity of relationships among variables (if done correctly).
+
+---
 
 ## Common Imputation Techniques
 
@@ -66,6 +68,7 @@ keypoints:
          - Seasonal Trend Decomposition using Loess (STL) Imputation
          
 ---
+
 ## Agenda
 
 - Assessing Missing Data
@@ -315,8 +318,7 @@ columns = {0 : 'Missing Values', 1 : '% of Missing Values'})
 mis_val_table_df
 ```
 
-
-## Showing the distribution of missing values
+### Showing the distribution of missing values
 
 ```python
 missingno.matrix(gdpng_realdf_miss,
@@ -331,7 +333,7 @@ plt.title('Missing Values Matrix', fontsize=14)
 
 ### Basic methods using pandas functions
 
-1) Imputation with a single value (Constant Imputation)  
+#### Imputation with a single value (Constant Imputation)  
    - This is the most straightforward approach. We impute a single value for all missing values.
 
 ```python
@@ -340,36 +342,48 @@ df_fill15k = gdpng_realdf_miss.fillna(15000)
 df_fill15k.head()
 ```
 
-  - Pandas Functions (fillna): Quickly fill with a fixed value or simple strategy.
+#### Pandas Functions (fillna): Quickly fill with a fixed value or simple strategy.
        - Mean, Median, & Mode Imputation: Simple statistical measures; however, may distort variability and distributions.
          
-    - Time-Series Oriented Approaches
-      
-      - Forward or Backward Fill: Propagates the last known value forward or backward, suitable for time-ordered data.  
+#### Time-Series Oriented Approaches 
+##### Forward or Backward Fill
+
+- Propagates the last known value forward or backward, suitable for time-ordered data.  
     
-    - Interpolation Methods
-        
-         - Linear Interpolation: Estimates missing values as points on a straight line between known values.
-         - Polynomial Interpolation: Uses higher-order curves for more complex trends.
-         - Spline Interpolation: Employs piecewise functions for smoother fits, often better for continuous data.  
+#### Interpolation Methods
+
+##### Linear Interpolation
+ - Estimates missing values as points on a straight line between known values.
+
+##### Polynomial Interpolation
+
+ - Uses higher-order curves for more complex trends.
+
+##### Spline Interpolation
+
+ - Employs piecewise functions for smoother fits, often better for continuous data.  
     
-    - Model-Based Methods
+#### Model-Based Methods
       
-         - Regression Imputation: Uses regression models to predict missing values based on other features.
-         - K-Nearest Neighbors (KNN) Imputation: Replaces missing values with averages or other statistics from the most similar observations.
-         - Multiple Imputation by Chained Equations (MICE): Iteratively imputes multiple sets of plausible values, accounting for uncertainty and providing robust estimates.
-         - Seasonal Trend Decomposition using Loess (STL) Imputation: Decomposes a time series into seasonal, trend, and residual components, then estimates missing values more accurately by leveraging these patterns.  
+##### Regression Imputation
+ 
+ - Uses regression models to predict missing values based on other features.
+  
+##### K-Nearest Neighbors (KNN) Imputation
+
+ - Replaces missing values with averages or other statistics from the most similar observations.
+  
+##### Multiple Imputation by Chained Equations (MICE)
+
+ - Iteratively imputes multiple sets of plausible values, accounting for uncertainty and providing robust estimates.
+  
+##### Seasonal Trend Decomposition using Loess (STL) Imputation
+
+ - Decomposes a time series into seasonal, trend, and residual components, then estimates missing values more accurately by leveraging these patterns.  
 
 
 
-
-
-
-
-
-
-
-
+---
 
 ## Exercise
 
