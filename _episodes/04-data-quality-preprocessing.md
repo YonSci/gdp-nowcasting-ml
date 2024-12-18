@@ -16,22 +16,15 @@ objectives:
 - Develop the ability to choose the most appropriate missing data handling technique for a given dataset and analysis goal.  
 
 keypoints:
-- "Deletion vs. Imputation:"
-    - Deletion: Simple but risks losing large amounts of data and introducing bias.
-    - Imputation: Replaces missing values with informed guesses, preserving sample size but adding complexity.
-  
-- "Simple Imputation Techniques:"     
-    - Basic pandas Functions: Quickly fill missing values with constants or forward/backward fill.    
-    - Statistical Measures (Mean, Median, Mode): Straightforward but may not maintain underlying data relationships.    
-
-- "More Advanced Imputation Techniques:"  
-    - Interpolation (Linear, Polynomial, Spline): Uses trends in existing data to estimate missing points.   
-    - Regression and KNN Imputation: Leverages relationships between variables to predict missing values.   
-    - MICE and STL Imputation: Handles complex, multivariate, and seasonal/trend-based patterns, offering more robust data reconstruction.   
-
-- "Trade-Offs:"
-    - Simpler methods are easier and faster to implement but may distort analyses.  
-    - Advanced methods better preserve data structure but can be more complex and resource-intensive. 
+- "Deletion: Simple but risks losing large amounts of data and introducing bias."
+- "Imputation: Replaces missing values with informed guesses, preserving sample size but adding complexity."
+- "Basic pandas Functions: Quickly fill missing values with constants or forward/backward fill."
+- "Statistical Measures (Mean, Median, Mode): Straightforward but may not maintain underlying data relationships."
+- "Interpolation (Linear, Polynomial, Spline): Uses trends in existing data to estimate missing points."
+- "Regression and KNN Imputation: Leverages relationships between variables to predict missing values."
+- "MICE and STL Imputation: Handles complex, multivariate, and seasonal/trend-based patterns, offering more robust data reconstruction."
+- "Simpler methods are easier and faster to implement but may distort analyses."
+- "Advanced methods better preserve data structure but can be more complex and resource-intensive." 
 ---
 
 # Identifying and Handling Missing Data
@@ -99,9 +92,8 @@ keypoints:
   - Multiple Imputation by Chained Equations (MICE)  
   - Seasonal and trend decomposition (STL)  
    
-  - Wrap-Up and Q&A
-    
-      -  Recap of key points and best practices  
+- Wrap-Up and Q&A
+  - Recap of key points and best practices  
 
     
 ---
@@ -126,15 +118,14 @@ keypoints:
 
 2) Calculate what percentage of rows have missing values above a certain threshold (e.g., rows with more than 30% missing)?     
 3) Observe how deleting rows/columns with too many missing values changes the dataset’s size and variable distributions?  
-4) Use .fillna() to replace missing values in a numeric column with its mean?  
-   - Compare the distribution of the column before and after mean imputation (via histograms or descriptive statistics)?   
-5) Apply forward fill imputation on a time-series column and discuss the potential implications?  
-6) Use linear interpolation and compare results with mean/median imputation?     
-7) Apply polynomial interpolation and compare differences in the resulting values?     
-8) Implement KNN imputation using fancyimpute or sklearn-based methods?     
-9) Perform multiple imputation using MICE (if a suitable library is available, such as statsmodels or impyute)?  
+4) Use .fillna() to replace missing values in a numeric column with its mean and compare the distribution of the column before and after mean imputation (via histograms or descriptive statistics)?     
+5) Apply forward fill imputation on a time-series column and discuss the potential implications?    
+6) Use linear interpolation and compare results with mean/median imputation?       
+7) Apply polynomial interpolation and compare differences in the resulting values?       
+8) Implement KNN imputation using fancyimpute or sklearn-based methods?       
+9) Perform multiple imputation using MICE (if a suitable library is available, such as statsmodels or impyute)?    
 10) Compare model performance (e.g., a simple regression model trained on the dataset) before and after MICE imputation to observe potential improvement?   
-11) Evaluating the quality of imputation using known values to measure error (e.g., mean absolute error, RMSE) and discuss how to interpret these errors and decide if the chosen imputation method is adequate?    
+11) Evaluating the quality of imputation using known values to measure error (e.g., mean absolute error, RMSE) and discuss how to interpret these errors and decide if the chosen imputation method is adequate?      
   
    
 
