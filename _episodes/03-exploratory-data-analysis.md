@@ -74,7 +74,7 @@ import summarytools as st
 
 - It's crucial to understand the structure and content of your dataset before proceeding with analysis.
 
-[GDP GT Data](../gdp_gt_data.csv)
+[GDP GT Data](../data/gdp_gt_data.csv)
 
 ```python
 # Load the data from CSV files
