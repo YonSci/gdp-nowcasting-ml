@@ -49,25 +49,27 @@ keypoints:
 
 ## Common Imputation Techniques
 
-    - Basic Methods:
-       - Pandas Functions (fillna)
-       - Mean, Median, & Mode Imputation
+- Basic Methods
+  - Pandas Functions (fillna)
+  - Mean, Median, & Mode Imputation
        
-    - Time-Series Oriented Approaches
-      - Forward or Backward Fill
+- Time-Series Oriented Approaches
+  - Forward or Backward Fill
       
-    - Interpolation Methods
-         - Linear Interpolation
-         - Polynomial Interpolation
-         - Spline Interpolation
-    
-    - Model-Based Methods
-         - Regression Imputation
-         - K-Nearest Neighbors (KNN) Imputation
-         - Multiple Imputation by Chained Equations (MICE)
-         - Seasonal Trend Decomposition using Loess (STL) Imputation
+- Interpolation Methods
+  - Linear Interpolation
+  - Polynomial Interpolation
+  - Spline Interpolation
+
+- Model-Based Methods
+  - Regression Imputation
+  - K-Nearest Neighbors (KNN) Imputation
+  - Multiple Imputation by Chained Equations (MICE)
+  - Seasonal Trend Decomposition using Loess (STL) Imputation
+
          
 ---
+
 
 ## Agenda
 
@@ -364,7 +366,7 @@ df_fill15k = gdpng_realdf_miss.fillna(15000)
 df_fill15k.head()
 ```
 
-#### Plot the original GDP and with the imputed data using constant imputation method
+#### Plot the original GDP with the imputed data using constant imputation method
 
 ```
 trace_imputed = go.Scatter(
@@ -417,7 +419,7 @@ df_fill_spec15k = gdpng_realdf_miss.fillna(value={"RealGDP": 15000})
 df_fill_spec15k.head()
 ```
 
-#### Pandas Functions (fillna): 
+#### Pandas Functions (fillna)
  - Quickly (imple statistical measures) fill with a fixed value or simple strategy, however, may distort variability and distributions.
 
 ```python
@@ -442,7 +444,7 @@ df_fill_mean.head()
 # df_fill_min
 ```
 
-#### Plot the original GDP and with the imputed data using Mean imputation method
+#### Plot the original GDP with the imputed data using Mean imputation method
 
 ```python
 trace_imputed = go.Scatter(
@@ -497,8 +499,9 @@ fig.show()
 Pros:
    - Simple and easy to implement.  
    - Does not require any model fitting.  
-   - Can be a reasonable assumption in certain time-series datasets.  
-Cons:
+   - Can be a reasonable assumption in certain time-series datasets.
+       
+Cons:  
    - It can introduce bias into the data if the assumption of similar adjacent values does not hold.  
    - It does not consider the possible variability around the missing value.  
    - It can lead to overestimation or underestimation of the data analysis.
@@ -512,7 +515,7 @@ df_fill_bfill.head()
 # df_fill_ffill = gdpng_realdf_miss.ffill() 
 # df_fill_ffill
 ```
-#### Plot the original GDP and with the imputed data using fill backward method
+#### Plot the original GDP with the imputed data using fill backward method
 
 ```python
 trace_imputed = go.Scatter(
@@ -563,8 +566,9 @@ fig.show()
 
 - is an imputation technique that assumes a linear relationship between data points.  
 - is a method of **curve fitting** used to estimate the value between two known values.  
-- In the context of missing data, linear interpolation can be used to estimate the missing values by drawing a straight line between two points.  
-Pros
+- In the context of missing data, linear interpolation can be used to estimate the missing values by drawing a straight line between two points.
+  
+Pros  
  - Simple and fast.  
  - It can provide a good estimate for the missing values when the data shows a linear trend.  
 
@@ -582,7 +586,7 @@ df_interpolate = gdpng_realdf_miss.interpolate( method='linear')
 df_interpolate.head()
 ```
 
-#### Plot the original GDP and with the imputed data using linear interpolation method
+#### Plot the original GDP with the imputed data using linear interpolation method
 
 ```python
 trace_imputed = go.Scatter(
@@ -639,7 +643,7 @@ df_interpolate_poly = gdpng_realdf_miss.interpolate(method='polynomial', order=5
 df_interpolate_poly.head()
 ```
 
-#### Plot the original GDP and with the imputed data using polynomial interpolation method
+#### Plot the original GDP with the imputed data using polynomial interpolation method
 
 
 ```python
@@ -690,10 +694,13 @@ fig.show()
 - is a method of interpolating data points using **piecewise polynomials** called **splines**.       
 - Instead of fitting a single polynomial to all data points, spline interpolation fits multiple polynomials to subsets of the data points, ensuring smoothness at the boundaries where the polynomials meet.    
 
-Pros:
+Pros:  
+
   - Provides a smoother and more flexible fit than linear interpolation.    
-  - Does not suffer from the problem of overfitting that can occur with polynomial interpolation.    
+  - Does not suffer from the problem of overfitting that can occur with polynomial interpolation.  
+    
 Cons:  
+  
   - More computationally intensive than linear interpolation.    
   - Can create unrealistic estimates if the data is not smooth.    
 
@@ -702,7 +709,7 @@ df_interpolate_spline = gdpng_realdf_miss.interpolate(method='spline', order=2)
 df_interpolate_spline.head()
 ```
 
-#### Plot the original GDP and with the imputed data using spline interpolation method
+#### Plot the original GDP with the imputed data using spline interpolation method
 
 
 ```python
@@ -799,7 +806,7 @@ df_with_missing.head()
 ```
 
 
-#### Plot the original GDP and with the imputed data using regression interpolation method
+#### Plot the original GDP with the imputed data using regression interpolation method
 
 
 ```python
@@ -869,7 +876,7 @@ df_knn_imputed = pd.DataFrame(df_knn_imputed,
 df_knn_imputed.head()
 ```
 
-#### Plot the original GDP and with the imputed data using KNN interpolation method
+#### Plot the original GDP with the imputed data using KNN interpolation method
 
 
 ```python
@@ -943,7 +950,7 @@ df_mice_imputed = pd.DataFrame(df_mice_imputed,
 df_mice_imputed.head()
 ```
 
-#### Plot the original GDP and with the imputed data using MICE interpolation method
+#### Plot the original GDP with the imputed data using MICE interpolation method
 
 ```python
 df_with_missing = gdpng_realdf_miss.copy()
@@ -1027,7 +1034,7 @@ df_with_missing.loc[missing_indices, "RealGDP"] = df_imputed[missing_indices]
 df_with_missing.head()  
 ```
 
-#### Plot the original GDP and with the imputed data using STL interpolation method
+#### Plot the original GDP with the imputed data using STL interpolation method
 
 
 ```python
