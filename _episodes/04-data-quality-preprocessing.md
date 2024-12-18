@@ -32,9 +32,9 @@ keypoints:
 - Missing data occurs when values are not stored for certain observations in a dataset.
 - Unhandled missing data can lead to biased analyses, reduced statistical power, and potentially incorrect conclusions. Proper handling ensures more reliable insights.
 
-- Approaches to Handling Missing Data:
+## Approaches to Handling Missing Data
   
-  - Deletion: Remove any row or observation that contains at least one missing value.
+  - **Deletion**: Remove any row or observation that contains at least one missing value.
       - Pros:
          - Easy to implement.
       - Cons:
@@ -42,34 +42,29 @@ keypoints:
         - Can lead to biased results.
         - Provides no insight into why data are missing.
       
-   - Imputation: Replace missing values with estimated values derived from the available data.
+   - **Imputation**: Replace missing values with estimated values derived from the available data.
   - Why Impute?: Preserves dataset size, potentially reduces bias, and retains the integrity of relationships among variables (if done correctly).  
 
-- Common Imputation Techniques:
+## Common Imputation Techniques
 
     - Basic Methods:
-      
-       - pandas Functions (fillna): Quickly fill with a fixed value or simple strategy.
-       - Mean, Median, & Mode Imputation: Simple statistical measures; however, may distort variability and distributions.
-         
+       - Pandas Functions (fillna)
+       - Mean, Median, & Mode Imputation
+       
     - Time-Series Oriented Approaches
+      - Forward or Backward Fill
       
-      - Forward or Backward Fill: Propagates the last known value forward or backward, suitable for time-ordered data.  
-    
     - Interpolation Methods
-        
-         - Linear Interpolation: Estimates missing values as points on a straight line between known values.
-         - Polynomial Interpolation: Uses higher-order curves for more complex trends.
-         - Spline Interpolation: Employs piecewise functions for smoother fits, often better for continuous data.  
+         - Linear Interpolation
+         - Polynomial Interpolation
+         - Spline Interpolation
     
     - Model-Based Methods
-      
-         - Regression Imputation: Uses regression models to predict missing values based on other features.
-         - K-Nearest Neighbors (KNN) Imputation: Replaces missing values with averages or other statistics from the most similar observations.
-         - Multiple Imputation by Chained Equations (MICE): Iteratively imputes multiple sets of plausible values, accounting for uncertainty and providing robust estimates.
-         - Seasonal Trend Decomposition using Loess (STL) Imputation: Decomposes a time series into seasonal, trend, and residual components, then estimates missing values more accurately by leveraging these patterns.  
-
-
+         - Regression Imputation
+         - K-Nearest Neighbors (KNN) Imputation
+         - Multiple Imputation by Chained Equations (MICE)
+         - Seasonal Trend Decomposition using Loess (STL) Imputation
+         
 ---
 ## Agenda
 
@@ -99,7 +94,7 @@ keypoints:
 ---
 
 
-## Importing Libraries
+### Importing Libraries
 
 ```python
 # Import pandas and numpy
@@ -144,7 +139,7 @@ from statsmodels.tsa.seasonal import STL
 from PIL import Image
 ```
 
-## Load data
+### Load data
 
 ```python
 # Load GDP data without missing data 
@@ -153,7 +148,7 @@ gdpreal_govexp = pd.read_csv('gdpreal_govexp.csv')
 gdpreal_govexp.head()
 ```
 
-## Prepare the data for analysis/plotting 
+### Prepare the data for analysis/plotting 
   - Conver the Quarter column to datetime format  
   -  Fix the index of the GDP Data  
   - Convert 'RealGDP'  column to float
@@ -172,7 +167,7 @@ gdpreal_govexp.head()
 ```
 
 
-## Plot the Real GDP data using Matplotlib
+### Plot the Real GDP data using Matplotlib
 
 ```python
 plt.figure(figsize=(12, 6))
@@ -203,7 +198,7 @@ plt.tight_layout()
 # Show the plot
 plt.show()
 ```
-## Plot the Real GDP data using Plotly
+### Plot the Real GDP data using Plotly
 
 ```python
 # Create the plot
@@ -242,7 +237,7 @@ fig.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightGray')
 fig.show()
 ```
 
-## Identifing Missing Values
+### Identifing Missing Values
 
 ```python
 # Missing value in each coloumns
@@ -261,7 +256,7 @@ columns = {0 : 'Missing Values', 1 : '% of Missing Values'})
 mis_val_table_df
 ```
 
-## Load GDP data with missing data 
+### Load GDP data with missing values 
 ```python
 # Load GDP data with missing data 
 gdpng_realdf_miss = pd.read_csv('gdpng_realdf_miss.csv')
@@ -269,7 +264,39 @@ gdpng_realdf_miss = pd.read_csv('gdpng_realdf_miss.csv')
 gdpng_realdf_miss.head()
 ```
 
-## Identifing Missing Values
+### Plot the GDP data with missing values
+
+```python
+plt.figure(figsize=(12, 6))
+plt.plot(
+    gdpng_realdf_miss['Quarter'],
+    gdpng_realdf_miss['RealGDP'],
+    marker='o',
+    linestyle='-',
+    color='blue',
+    label='Real GDP (Billion Naira)'
+)
+
+# Add titles and labels
+plt.title('Nigeria Real GDP (2010 Q1 - 2024 Q3)', fontsize=16)
+plt.xlabel('Quarter', fontsize=12)
+plt.ylabel('Real GDP (Billion Naira)', fontsize=12)
+
+# Improve y-axis ticks
+plt.yticks(fontsize=10)  # Reduce frequency and size of y-ticks
+plt.ticklabel_format(axis='y', style='plain')  # Prevent scientific notation on the y-axis
+
+# Grid, legend, and layout
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.xticks(rotation=45)
+plt.legend(fontsize=12)
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+```
+
+### Identifing Missing Values
 
 ```python
 # Missing value in each coloumns
@@ -312,6 +339,27 @@ plt.title('Missing Values Matrix', fontsize=14)
 df_fill15k = gdpng_realdf_miss.fillna(15000)
 df_fill15k.head()
 ```
+
+  - Pandas Functions (fillna): Quickly fill with a fixed value or simple strategy.
+       - Mean, Median, & Mode Imputation: Simple statistical measures; however, may distort variability and distributions.
+         
+    - Time-Series Oriented Approaches
+      
+      - Forward or Backward Fill: Propagates the last known value forward or backward, suitable for time-ordered data.  
+    
+    - Interpolation Methods
+        
+         - Linear Interpolation: Estimates missing values as points on a straight line between known values.
+         - Polynomial Interpolation: Uses higher-order curves for more complex trends.
+         - Spline Interpolation: Employs piecewise functions for smoother fits, often better for continuous data.  
+    
+    - Model-Based Methods
+      
+         - Regression Imputation: Uses regression models to predict missing values based on other features.
+         - K-Nearest Neighbors (KNN) Imputation: Replaces missing values with averages or other statistics from the most similar observations.
+         - Multiple Imputation by Chained Equations (MICE): Iteratively imputes multiple sets of plausible values, accounting for uncertainty and providing robust estimates.
+         - Seasonal Trend Decomposition using Loess (STL) Imputation: Decomposes a time series into seasonal, trend, and residual components, then estimates missing values more accurately by leveraging these patterns.  
+
 
 
 
