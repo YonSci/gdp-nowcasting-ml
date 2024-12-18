@@ -1,5 +1,5 @@
 ---
-title: Exploratory Data Analysis (EDA)
+title: Identifying and Handling Missing Data
 teaching: 130
 exercises: 130
 questions:
