@@ -72,7 +72,9 @@ import summarytools as st
 
 - Loading data into your environment is the first step in any data analysis task.
 
-- It's crucial to understand the structure and content of your dataset before proceeding with analysis.  
+- It's crucial to understand the structure and content of your dataset before proceeding with analysis.
+
+[GDP GT Data](../gdp_gt_data.csv)
 
 ```python
 # Load the data from CSV files
