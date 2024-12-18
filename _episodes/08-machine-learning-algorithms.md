@@ -22,10 +22,10 @@ keypoints:
 ### Linear Regression
 
 #### Assumptions:
-- **Linearity**: The relationship between predictors and the target is linear.
+- **Linearity**: The relationship between `predictors` and the `target` is linear.
 - **Independence of errors**: Residuals should be independent of each other.
-- **Homoscedasticity**: Constant variance of residuals.
 - **Normality of residuals** (for inference).
+- **Homoscedasticity**: variance of the residuals is constant across all levels of the predictor variable(s)
 
 #### How It Works:
 - Finds a linear combination of input features to predict the target value. Minimizes the sum of squared residuals.
@@ -37,6 +37,89 @@ keypoints:
 **Cons:**
 - Sensitive to outliers.
 - Might underfit if the relationship is non-linear.
+
+#### Importing Libraries
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+```
+
+#### Load the data from the csv file
+```python
+# Load the data from the csv file
+data = pd.read_csv('gdp_data.csv', index_col='Year')
+data.head()
+```
+
+#### Plot the timeseries of the data
+```python
+# Create a function to plot the time series
+def plot_time_series(column):
+    plt.figure(figsize=(10, 6))
+    data[column].plot()
+    plt.title(f'{column}')
+    plt.xlabel('Date')
+    plt.ylabel(column)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+# Create a dropdown widget for selecting the column
+column_selector = widgets.Dropdown(
+    options=data.columns,
+    description='Column:',
+    disabled=False,
+)
+
+# Link the dropdown widget to the plot_time_series function
+interactive_plot = widgets.interactive_output(plot_time_series, {'column': column_selector})
+
+# Display the widget and the interactive plot
+display(column_selector, interactive_plot)
+```
+
+
+#### Split data
+```python
+X = data.drop("gdp", axis=1)
+y = data["gdp"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, shuffle=False)
+```
+
+#### Define and train the model
+```python
+lr = LinearRegression()
+lr.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+predictions = lr.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2 = r2_score(y_test, predictions)
+print(f"  R^2: {r2:.4f}")
+```
+
+#### Plot the predictions
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Linear Regression')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 ### Ridge Regression
 
