@@ -38,6 +38,15 @@ keypoints:
 - Sensitive to outliers.
 - Might underfit if the relationship is non-linear.
 
+#### Install Machine Learning Frameworks and Libraries
+
+```python
+pip install xgboost
+pip install lightgbm
+pip install sklearn
+pip install -U scikit-learn
+```
+
 #### Importing Libraries
 
 ```python
@@ -722,7 +731,7 @@ stack.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-# Step 4: Make predictions
+# Make predictions
 predictions_stack = stack.predict(X_test)
 predictions_stack
 ```
