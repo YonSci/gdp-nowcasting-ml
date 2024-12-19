@@ -3,14 +3,17 @@ title: Machine Learning Algorithms and Basic Implementation
 teaching: 130
 exercises: 130
 questions:
-- "How much of the data is missing? Is it a small fraction or a significant portion?"
+- "What are the fundamental concepts in ML?"
+- "Which frame work is used in ML?"
+- "How do I train and test ML models?"
 
 objectives:
-- "Learn the difference between deleting incomplete observations and imputing missing values."
+- "Gain an understanding of fundamental machine learning concepts."
+- "Learn and apply best practices for training, evaluating, and interpreting machine learning models."
 
 
 keypoints:
-- "Deletion: Simple but risks losing large amounts of data and introducing bias."
+- "ML algorithms like linear regression, k-nearest neighbors,support vector Machine, xgboost and random forests are vital algorithms"
 
 ---
 
