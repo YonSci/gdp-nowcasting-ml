@@ -50,6 +50,11 @@ keypoints:
 
 ---
 
+## Install Libraries
+```python
+pip install statsmodels
+```
+
 ## Importing Libraries
 
 ```python
@@ -75,6 +80,10 @@ from PIL import Image
 ```
 
 ---
+
+### Import the data
+
+[Data](../data/gdpreal.csv)
 
 ## Import the Data
 
