@@ -17,13 +17,27 @@ keypoints:
 
 ---
 
+# WHAT DO THE WORDS MEAN?
+
+![ai-ml-dl-gai](../assets/img/ai-ml-dl-gai.png)
+
+**Artificial Intelligence**: The ability of computing systems to achieve **human-like performance** on **complex tasks**.
+- Conceptual umbrella term  
+- AI is the **outcome**, not the method
+
+- It is defined as the **science** and **engineering** of making intelligent machines that behave like human.
 
 # Machine Learning Algorithms
 
 **Machine learning** is a subset of **artificial intelligence (AI)** that focuses on developing computer systems capable of learning and improving from data without being explicitly programmed.
 
+- is a field of study that enables **computers** to learn and improve from experience without being explicitly programmed. 
 
-is a field of study that enables **computers** to learn and improve from experience without being explicitly programmed. 
+- Machine learning is **methodology** and currently our most successful way of achieving AI.
+
+- At a high level, ML systems look a tons of data and come up with rules to predict outcomes for unseen data.
+  
+![ml](../assets/img/ml.png)
 
 Machine learning is widely used in various fields and applications such as:
 • Face Recognition
