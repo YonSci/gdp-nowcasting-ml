@@ -76,6 +76,9 @@ from sklearn.metrics import r2_score
 
 # Import StandardScaler from scikit-learn for feature scaling
 from sklearn.preprocessing import StandardScaler
+
+# Interactive Widgets
+import ipywidgets as widgets
 ```
 
 #### Load the data from the csv file
