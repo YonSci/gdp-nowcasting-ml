@@ -303,10 +303,10 @@ detect_outliers_IF(df_IF, data_col_list)
   - Fraudulent transactions: LOF can be used to identify fraudulent transactions
 
 
-[lof1]('../assets/img/lof1.png')
+![lof1](../assets/img/lof1.png)
 
 
-[lof2]('../assets/img/lof1.png')
+![lof2](../assets/img/lof1.png)
 
 ### Initialize the Local Outlier Factor (LOF) model
 
