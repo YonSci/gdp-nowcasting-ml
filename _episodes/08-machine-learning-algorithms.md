@@ -507,7 +507,7 @@ gbr.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-# Step 4: Make predictions
+# Make predictions
 predictions_gbr = gbr.predict(X_test)
 predictions_gbr
 ```
@@ -557,7 +557,7 @@ xgbr.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-# Step 4: Make predictions
+# Make predictions
 predictions_xgbr = xgbr.predict(X_test_scaled)
 predictions_xgbr
 ```
@@ -610,7 +610,7 @@ lgb.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-# Step 4: Make predictions
+# Make predictions
 predictions_lgb = lgb.predict(X_test)
 predictions_lgb
 ```
@@ -665,7 +665,7 @@ rf.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-# Step 4: Make predictions
+# Make predictions
 predictions_rf = rf.predict(X_test)
 predictions_rf
 ```
