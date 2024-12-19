@@ -772,9 +772,10 @@ r2_scores = pd.DataFrame({
 
 r2_scores.sort_values(by='R^2 Score', ascending=False)
 ```
----
+
 
 ### Plot the R^2 scores
+```python
 plt.figure(figsize=(12, 6))
 
 plt.bar(r2_scores['Model'], r2_scores['R^2 Score'], color='skyblue')
@@ -783,3 +784,5 @@ plt.xlabel('R^2 Score')
 plt.title('Model Comparison')
 plt.xticks(rotation=90)
 plt.show()
+```
+---
