@@ -757,4 +757,29 @@ plt.tight_layout()
 plt.show()
 ```
 
+---
 
+### Machine Learning Model Comparison
+
+```python
+r2_scores = pd.DataFrame({
+    'Model': ['Linear Regression', 'Ridge Regression', 'Lasso Regression', 'Elastic Net Regression',
+              'Decision Tree Regressor', 'K-Nearest Neighbors Regressor', 'Support Vector Regressor',
+              'Gradient Boosting Machines', 'XGBoost Regressor', 'Light Gradient Boosting Machine',
+              'Random Forest Regressor', 'Stacked Regression'],
+    'R^2 Score': [r2_lr, r2_ridge, r2_lasso, r2_elastic, r2_dt, r2_knn, r2_svr, r2_gbr, r2_xgbr, r2_lgb, r2_rf, r2_stack]
+})
+
+r2_scores.sort_values(by='R^2 Score', ascending=False)
+```
+---
+
+### Plot the R^2 scores
+plt.figure(figsize=(12, 6))
+
+plt.bar(r2_scores['Model'], r2_scores['R^2 Score'], color='skyblue')
+plt.xlabel('R^2 Score')
+
+plt.title('Model Comparison')
+plt.xticks(rotation=90)
+plt.show()
