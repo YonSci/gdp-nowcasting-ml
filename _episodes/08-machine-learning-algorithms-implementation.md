@@ -40,11 +40,11 @@ keypoints:
 ![ml](../assets/img/ml.png)
 
 Machine learning is widely used in various fields and applications such as:
-• Face Recognition
-• Object Detection
-• Chatbots
-• Recommendation Systems
-• Autonomous Vehicles
+• Face Recognition  
+• Object Detection  
+• Chatbots  
+• Recommendation Systems  
+• Autonomous Vehicles  
 • Disease Diagnosis
 • Fraud detection
 
