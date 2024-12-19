@@ -1,5 +1,5 @@
 ---
-title: Machine Learning Algorithms
+title: Deep Learning Algorithms
 teaching: 130
 exercises: 130
 questions:
