@@ -90,7 +90,7 @@ y = data["gdp"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, shuffle=False)
 ```
 
-#### Define and train the model
+#### Define and Train the Linear Regression Model
 ```python
 lr = LinearRegression()
 lr.fit(X_train, y_train)
@@ -98,20 +98,21 @@ lr.fit(X_train, y_train)
 
 #### Make predictions
 ```python
-predictions = lr.predict(X_test)
+predictions_lr = lr.predict(X_test)
 ```
 
 #### Evaluate the model
 
 ```python
-r2 = r2_score(y_test, predictions)
-print(f"  R^2: {r2:.4f}")
+r2_lr = r2_score(y_test, predictions_lr)
+print(f"  R^2: {r2_lr:.4f}")
 ```
 
 #### Plot the predictions
+```python
 plt.figure(figsize=(10, 6))
 plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
-plt.plot(y_test.index, predictions, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.plot(y_test.index, predictions_lr, label='Predicted GDP', linestyle='--', color='red', marker='o')
 plt.title('GDP Prediction with Linear Regression')
 plt.xlabel('Year')
 plt.ylabel('GDP')
@@ -120,7 +121,6 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-
 ### Ridge Regression
 
 #### Assumptions:
@@ -137,6 +137,40 @@ plt.show()
 - Still assumes a linear relationship.
 - Coefficients are shrunk but not set to zero.
 
+#### Define and train the Ridge Regression Model
+
+```python
+ridge = Ridge(alpha=1.0)
+ridge.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+predictions_ridge = ridge.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_ridge = r2_score(y_test, predictions_ridge)
+print(f"  R^2: {r2_ridge:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_ridge, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Ridge Regression')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
 ### Lasso Regression
 
 #### Assumptions:
@@ -150,6 +184,40 @@ plt.show()
 
 **Cons:**
 - Can be unstable for some datasets (feature selection might be too aggressive).
+
+#### Define and train Lasso Regression Model
+
+```python
+lasso = Lasso(alpha=1.0)
+lasso.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+predictions_lasso = lasso.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_lasso = r2_score(y_test, predictions_lasso)
+print(f"  R^2: {r2_lasso =:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_lasso, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Lasso Regression')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 
 ### Elastic Net Regression
 
@@ -166,6 +234,41 @@ plt.show()
 
 **Cons:**
 - Additional hyperparameters to tune (ratio of L1 vs L2).
+
+
+#### Define and train ElasticNet Regression Model
+
+```python
+elastic = ElasticNet(alpha=1.0, l1_ratio=0.5)
+elastic.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+predictions_elastic = elastic.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_elastic = r2_score(y_test, predictions_elastic)
+print(f"  R^2: {r2_elastic:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_elastic, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Elastic Net Regression')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 
 ---
 
@@ -187,6 +290,38 @@ plt.show()
 - Prone to overfitting if not regularized.
 - Unstable to small variations in data.
 
+#### Define and Train Decision Tree Regressor
+```python
+dt = DecisionTreeRegressor(max_depth=5, random_state=42)
+dt.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+predictions_dt = dt.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_dt = r2_score(y_test, predictions_dt)
+print(f"  R^2: {r2_dt:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_dt, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Decision Tree Regressor')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 ---
 
 ## Instance-Based Learning
@@ -207,6 +342,49 @@ plt.show()
 - Sensitive to the scale of features and choice of k.
 - Computationally expensive at prediction time.
 
+
+#### Define and Train K-Nearest Neighbors (KNN) Regressor
+```python
+# Step 1: Standardize the data
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+
+# Step 2: Train the KNN model
+knn = KNeighborsRegressor(n_neighbors=5)
+knn.fit(X_train_scaled, y_train)
+```
+
+#### Make predictions
+```python
+# Step 3: Standardize the test data
+X_test_scaled = scaler.transform(X_test)
+
+# Step 4: Make predictions
+predictions_knn = knn.predict(X_test_scaled)
+predictions_knn
+```
+
+#### Evaluate the model
+
+```python
+r2_knn = r2_score(y_test, predictions_knn)
+print(f"  R^2: {r2_knn:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_knn, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with K-Nearest Neighbors (KNN) Regressor')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 ---
 
 ## Support Vector Regressor (SVR)
@@ -224,6 +402,48 @@ plt.show()
 **Cons:**
 - Parameter tuning (C, epsilon, kernel parameters) can be tricky.
 - Scalability can be an issue with large datasets.
+
+
+#### Define and Train Support Vector Regressor (SVR)
+```python
+# Step 1: Standardize the data
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+
+# Step 2: Train the SVR model
+svr = SVR(C=1.0, epsilon=0.1, kernel='rbf')
+svr.fit(X_train_scaled, y_train)
+```
+
+#### Make predictions
+```python
+# Step 3: Standardize the test data
+X_test_scaled = scaler.transform(X_test)
+
+# Step 4: Make predictions
+predictions_svr = svr.predict(X_test_scaled)
+```
+
+#### Evaluate the model
+
+```python
+r2_svr = r2_score(y_test, predictions_svr)
+print(f"  R^2: {r2_svr:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_svr, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Support Vector Regressor (SVR)')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 ---
 
@@ -245,6 +465,39 @@ plt.show()
 - More complex to tune.
 - Can overfit without proper regularization.
 
+#### Define and Train Gradient Boosting Machines
+```python
+gbr = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+gbr.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+# Step 4: Make predictions
+predictions_gbr = gbr.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_gbr = r2_score(y_test, predictions_gbr)
+print(f"  R^2: {r2_gbr:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_gbr, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Gradient Boosting Machines')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 ### XGBoost (Extreme Gradient Boosting)
 
 #### Assumptions:
@@ -261,6 +514,40 @@ plt.show()
 - Parameter tuning can still be complex.
 - Slightly more complex implementation.
 
+#### Define and Train Extreme Gradient Boosting
+```python
+xgbr = xgb.XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+xgbr.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+# Step 4: Make predictions
+predictions_xgbr = xgbr.predict(X_test_scaled)
+```
+
+#### Evaluate the model
+
+```python
+r2_xgbr = r2_score(y_test, predictions_xgbr)
+print(f"  R^2: {r2_xgbr:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_xgbr, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Extreme Gradient Boosting')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
 ### LightGBM (Light Gradient Boosting Machine)
 
 #### Assumptions:
@@ -276,6 +563,41 @@ plt.show()
 **Cons:**
 - Might not perform well on very small datasets.
 - Still requires careful hyperparameter tuning.
+
+
+
+#### Define and Train Light Gradient Boosting Machine
+```python
+lgb = lgb.LGBMRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+lgb.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+# Step 4: Make predictions
+predictions_lgb = lgb.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_lgb = r2_score(y_test, predictions_lgb)
+print(f"  R^2: {r2_lgb:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_lgb, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Light Gradient Boosting Machine')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
 
 ---
 
@@ -298,6 +620,39 @@ plt.show()
 - Less interpretable than a single decision tree.
 - Can be computationally expensive.
 
+#### Define and Train Random Forest Regressor
+```python
+rf = RandomForestRegressor(n_estimators=100, max_depth=5, random_state=42)
+rf.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+# Step 4: Make predictions
+predictions_rf = rf.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_rf = r2_score(y_test, predictions_rf)
+print(f"  R^2: {r2_rf:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_rf, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Random Forest Regressor')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
 ---
 
 ## Stacking (Stacked Regression)
@@ -314,3 +669,44 @@ plt.show()
 **Cons:**
 - More complex workflow.
 - Risk of overfitting if not done carefully.
+
+#### Define and Train Stacked Regression
+```python
+base_models = [
+    ('lr', LinearRegression()),
+    ('rf', RandomForestRegressor(n_estimators=50, max_depth=5, random_state=42)),
+    ('gbr', GradientBoostingRegressor(n_estimators=50, learning_rate=0.1, max_depth=3, random_state=42))
+]
+
+stack = StackingRegressor(estimators=base_models, final_estimator=Ridge())
+stack.fit(X_train, y_train)
+```
+
+#### Make predictions
+```python
+# Step 4: Make predictions
+predictions_stack = stack.predict(X_test)
+```
+
+#### Evaluate the model
+
+```python
+r2_stack = r2_score(y_test, predictions_stack)
+print(f"  R^2: {r2_stack:.4f}")
+```
+
+#### Plot the predictions
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(data.index, data.gdp, label='Actual GDP', marker='o', color='blue')
+plt.plot(y_test.index, predictions_stack, label='Predicted GDP', linestyle='--', color='red', marker='o')
+plt.title('GDP Prediction with Stacked Regression')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
