@@ -20,6 +20,20 @@ keypoints:
 
 # Machine Learning Algorithms
 
+**Machine learning** is a field of study that enables computers to learn and improve from experience without being explicitly programmed. 
+
+It focuses on developing computer programs that can access data and use it to learn for themselves
+
+Types of Machine Learning 
+
+- **Supervised Learning**: Algorithms learn from **labeled** training data to **predict outcomes**. It includes **classification (predicting categories)** and **regression (predicting numerical values)**.  
+  
+- **Unsupervised Learning**: Algorithms find hidden patterns in **unlabeled data**. A common task is **clustering**, which groups similar examples together.
+  
+- **Reinforcement Learning**: Algorithms learn by **interacting with an environment** and receiving **rewards** or **penalties** for actions to maximize performance.
+
+![ML Types](../assets/img/ML_type.png)
+
 ## Linear Models
 
 ### Linear Regression
