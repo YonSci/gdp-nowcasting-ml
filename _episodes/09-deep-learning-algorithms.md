@@ -115,6 +115,13 @@ interactive_plot = widgets.interactive_output(plot_time_series, {'column': colum
 display(column_selector, interactive_plot)
 ```
 
+#### Split data
+```python
+X = data.drop("gdp", axis=1)
+y = data["gdp"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, shuffle=False)
+```
+
 #### Convert data to numpy
 
 ```python
