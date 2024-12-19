@@ -62,6 +62,8 @@ from PIL import Image
 
 ### Import the data
 
+[Data](../data/gdpreal.csv)
+
 ```python
 gdpreal = pd.read_csv('gdpreal.csv')
 gdpreal.head()
@@ -300,9 +302,9 @@ detect_outliers_IF(df_IF, data_col_list)
    - Cyber-attacks: LOF can be used to identify cyber-attacks in computer networks.
   - Fraudulent transactions: LOF can be used to identify fraudulent transactions
 
-[lof1]('image/lof1.png')
+[lof1]('../assets/img/lof1.png')
 
-[lof2]('image/lof1.png')
+[lof2]('../assets/img/lof1.png')
 
 ### Initialize the Local Outlier Factor (LOF) model
 
