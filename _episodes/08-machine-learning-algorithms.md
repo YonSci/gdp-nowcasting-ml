@@ -41,11 +41,39 @@ keypoints:
 #### Importing Libraries
 
 ```python
+
+# Import the NumPy library for numerical operations
 import numpy as np
+
+# Import the Pandas library for data manipulation and analysis
 import pandas as pd
+
+# Import Matplotlib for plotting and visualization
 import matplotlib.pyplot as plt
+
+# Import train_test_split from scikit-learn for splitting data into training and testing sets
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+
+# Import various regression models from scikit-learn
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet  # Linear models
+from sklearn.tree import DecisionTreeRegressor  # Decision tree model
+from sklearn.neighbors import KNeighborsRegressor  # K-nearest neighbors model
+from sklearn.svm import SVR  # Support vector regression model
+
+# Import ensemble models from scikit-learn
+from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor, StackingRegressor
+
+# Import XGBoost library for gradient boosting
+import xgboost as xgb
+
+# Import LightGBM library for gradient boosting
+import lightgbm as lgb
+
+# Import r2_score from scikit-learn for evaluating model performance
+from sklearn.metrics import r2_score
+
+# Import StandardScaler from scikit-learn for feature scaling
+from sklearn.preprocessing import StandardScaler
 ```
 
 #### Load the data from the csv file
@@ -99,6 +127,7 @@ lr.fit(X_train, y_train)
 #### Make predictions
 ```python
 predictions_lr = lr.predict(X_test)
+predictions_lr
 ```
 
 #### Evaluate the model
@@ -147,6 +176,7 @@ ridge.fit(X_train, y_train)
 #### Make predictions
 ```python
 predictions_ridge = ridge.predict(X_test)
+predictions_ridge
 ```
 
 #### Evaluate the model
@@ -195,6 +225,7 @@ lasso.fit(X_train, y_train)
 #### Make predictions
 ```python
 predictions_lasso = lasso.predict(X_test)
+predictions_lasso
 ```
 
 #### Evaluate the model
@@ -246,6 +277,7 @@ elastic.fit(X_train, y_train)
 #### Make predictions
 ```python
 predictions_elastic = elastic.predict(X_test)
+predictions_elastic
 ```
 
 #### Evaluate the model
@@ -299,6 +331,7 @@ dt.fit(X_train, y_train)
 #### Make predictions
 ```python
 predictions_dt = dt.predict(X_test)
+predictions_dt
 ```
 
 #### Evaluate the model
@@ -422,6 +455,7 @@ X_test_scaled = scaler.transform(X_test)
 
 # Step 4: Make predictions
 predictions_svr = svr.predict(X_test_scaled)
+predictions_svr
 ```
 
 #### Evaluate the model
@@ -475,6 +509,7 @@ gbr.fit(X_train, y_train)
 ```python
 # Step 4: Make predictions
 predictions_gbr = gbr.predict(X_test)
+predictions_gbr
 ```
 
 #### Evaluate the model
@@ -524,6 +559,7 @@ xgbr.fit(X_train, y_train)
 ```python
 # Step 4: Make predictions
 predictions_xgbr = xgbr.predict(X_test_scaled)
+predictions_xgbr
 ```
 
 #### Evaluate the model
@@ -576,6 +612,7 @@ lgb.fit(X_train, y_train)
 ```python
 # Step 4: Make predictions
 predictions_lgb = lgb.predict(X_test)
+predictions_lgb
 ```
 
 #### Evaluate the model
@@ -630,6 +667,7 @@ rf.fit(X_train, y_train)
 ```python
 # Step 4: Make predictions
 predictions_rf = rf.predict(X_test)
+predictions_rf
 ```
 
 #### Evaluate the model
@@ -686,6 +724,7 @@ stack.fit(X_train, y_train)
 ```python
 # Step 4: Make predictions
 predictions_stack = stack.predict(X_test)
+predictions_stack
 ```
 
 #### Evaluate the model
