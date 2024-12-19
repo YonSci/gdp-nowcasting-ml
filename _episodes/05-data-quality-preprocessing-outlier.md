@@ -3,15 +3,18 @@ title: Outlier Detection and Handling Outliers
 teaching: 130
 exercises: 130
 questions:
-- "How much of the data is missing? Is it a small fraction or a significant portion?"
-
+- "What methods are available for identifying outliers?"
+- "How can we implement outlier detection method?"
+- How to deal with the detected outliers?"  
 
 objectives:
-- "Learn the difference between deleting incomplete observations and imputing missing values."
-
+- "Develop the ability to detect unusual observations that deviate significantly from the bulk of the data and understand strategies for addressing them."nn
 
 keypoints:
-- "Deletion: Simple but risks losing large amounts of data and introducing bias."
+- "Data quality directly impacts the predictive power of models."
+- "Using measures such as z-scores or interquartile ranges to flag outliers."
+- "Visual techniques (box plots, histograms, scatter plots) to identify unusual observations."
+- "Whether to remove, cap, or transform outliers. The trade-offs between losing information and ensuring model robustness."  
 
 ---
 
