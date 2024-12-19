@@ -16,20 +16,20 @@ keypoints:
 ---
 
 ## Graphical Outlier Detection
-- Box Plot
+- ### Box Plot
 
-## Statistical Outlier Detection:
-- Interquartile Range (IQR) Method
-- Z-Score Method
+## Statistical Outlier Detection
+- ### Interquartile Range (IQR) Method
+- ### Z-Score Method
 
 ## Machine learning Models
-- Isolation Forest
-- Local Outlier Factor (LOF)
+- ### Isolation Forest
+- ### Local Outlier Factor (LOF)
 
 ## Handling Outliers
-- Removal
-- Capping
-- Transformation
+- ### Removal
+- ### Capping
+- ### Transformation
 
 ### Importing Libraries
 ```python
@@ -302,7 +302,9 @@ detect_outliers_IF(df_IF, data_col_list)
    - Cyber-attacks: LOF can be used to identify cyber-attacks in computer networks.
   - Fraudulent transactions: LOF can be used to identify fraudulent transactions
 
+
 [lof1]('../assets/img/lof1.png')
+
 
 [lof2]('../assets/img/lof1.png')
 
@@ -352,9 +354,9 @@ df_LOF= gdpreal_d.copy()
 detect_outliers_LOF(df_LOF, data_col_list)
 ```
 ###  Handling Outliers
-- Removal: Remove rows that contain outlier values beyond a certain threshold.  
-- Capping: Cap the outlier values at a specified upper or lower percentile to reduce their impact.
-- - Transformation: Apply transformations (e.g., log, square root) to reduce the effect of extreme values.
+- #### Removal: Remove rows that contain outlier values beyond a certain threshold.    
+- #### Capping: Cap the outlier values at a specified upper or lower percentile to reduce their impact.  
+- #### Transformation: Apply transformations (e.g., log, square root) to reduce the effect of extreme values.  
 
 ### Capping
 
