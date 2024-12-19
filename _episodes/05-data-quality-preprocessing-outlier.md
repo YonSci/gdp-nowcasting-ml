@@ -15,27 +15,23 @@ keypoints:
 
 ---
 
-# Outlier Detection and Handling Outliers  
-
-## Graphical Outlier Detection: 
-### Box Plot
+## Graphical Outlier Detection
+- Box Plot
 
 ## Statistical Outlier Detection:
-### Interquartile Range (IQR) Method
-### Z-Score Method
+- Interquartile Range (IQR) Method
+- Z-Score Method
 
 ## Machine learning Models
-### Isolation Forest
-### Local Outlier Factor (LOF)
+- Isolation Forest
+- Local Outlier Factor (LOF)
 
 ## Handling Outliers
-### Removal
-### Capping
-#### Transformation
-
+- Removal
+- Capping
+- Transformation
 
 ### Importing Libraries
-
 ```python
 # Import pandas and numpy
 import pandas as pd
