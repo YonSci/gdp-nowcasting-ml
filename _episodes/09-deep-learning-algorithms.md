@@ -17,21 +17,13 @@ keypoints:
 
 # Neural Networks and Architectures
 
-## Thought About Neural Networks and Architectures for 7 Seconds
-
-Below is a continuation of the hands-on approach, now focusing on various neural network architectures using the same synthetic dataset for predicting GDP. We will cover:
+We will cover:
 
 - **Artificial Neural Network (ANN) / Multi-Layer Perceptron (MLP)**
 - **Recurrent Neural Networks (RNN)**
 - **Long Short-Term Memory (LSTM)**
 - **Gated Recurrent Unit (GRU)**
 - **Convolutional Neural Networks (CNN)**
-
-### Note:
-
-- The dataset is not inherently sequential or image-based, which makes the use of RNNs, LSTMs, GRUs, and CNNs less conventional.
-- Typically, these models excel with sequential data (RNN/LSTM/GRU) or image data (CNN). Here, we’ll demonstrate the architectures to show how to implement them, but keep in mind that the performance may not improve over simpler models for this tabular data.
-- For RNN-based models, we will reshape the data to mimic a sequence dimension of length 1 (just as a demonstration). Similarly, for CNN, we will treat the features as a single "temporal" dimension and apply 1D convolutions.
 
 ---
 
@@ -54,6 +46,129 @@ Below is a continuation of the hands-on approach, now focusing on various neural
 - May need large amounts of data and careful regularization to avoid overfitting.
 
 ---
+
+#### Install Machine Learning Frameworks and Libraries
+
+```python
+pip install tensorflow
+```
+
+#### Importing Libraries
+
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense, SimpleRNN, LSTM, GRU, Conv1D, Flatten, InputLayer
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
+
+# Import the NumPy library for numerical operations
+import numpy as np
+
+# Import the Pandas library for data manipulation and analysis
+import pandas as pd
+
+# Import Matplotlib for plotting and visualization
+import matplotlib.pyplot as plt
+
+# Import r2_score from scikit-learn for evaluating model performance
+from sklearn.metrics import r2_score
+
+# Import StandardScaler from scikit-learn for feature scaling
+from sklearn.preprocessing import StandardScaler
+```
+
+#### Load the data from the csv file
+```python
+# Load the data from the csv file
+data = pd.read_csv('gdp_data.csv', index_col='Year')
+data.head()
+```
+
+#### Plot the timeseries of the data
+```python
+# Create a function to plot the time series
+def plot_time_series(column):
+    plt.figure(figsize=(10, 6))
+    data[column].plot()
+    plt.title(f'{column}')
+    plt.xlabel('Date')
+    plt.ylabel(column)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+# Create a dropdown widget for selecting the column
+column_selector = widgets.Dropdown(
+    options=data.columns,
+    description='Column:',
+    disabled=False,
+)
+
+# Link the dropdown widget to the plot_time_series function
+interactive_plot = widgets.interactive_output(plot_time_series, {'column': column_selector})
+
+# Display the widget and the interactive plot
+display(column_selector, interactive_plot)
+```
+
+#### Convert data to numpy
+
+```python
+X_train_np = X_train.values
+X_test_np = X_test.values
+y_train_np = y_train.values
+y_test_np = y_test.values
+```
+
+#### Normalization 
+```python
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train_np)
+X_test_scaled = scaler.transform(X_test_np)
+```
+#### Convert the data into 3d
+For RNN, LSTM, GRU, CNN, we need to provide a 3D input [samples, timesteps, features].
+
+```python
+X_train_3d = X_train_scaled.reshape((X_train_scaled.shape[0], 1, X_train_scaled.shape[1]))
+X_test_3d = X_test_scaled.reshape((X_test_scaled.shape[0], 1, X_test_scaled.shape[1]))
+```
+
+```python
+def evaluate_nn_model(model, X_test, y_test, name="NN Model"):
+    preds = model.predict(X_test).flatten()
+    mse = tf.keras.losses.MeanSquaredError()(y_test, preds).numpy()
+    rmse = mse**0.5
+    r2 = 1 - ( ( (y_test - preds)**2 ).sum() / ((y_test - y_test.mean())**2).sum() )
+    print(f"{name} Performance:")
+    print(f"  RMSE: {rmse:,.2f}")
+    print(f"  R^2: {r2:.4f}")
+    print("-"*40)
+```
+
+
+#### MLP (Multi-Layer Perceptron)
+```python
+mlp = Sequential([
+    Dense(64, activation='relu', input_shape=(X_train_scaled.shape[1],)),
+    Dense(64, activation='relu'),
+    Dense(1)
+])
+
+mlp.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
+early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+
+mlp.fit(X_train_scaled, y_train_np, 
+        validation_split=0.2, 
+        epochs=50, 
+        batch_size=32, 
+        callbacks=[early_stop], 
+        verbose=0)
+
+evaluate_nn_model(mlp, X_test_scaled, y_test_np, "MLP")
+```
+
 
 ### 2. Recurrent Neural Network (RNN)
 
