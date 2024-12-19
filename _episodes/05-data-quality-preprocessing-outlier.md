@@ -2,13 +2,14 @@
 title: Outlier Detection and Handling Outliers
 teaching: 130
 exercises: 130
+
 questions:
 - "What methods are available for identifying outliers?"
 - "How can we implement outlier detection method?"
 - How to deal with the detected outliers?"  
 
 objectives:
-- "Develop the ability to detect unusual observations that deviate significantly from the bulk of the data and understand strategies for addressing them."nn
+- "Develop the ability to detect unusual observations that deviate significantly from the bulk of the data and understand strategies for addressing them."
 
 keypoints:
 - "Data quality directly impacts the predictive power of models."
