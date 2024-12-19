@@ -4,17 +4,26 @@ teaching: 130
 exercises: 130
 
 questions:
+- "Understand the concept of stationarity in time series (constant mean, variance, and autocorrelation over time)."
+- "Recognize the Importance of Stationarity for Modeling: Learn why many time-series forecasting methods assume stationarity."
+- "Understand how to measure the extent to which current values of a series depend on its past values through autocorrelation and partial autocorrelation functions."
 
 
 objectives:
 
+ - "Why do we need to ensure the time series (and related indicators) is stationary for certain modeling approaches?"
+ - "Which stationarity test (ADF, KPSS, or others) is most appropriate for our GDP dataset, and what are the interpretation criteria?"
+ - "If the  time series is non-stationary, what transformations should we consider?"
+ - "How does understanding the autocorrelation structure help us in modeling GDP nowcasting?"
 
 keypoints:
-
+- "A stationary time series has statistical properties (mean, variance) that do not change over time."
+- "Stationarity simplifies modeling and is a common assumption in classical statistical forecasting methods."
+- "Non-stationary data often exhibit trends, seasonal patterns, or evolving volatility."
+- "Autocorrelation (ACF): Measures how current values of a series relate to past values at various lags."
+- Partial Autocorrelation (PACF): Isolates the direct relationship between a series and its lagged values, removing the influence of intermediate lags."
+- "Statistical tests like the Augmented Dickey-Fuller (ADF), Phillips-Perron, or KPSS help determine if a series is stationary."  
 ---
-
-
-
 
 # Stationarity Tests in Time Series
 
