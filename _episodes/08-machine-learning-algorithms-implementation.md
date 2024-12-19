@@ -121,7 +121,7 @@ from sklearn.preprocessing import StandardScaler
 import ipywidgets as widgets
 ```
 #### Download data 
-![gdp_data](../data/gdp_data.csv)
+[gdp_data](../data/gdp_data.csv)
 
 #### Load the data from the csv file
 ```python
