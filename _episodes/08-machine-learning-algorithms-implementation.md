@@ -20,13 +20,29 @@ keypoints:
 
 # Machine Learning Algorithms
 
-**Machine learning** is a field of study that enables computers to learn and improve from experience without being explicitly programmed. 
+**Machine learning** is a subset of **artificial intelligence (AI)** that focuses on developing computer systems capable of learning and improving from data without being explicitly programmed.
 
-It focuses on developing computer programs that can access data and use it to learn for themselves
+
+is a field of study that enables **computers** to learn and improve from experience without being explicitly programmed. 
+
+Machine learning is widely used in various fields and applications such as:
+• Face Recognition
+• Object Detection
+• Chatbots
+• Recommendation Systems
+• Autonomous Vehicles
+• Disease Diagnosis
+• Fraud detection
+
+And many more it is nowadays being used in almost all sectors including economics, statistics, healthcare, agriculture, education, business, construction, astronomy, etc.
 
 Types of Machine Learning 
 
-- **Supervised Learning**: Algorithms learn from **labeled** training data to **predict outcomes**. It includes **classification (predicting categories)** and **regression (predicting numerical values)**.  
+- **Supervised Learning**: Algorithms learn from **labeled** training data to **predict outcomes**. It includes **classification (predicting categories)** and **regression (predicting numerical values)**.
+
+- The goal is to learn the mapping from input to output.
+
+- Some examples of supervised learning include image classification, email spam detection.  
   
 - **Unsupervised Learning**: Algorithms find hidden patterns in **unlabeled data**. A common task is **clustering**, which groups similar examples together.
   
@@ -104,6 +120,8 @@ from sklearn.preprocessing import StandardScaler
 # Interactive Widgets
 import ipywidgets as widgets
 ```
+#### Download data 
+![gdp_data](../data/gdp_data.csv)
 
 #### Load the data from the csv file
 ```python
