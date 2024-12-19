@@ -1,5 +1,5 @@
 ---
-title: Machine Learning Algorithms
+title: Machine Learning Algorithms and Basic Implementation
 teaching: 130
 exercises: 130
 questions:
