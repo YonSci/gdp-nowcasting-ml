@@ -1,26 +1,42 @@
+---
+title: Outlier Detection and Handling Outliers
+teaching: 130
+exercises: 130
+questions:
+- "How much of the data is missing? Is it a small fraction or a significant portion?"
 
 
-# %% [markdown]
-# ## Outlier Detection and Handling Outliers  
-# 
-# - Graphical Outlier Detection: 
-#   - Box Plot
-# 
-# - Statistical Outlier Detection:
-#     - Interquartile Range (IQR) Method
-#     - Z-Score Method
-#     - Isolation Forest
-#     - Local Outlier Factor (LOF)
-# 
-# - Handling Outliers
-#     - Removal
-#     - Capping
-#     - Transformation
+objectives:
+- "Learn the difference between deleting incomplete observations and imputing missing values."
 
-# %% [markdown]
-# ## Importing Libraries
 
-# %%
+keypoints:
+- "Deletion: Simple but risks losing large amounts of data and introducing bias."
+
+---
+
+# Outlier Detection and Handling Outliers  
+
+## Graphical Outlier Detection: 
+### Box Plot
+
+## Statistical Outlier Detection:
+### Interquartile Range (IQR) Method
+### Z-Score Method
+
+## Machine learning Models
+### Isolation Forest
+### Local Outlier Factor (LOF)
+
+## Handling Outliers
+### Removal
+### Capping
+#### Transformation
+
+
+### Importing Libraries
+
+```python
 # Import pandas and numpy
 import pandas as pd
 import numpy as np
@@ -46,47 +62,29 @@ import ipywidgets as widgets
 from IPython.display import display
 
 from PIL import Image
+```
 
-# %% [markdown]
-# ## Outlier Detection and Handling Outliers  
-# 
-# - Graphical Outlier Detection: 
-#   - Box Plot
-# 
-# - Statistical Outlier Detection:
-#     - Interquartile Range (IQR) Method
-#     - Z-Score Method
-#     - Isolation Forest
-#     - Local Outlier Factor (LOF)
-# 
-# - Handling Outliers
-#     - Removal
-#     - Capping
-#     - Transformation
+### Import the data
 
-# %%
-# Import the data
-
+```python
 gdpreal = pd.read_csv('gdpreal.csv')
-
 gdpreal.head()
+```
 
-# %%
-gdpreal.tail()
-
-# %%
-# Convert the 'Quarter' column to datetime format and adjust for quarter-end
+### Convert the 'Quarter' column to datetime format and adjust for quarter-end
+```python
 gdpreal['Quarter'] = pd.PeriodIndex(gdpreal['Quarter'], freq='Q').to_timestamp()
 gdpreal['Quarter'] = gdpreal['Quarter'] + MonthEnd(3)
 
 # Convert 'RealGDP' to float (ensure clean data)
 gdpreal['RealGDP'] = gdpreal['RealGDP'].str.replace(',', '').astype(float)
 
-
 gdpreal.head()
+```
 
-# %%
-# Plot the Real GDP data
+
+### Plot the Real GDP data
+```python
 plt.figure(figsize=(12, 6))
 plt.plot(
     gdpreal['Quarter'],
@@ -114,16 +112,15 @@ plt.tight_layout()
 
 # Show the plot
 plt.show()
+```
 
-# %% [markdown]
-# ### Graphical Outlier Detection: Box Plot
+### Graphical Outlier Detection: Box Plot
 
-# %%
+```python
 # Drop the Date column
 gdpreal_d = gdpreal.drop(columns=['Quarter'])
 gdpreal_d.head()
 
-# %%
 def plot_boxplot(column):
     plt.figure(figsize=(10, 6))
     gdpreal_d.boxplot(column=column, color='b', patch_artist=True, figsize=(8, 6),
@@ -144,11 +141,10 @@ interactive_plot = widgets.interactive_output(plot_boxplot, {'column': column_se
 
 # Display the widget and the interactive plot
 display(column_selector, interactive_plot)
+```
+### Statistical Outlier Detection: Interquartile Range (IQR) Method
 
-# %% [markdown]
-# ### Statistical Outlier Detection: Interquartile Range (IQR) Method
-
-# %%
+```python
 def detect_outliers_IQR(data, column_names):
     # Initialize a dictionary to store the count of outliers for each column
     outlier_counts = {}
@@ -188,9 +184,10 @@ def detect_outliers_IQR(data, column_names):
     print("Total outlier counts detected by Interquartile Range (IQR) Method:")
     for column_name, count in outlier_counts.items():
         print(f"{column_name}: {count}")
+```
 
-# %%
-# Detect outliers in data using IQR Method
+### Detect outliers in data using IQR Method
+```python
 df_IQR = gdpreal_d.copy()
 
 data_col_bilate = df_IQR.columns
@@ -199,11 +196,9 @@ data_col_bilate = df_IQR.columns
 data_col_list = data_col_bilate.tolist()
 
 detect_outliers_IQR(df_IQR, data_col_list)
-
-# %% [markdown]
-# ### Statistical Outlier Detection: Z-Score Method
-
-# %%
+```
+### Statistical Outlier Detection: Z-Score Method
+```python
 def detect_outliers_zscore(data, column_names):
     # Initialize a dictionary to store the count of outliers for each column
     outlier_counts = {}
@@ -231,36 +226,35 @@ def detect_outliers_zscore(data, column_names):
     print("Total outlier counts detected by Z-score Method:")
     for column_name, count in outlier_counts.items():
         print(f"{column_name}: {count}")
+```
 
-# %%
-# Detect outliers in data using Z-Score Method
+### Detect outliers in data using Z-Score Method
+
+```python
 df_zscore = gdpreal_d.copy()
 detect_outliers_zscore(df_zscore, data_col_list)
+```
+### Isolation Forest
 
-# %% [markdown]
-# ### Isolation Forest
-# 
-# - The Isolation Forest method is a **tree-based algorithm** that identifies outliers in data by randomly partitioning features to create shorter paths for anomalies.
-# 
-# - is an **unsupervised** learning algorithm used primarily for anomaly and outliers detection. 
-# 
-# - It operates on the principle that anomalies are "few and different" from the majority of the data.
-# 
-# How Isolation Forest Works:
-# 
-#    - **Random Feature Selection**: A feature is selected at random.
-#    - **Random Split Value**: A random split value is chosen between the selected feature's minimum and maximum values.
-#    - **Recursive Partitioning**: The data is partitioned recursively until all data points are isolated or a maximum tree height is reached.
-#    - **Scoring Data Points**
-#         - Short Path Length: Indicates potential anomalies.
-#         - Long Path Length: Indicates normal data points.
-# 
-# 
-# 
-# - Fast, generalize well, and robust to noise
+- The Isolation Forest method is a **tree-based algorithm** that identifies outliers in data by randomly partitioning features to create shorter paths for anomalies.
 
-# %%
+- is an **unsupervised** learning algorithm used primarily for anomaly and outliers detection. 
+ 
+- It operates on the principle that anomalies are "few and different" from the majority of the data.
+ 
+#### How Isolation Forest Works:
+ - **Random Feature Selection**: A feature is selected at random.
+ - **Random Split Value**: A random split value is chosen between the selected feature's minimum and maximum values.
+ - **Recursive Partitioning**: The data is partitioned recursively until all data points are isolated
+- **Scoring Data Points**
+  - Short Path Length: Indicates potential anomalies.
+  - Long Path Length: Indicates normal data points.
+
+- Fast, generalize well, and robust to noise
+
 # Initialize the Isolation Forest model
+
+```python
 iso_forest = IsolationForest(contamination=0.01, random_state=42)
 
 def detect_outliers_IF(data, column_names):
@@ -291,40 +285,32 @@ def detect_outliers_IF(data, column_names):
     print("Total outlier counts detected by Isolation Forest:")
     for column_name, count in outlier_counts.items():
         print(f"{column_name}: {count}")
+```
 
-# %%
-# Detect outliers in data using Isolation Forest Method
+### Detect outliers in data using Isolation Forest Method
 
+```python
 df_IF= gdpreal_d.copy()
 
 detect_outliers_IF(df_IF, data_col_list)
+```
+### Local Outlier Factor
+- is an **unsupervised** machine learning algorithm that identifies outliers by comparing the **density** of a data point to the density of its neighbors.
+  1. Estimating local density using the distance to its k nearest neighbors.
+  2. Comparing local densities of its neighbors.
+  3. Identifying outlier
+     
+- LOF can be used to identify outliers in a variety of situations, including:
+   - Cyber-attacks: LOF can be used to identify cyber-attacks in computer networks.
+  - Fraudulent transactions: LOF can be used to identify fraudulent transactions
 
-# %% [markdown]
-# ### Local Outlier Factor
-# 
-# - is an **unsupervised** machine learning algorithm that identifies outliers by comparing the **density** of a data point to the density of its neighbors. 
-# 
-# 1. Estimating local density using the distance to its k nearest neighbors.
-# 2. Comparing local densities of its neighbors.
-# 3. Identifying outliers
-# 
-# 
-# - LOF can be used to identify outliers in a variety of situations, including:
-# 
-#     - Cyber-attacks: LOF can be used to identify cyber-attacks in computer networks.
-#     - Fraudulent transactions: LOF can be used to identify fraudulent transactions
-# 
-# 
+[lof1]('image/lof1.png')
 
-# %%
-lof1 = Image.open('image/lof1.png')
-display(lof1)
+[lof2]('image/lof1.png')
 
-lof2 = Image.open('image/lof2.png')
-display(lof2)
+### Initialize the Local Outlier Factor (LOF) model
 
-# %%
-# Initialize the Local Outlier Factor (LOF) model
+```python
 lof = LocalOutlierFactor(n_neighbors=20, contamination=0.01)
 
 def detect_outliers_LOF(data, column_names):
@@ -359,31 +345,24 @@ def detect_outliers_LOF(data, column_names):
     print("Total outlier counts detected by Local Outlier Factor:")
     for column_name, count in outlier_counts.items():
         print(f"{column_name}: {count}")
+```
 
+### Detect outliers in data using Local Outlier Factor Method
 
-# %%
-# Detect outliers in data using Local Outlier Factor Method
-
+```python
 df_LOF= gdpreal_d.copy()
 detect_outliers_LOF(df_LOF, data_col_list)
+```
+###  Handling Outliers
+- Removal: Remove rows that contain outlier values beyond a certain threshold.  
+- Capping: Cap the outlier values at a specified upper or lower percentile to reduce their impact.
+- - Transformation: Apply transformations (e.g., log, square root) to reduce the effect of extreme values.
 
-# %% [markdown]
-# ###  Handling Outliers
-# 
-# - Removal: Remove rows that contain outlier values beyond a certain threshold.
-# 
-# - Capping: Cap the outlier values at a specified upper or lower percentile to reduce their impact.
-# 
-# - Transformation: Apply transformations (e.g., log, square root) to reduce the effect of extreme values.
+### Capping
 
-# %% [markdown]
-# ### Capping
-
-# %%
+```python
 df_out = gdpreal_d.copy()
-
 data_col_list = df_out.columns
-
 # convert the column names to a list
 # data_col_list = ['CPYC' ]  
 
@@ -393,19 +372,18 @@ for column in data_col_list:
     
     # Capping the values
     df_out[column] = df_out[column].clip(lower=percentile_5, upper=percentile_95)
-
+```
     
+### Summary statistics of the data after capping
 
-# %% [markdown]
-# ### Summary statistics of the data after capping
-
-# %%
+```python
 df_out.describe().T
+```
 
-# %% [markdown]
-# ### Box Plot after capping
 
-# %%
+### Box Plot after capping
+
+```python
 def plot_boxplot(column):
     plt.figure(figsize=(10, 6))
     df_out.boxplot(column=column, color='b', patch_artist=True, figsize=(8, 6),
@@ -426,8 +404,7 @@ interactive_plot = widgets.interactive_output(plot_boxplot, {'column': column_se
 
 # Display the widget and the interactive plot
 display(column_selector, interactive_plot)
-
-# %%
+```
 
 
 
