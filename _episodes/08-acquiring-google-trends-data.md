@@ -172,6 +172,101 @@ As in Google’s own tool, we can extract information at a global or geolocated 
 
 [Link for Pytrends](https://pypi.org/project/pytrends/)
 
+### Google Trends Data Analysis using Pytrends
+
+#### Step 1: Install Pytrends
+First, install the `pytrends` library, which allows you to interact with the Google Trends API.
+
+```python
+pip install pytrends
+```
+
+##### Step 2: Import Necessary Libraries
+Import the required libraries for working with Google Trends data and for visualizing it.
+
+```python
+from pytrends.request import TrendReq
+import matplotlib.pyplot as plt
+```
+
+- `TrendReq`: The main class used to make requests to the Google Trends API.
+- `matplotlib.pyplot`: A plotting library used for data visualization.
+
+#### Step 3: Connect to Google Trends
+Establish a connection to the Google Trends API.
+
+```python
+# Connect to Google Trends
+d pytrends = TrendReq(hl='en-US', tz=360)
+```
+
+- `hl='en-US'`: Sets the language to English (US).
+- `tz=360`: Sets the timezone offset (360 represents UTC+6).
+
+---
+
+#### Step 4: Specify Keywords for Search
+Define the list of keywords you want to analyze using Google Trends.
+
+```python
+# Keywords to search for
+pytrends.build_payload(kw_list=['data science'])
+```
+
+- `kw_list=['data science']`: A list containing the keyword(s) to search for.
+
+#### Step 5: Retrieve Data
+Fetch the interest over time data for the specified keyword(s).
+
+```python
+# Retrieve data
+time_df = pytrends.interest_over_time()
+```
+
+- `interest_over_time()`: Retrieves the search interest over time as a Pandas DataFrame.
+
+#### Step 6: Preview the Data
+View the first few rows of the retrieved data.
+
+```python
+time_df.head()
+```
+
+- `head()`: Displays the first five rows of the DataFrame.
+
+#### Step 7: Visualize the Data
+Create a graph to visualize the trends over time.
+
+```python
+# Create a graph
+fig, ax = plt.subplots(figsize=(12, 6))
+time_df['data science'].plot(color='purple')
+```
+
+- `figsize=(12, 6)`: Specifies the size of the figure.
+- `time_df['data science']`: Accesses the column corresponding to the keyword "data science".
+- `plot(color='purple')`: Plots the data using a purple line.
+
+#### Step 8: Add Titles and Labels
+Enhance the graph with a title and axis labels.
+
+```python
+# Add title and labels
+plt.title('Total Google Searches for "Data Science"', fontweight='bold')
+plt.xlabel('Year')
+plt.ylabel('Total Count')
+```
+
+- `plt.title()`: Sets the graph's title with bold font.
+- `plt.xlabel()`: Sets the label for the x-axis.
+- `plt.ylabel()`: Sets the label for the y-axis.
+
+
+## Final Output
+The output will be a graph displaying the total Google searches for "Data Science" over time.
+![](../assets/img/gt_pytrends.png)
+
+
 ---
 
 
