@@ -3,27 +3,26 @@ title: Download Google Trends Data
 teaching: 130
 exercises: 130
 questions:
-- "How can Google Trends data be leveraged to gain insights into public economic sentiment?"
-- "How Google Trends data can be downloaded using diffrent methods?"
-- "What are the key advantages and potential limitations of using Google Trends data in economic forecasting?"
-- "Is there a list of Google Trends keywords used by different research institutions?"
-- "What considerations should be taken into account when integrating Google Trends data with traditional economic indicators?"  
+  - "How can Google Trends data be leveraged to gain insights into public economic sentiment?"
+  - "How can Google Trends data be downloaded using different methods?"
+  - "What are the key advantages and potential limitations of using Google Trends data in economic forecasting?"
+  - "Is there a list of Google Trends keywords used by different research institutions?"
+  - "What considerations should be taken into account when integrating Google Trends data with traditional economic indicators?"
 
 objectives:
-- "To understand the significance of Google Trends data in economic analysis."
-- "To learn how to utilize Google Trends for nowcasting GDP by analyzing public search behavior."
-- "To recognize the advantages and limitations of using Google Trends data in economic research."
-- "To download Google Trends data using diffrent methods."    
+  - "Understand the significance of Google Trends data in economic analysis."
+  - "Learn how to utilize Google Trends for nowcasting GDP by analyzing public search behavior."
+  - "Recognize the advantages and limitations of using Google Trends data in economic research."
+  - "Download Google Trends data using different methods."
 
 keypoints:
-- "Introduction to Google Trends data."
-- "Applications of Google Trends data in Economic Analysis."
-- "Advantages and Limitations of Google Trends data.
-- "Ways to download Google Trends data."
-- "Keyword Examples from Research Institutions."
-
-  
+  - "Introduction to Google Trends data."
+  - "Applications of Google Trends data in Economic Analysis."
+  - "Advantages and Limitations of Google Trends data."
+  - "Ways to download Google Trends data."
+  - "Keyword Examples from Research Institutions."
 ---
+
 
 # Introduction to Google Trends Data
 
