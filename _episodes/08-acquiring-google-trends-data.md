@@ -19,6 +19,26 @@ keypoints:
 
 Google Trends data is valuable for various applications, including `market research`, `forecasting`, `sentiment analysis`, and `academic research`. By analyzing trends, businesses and researchers can identify patterns, understand user behavior, and make informed decisions based on public interest.
 
+In this project, Google Trends data is used as real-time survey of public sentiment that people's search behavior on Google reflects their current economic situation and concerns. Google Trends help us to know how people are feeling about the economy.  
+
+For example, during economic booms, consumer confidence is high, leading to increased searches for terms like "loans," "investment opportunities," or "luxury goods." On the other hand, economic downturns (economic crisis) trigger a shift in search behavior towards terms like "unemployment benefits," "debt consolidation," "budgeting tips," or "frugal living." By analyzing these trends, economists can get a sense of how people are feeling about the economy. Essentially, Google Trends provides a real-time window into public sentiment and economic concerns, potentially providing early warnings of economic shifts. When combined with other economic data, it becomes a valuable tool for economists and policymakers.  
+
+Advantages:
+
+- `Near real-time`: Google Trends data offers near real-time insights, potentially leading to faster detection of economic changes compared to traditional indicators with reporting lags.
+
+- `Granularity`: Search data can be geographically specific, allowing for analysis at national or even regional levels.
+
+- `Complementary Data Source`: Google Trends data can be integrated with traditional economic indicators to create a more comprehensive picture of the current economic state.
+
+Limitations:
+
+ - `Causality Challenges`: Correlation doesn't equal causation. Increased searches for "loans" might not directly cause a GDP rise, but could reflect underlying economic conditions.
+ 
+ - Sentiment vs. Reality: Search behavior might not always reflect actual economic activity. For example, a surge in searches for "unemployment benefits" could indicate a perceived economic downturn, not necessarily a confirmed one. 
+ 
+ - `External Factors`: Google Trends data needs to be considered alongside other factors like government policies, international trade, and natural disasters for a holistic view.
+
 Key features of Google Trends data include:
 
 - `Interest Over Time`: Displays how search interest in a term changes over a specific period.    
