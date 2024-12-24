@@ -46,6 +46,8 @@ Key features of Google Trends data include:
   
 With both manual exploration and automated methods using tools like the pytrends Python library, Google Trends data is accessible and versatile for a wide range of analyses.  
 
+Google Trends Keywords:    
+
 Various research centers and economic institutes have utilized different sets of keywords for their studies. Identifying appropriate keywords for a specific country or geographic region often requires in-depth research. However, here are examples of keywords used by three notable institutions:
 
 1) University of British Columbia (UBC), Canada
