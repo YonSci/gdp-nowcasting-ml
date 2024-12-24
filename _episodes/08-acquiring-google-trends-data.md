@@ -21,18 +21,17 @@ Step1 : Logging in with a Google account.
 
  - Logging in with a Google account is optional but can provide a smoother experience and help avoid potential limitations during data downloads.
    
- - 
-
 Step 2: Open the [Google Trends website](https://trends.google.com/trends/) in your web browser.  
 
-[]()
+![](../assets/img/gt1.png)
+
 Step 3: Click the Explore button to begin your search.  
 
-[]()
+![](../assets/img/gt2.png)
 
 Step 4: Search for Keywords. Enter a key term or word in the search bar.  
 
-[]()  
+![](../assets/img/g3.png)
 
 - Example terms: Economic crisis, Recession, Financial crisis, Inflation, Unemployment. List of Keywords from 
 
