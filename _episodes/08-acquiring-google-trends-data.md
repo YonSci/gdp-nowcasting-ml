@@ -262,11 +262,84 @@ plt.ylabel('Total Count')
 - `plt.ylabel()`: Sets the label for the y-axis.
 
 
-## Final Output
+#### Final Output
 The output will be a graph displaying the total Google searches for "Data Science" over time.
 ![](../assets/img/gt_pytrends.png)
 
 
----
+### Parameters for Build Payload in Pytrends
 
+The `build_payload` function in Pytrends has the following parameters:
+
+#### **1. `kw_list`**
+- A list of keywords to fetch data for.
+- You can specify up to five terms.
+  
+**Example:**
+```python
+kw_list = ['Pizza', 'Italian', 'Spaghetti', 'Breadsticks', 'Sausage']
+```
+
+#### **2. `cat`**
+- The category to narrow down the results.
+- Categories can be identified by inspecting the URL when manually using Google Trends.
+
+**Example:** 
+Choose a category ID for targeted results, such as food, travel, or technology.
+
+#### **3. `geo`**
+- A two-letter country abbreviation to specify the geographical region.
+  
+**Example:**
+```python
+geo = 'US'  # United States
+geo = 'IN'  # India
+```
+
+#### **4. `timeframe`**
+- Specifies the date range for the data.
+- Use predefined formats or custom datetime ranges.
+
+#### **Predefined Formats:**
+- `'today 5-y'`: Data from the last 5 years.
+- `'today 3-m'`: Data from today to 3 months ago (works only for 1, 3, or 12 months).
+- `'now 7-d'`: Data from the past week (works only for 1 or 7 days).
+- `'now 1-H'`: Data from the past hour (works only for 1 or 4 hours).
+
+#### **Custom Date Range:**
+- `'YYYY-MM-DD YYYY-MM-DD'`: Data for specific date ranges.
+  
+**Example:**
+```python
+'2016-12-14 2017-01-25'
+```
+
+#### **All Time Data:**
+- `'all'`: Retrieves all available data.
+
+#### **5. `gprop`**
+- Specifies the Google property to filter results.
+
+#### **Available Options:**
+- `'web'`: Web search (default).
+- `'images'`: Google Images.
+- `'news'`: Google News.
+- `'youtube'`: YouTube.
+- `'froogle'`: Google Shopping results.
+
+**Example:**
+```python
+gprop = 'youtube'  # Fetch trends for YouTube searches.
+```
+
+#### Example Usage
+```python
+pytrends.build_payload(
+    kw_list=['Pizza', 'Italian'], 
+    cat=0, 
+    geo='US', 
+    timeframe='today 5-y', 
+    gprop='web'
+)
+```
 
