@@ -106,9 +106,27 @@ Step 10: Download Data: Click the Download icon in the top-right corner of the c
 
 Step 11: Open and Analyze the CSV File: Open the file using a spreadsheet application like Google Sheets, Microsoft Excel, or another data analysis tool.  
 
+---
+
 ## Automated Google Tresnds Data Download using web appliction devloped at UNECA
 
+The `GDP Nowcasting app` is a web-based application currently being developed at the African Centre for Statistics (ACS) under the United Nations Economic Commission for Africa (UNECA). It is designed to nowcast GDP by utilizing Google Trends data and applying various machine learning algorithms. The app aims to fully automate the GDP nowcasting process, encompassing workflows, deployments, and the integration of diverse machine learning methodologies.  
+
+You can use the web application to download Google Trends data by following these steps: 
+
+Step 1: Select a country from the dropdown menu  
+
+Step 2: Choose the desired time range.   
+
+Step 3: Specify keywords either by manually entering them or selecting from the provided dictionary.  
+
+Step 4: Finally, download the data in CSV format. 
+
+
+---
 
 ## Automated Google Tresnds Data Download using the `pytrends` Python library
+
+---
 
 
