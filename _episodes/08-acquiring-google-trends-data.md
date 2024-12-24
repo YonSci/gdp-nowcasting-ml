@@ -114,14 +114,30 @@ The [`GDP Nowcasting app`](https://mlops-gpd-nowcasting-88t9uagbxrtgq2ajmbpcw4.s
 
 You can use the web application to download Google Trends data by following these steps: 
 
-Step 1: Select a country from the dropdown menu  
+Step 1: Open the Web application link
+![](../assets/img/slla1.png)
 
-Step 2: Choose the desired time range.   
+Step 2: Go the Navigation Bar and select Google Trend Data Downloder module 
 
-Step 3: Specify keywords either by manually entering them or selecting from the provided dictionary.  
+![](../assets/img/slla2.png)
 
-Step 4: Finally, download the data in CSV format. 
+Step 3: Select a country from the dropdown menu  
 
+![](../assets/img/slla3.png)
+
+Step 4: Choose the desired time range.   
+
+![](../assets/img/slla4.png)
+
+Step 5: Specify keywords either by manually entering them or selecting from the provided dictionary.  
+
+![](../assets/img/slla5.png)
+
+Step 6: Finally, download the data in CSV format. 
+
+![](../assets/img/slla6.png)
+
+![](../assets/img/slla7.png)
 
 ---
 
