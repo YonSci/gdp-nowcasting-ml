@@ -13,6 +13,22 @@ keypoints:
 
 ---
 
+# Introduction to Google Trends Data
+
+`Google Trends` is a powerful tool that provides insights into the relative popularity of search queries over time across various regions and languages. It is widely used to analyze search trends, compare keywords, and explore interest in topics. The data is normalized on a scale of 0 to 100, with 100 representing the peak popularity of a term within the selected parameters.  
+
+Google Trends data is valuable for various applications, including `market research`, `forecasting`, `sentiment analysis`, and `academic research`. By analyzing trends, businesses and researchers can identify patterns, understand user behavior, and make informed decisions based on public interest.
+
+Key features of Google Trends data include:
+
+- `Interest Over Time`: Displays how search interest in a term changes over a specific period.    
+- `Regional Interest`: Shows interest levels by geography, such as countries or cities.  
+- `Related Queries and Topics`: Highlights associated search terms and their popularity.  
+- `Search Categories and Types`: Enables filtering by category or search type (e.g., web search, image search, YouTube search).  
+  
+With both manual exploration and automated methods using tools like the pytrends Python library, Google Trends data is accessible and versatile for a wide range of analyses.  
+
+
 # Download Google Trends Data
 
 ## Download Google Tresnds Data  Directly from Google Trends Account.  
@@ -33,7 +49,7 @@ Step 4: Search for Keywords. Enter a key term or word in the search bar.
 
 ![](../assets/img/g3.png)
 
-- Example terms: Economic crisis, Recession, Financial crisis, Inflation, Unemployment. List of Keywords from 
+- Example terms: Economic crisis, Recession, Financial crisis, Inflation, Unemployment. List of Keywords can be found here 
 
 Step 5: Country/Region: Select a specific country.  
 
