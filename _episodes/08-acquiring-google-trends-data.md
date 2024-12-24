@@ -2,11 +2,10 @@
 title: Download Google Trends Data
 teaching: 130
 exercises: 130
-
 questions:
 - "How can Google Trends data be leveraged to gain insights into public economic sentiment?"
 - "How Google Trends data can be downloaded using diffrent methods?"
-- "What are the key advantages and potential limitations of using Google Trends data in economic forecasting?
+- "What are the key advantages and potential limitations of using Google Trends data in economic forecasting?"
 - "Is there a list of Google Trends keywords used by different research institutions?" 
 - "What considerations should be taken into account when integrating Google Trends data with traditional economic indicators?"  
 
