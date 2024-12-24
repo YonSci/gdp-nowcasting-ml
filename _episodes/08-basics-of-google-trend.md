@@ -43,6 +43,8 @@ Analyze the data presented in various formats, such as interest over time, geogr
 Download Data
 
 Locate the desired chart (e.g., "Interest over time").
+
+the download button
 Click the Download icon (three-dot menu ⋮ in the top-right corner of the chart).
 The data will be saved in CSV format on your computer.
 Open and Analyze the CSV File
