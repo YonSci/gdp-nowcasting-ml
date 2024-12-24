@@ -143,13 +143,13 @@ Occasionally, the Google Trends API may block downloads due to multiple requests
 
 To overcome this limitation, we pre-downloaded monthly Google Trends data using the Institute of Business Administration (IBA) methodology, covering the period from 2004 to December 20, 2024, for the following countries:
 
-1) Nigeria  
-2) Kenya
-3) Ivory Coast
-4) Cameroon
-5) Egypt
-6) Mauritius
-7) Ghana
+1) [Nigeria](../data/gt_2004-01-01_2024-12-16_NG.csv)  
+2) [Kenya](../data/gt_2004-01-01_2024-12-20_KE.csv)
+3) [Ivory Coast](../data/gt_2004-01-01_2024-12-20_CI.csv)
+4) [Cameroon](../data/gt_2004-01-01_2024-12-20_CM.csv)
+5) [Egypt](../data/gt_2004-01-01_2024-12-24_EG.csv)
+6) [Mauritius](../data/gt_2004-01-01_2024-12-20_MU.csv)
+7) [Ghana](../data/gt_2004-01-01_2024-12-20_GH.csv)
    
 If needed, we can also provide additional keywords from other sources upon request.
 
