@@ -51,19 +51,22 @@ Various research centers and economic institutes have utilized different sets of
 1) University of British Columbia (UBC), Canada
 
 - Capstone Project: _Nowcasting Macroeconomic Indicators using Google Trends (2022)_
- - [capstone keywords category](../data/capstone_keywords_category.csv)  
- - [capstone keywords Queries](../data/capstone_keywords_queries.json) 
- - [capstone keywords Topics](../data/capstone_keywords_topics.json)  
+  
+  - [capstone keywords category](../data/capstone_keywords_category.csv)    
+  - [capstone keywords Queries](../data/capstone_keywords_queries.json)   
+  - [capstone keywords Topics](../data/capstone_keywords_topics.json)    
   
 2) Organisation for Economic Co-operation and Development (OECD)
 
-- _OECD Economics Department Working Papers (2020)_ 
- - [capstone keywords Topics](../data/OECD_keywords.csv)    
+- _OECD Economics Department Working Papers (2020)_
+  
+  - [capstone keywords Topics](../data/OECD_keywords.csv)      
 
 3) Institute of Business Administration (IBA), Karachi, Pakistan
 
 - _Nowcasting GDP Growth and Forecasting Inflation of Pakistan, 2021_
- - [capstone keywords Topics](../data/IBA_keywords.xlsx)   
+  
+  - [capstone keywords Topics](../data/IBA_keywords.xlsx)     
 
 # Download Google Trends Data
 
