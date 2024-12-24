@@ -143,7 +143,8 @@ Occasionally, the Google Trends API may block downloads due to multiple requests
 
 To overcome this limitation, we pre-downloaded monthly Google Trends data using the Institute of Business Administration (IBA) methodology, covering the period from 2004 to December 20, 2024, for the following countries:
 
-1) [Nigeria](../data/gt_2004-01-01_2024-12-16_NG.csv)  
+
+1) [Nigeria](../data/gt_2004-01-01_2024-12-20_NG.csv)    
      
 2) [Kenya](../data/gt_2004-01-01_2024-12-20_KE.csv)  
   
