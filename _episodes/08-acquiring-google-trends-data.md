@@ -343,3 +343,60 @@ pytrends.build_payload(
 )
 ```
 
+### Downloading Google Trends Data using list of keywords
+
+#### **Step 1: Define the Keyword List**
+Create a list of keywords to analyze in Google Trends.
+
+```python
+kw_list = ["crypto", "bitcoin", "ethereum", "AI", "Tesla"]
+```
+
+- `kw_list`: A list of up to five keywords or topics to fetch data for.
+- Examples in this list include:
+  - "crypto": Represents general cryptocurrency searches.
+  - "bitcoin": Specific to Bitcoin.
+  - "ethereum": Specific to Ethereum.
+  - "AI": Related to Artificial Intelligence.
+  - "Tesla": Refers to the electric vehicle company.
+
+#### **Step 2: Build Payload**
+Pass the keyword list and additional parameters to the `build_payload` function to fetch data.
+
+```python
+pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='US', gprop='')
+```
+
+- `kw_list`: Keywords to analyze.
+- `cat=0`: Searches across all categories.
+- `timeframe='today 5-y'`: Fetches data from the last 5 years.
+- `geo='US'`: Limits the data to searches made in the United States.
+- `gprop=''`: Default setting for web search. Other options include images, news, YouTube, and Google Shopping.
+
+#### **Step 3: Retrieve Interest Over Time Data**
+Fetch the interest over time for the specified keywords.
+
+```python
+iot = pytrends.interest_over_time()
+```
+
+- `interest_over_time()`: Retrieves the relative popularity of each keyword over the specified time range.
+- The result is returned as a Pandas DataFrame.
+
+#### **Step 4: Plot the Data**
+Visualize the interest over time data.
+
+```python
+iot.plot()
+```
+
+- `plot()`: Generates a line plot of the search interest for each keyword.
+- Each keyword's trend is represented by a separate line.
+
+
+#### Final Output
+The output will be a line graph showing the relative search interest of the keywords "crypto," "bitcoin," "ethereum," "AI," and "Tesla" in the United States over the last 5 years.
+
+![](../assets/img/list_keywords.png)
+
+
