@@ -110,7 +110,7 @@ Step 11: Open and Analyze the CSV File: Open the file using a spreadsheet applic
 
 ## Automated Google Tresnds Data Download using web appliction devloped at UNECA
 
-The `GDP Nowcasting app` is a web-based application currently being developed at the African Centre for Statistics (ACS) under the United Nations Economic Commission for Africa (UNECA). It is designed to nowcast GDP by utilizing Google Trends data and applying various machine learning algorithms. The app aims to fully automate the GDP nowcasting process, encompassing workflows, deployments, and the integration of diverse machine learning methodologies.  
+The [`GDP Nowcasting app`](https://mlops-gpd-nowcasting-88t9uagbxrtgq2ajmbpcw4.streamlit.app/) is a web-based application currently being developed at the African Centre for Statistics (ACS) under the United Nations Economic Commission for Africa (UNECA). It is designed to nowcast GDP by utilizing Google Trends data and applying various machine learning algorithms. The app aims to fully automate the GDP nowcasting process, encompassing workflows, deployments, and the integration of diverse machine learning methodologies.  
 
 You can use the web application to download Google Trends data by following these steps: 
 
