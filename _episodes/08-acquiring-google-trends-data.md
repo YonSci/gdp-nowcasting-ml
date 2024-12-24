@@ -163,6 +163,14 @@ If needed, we can also provide additional keywords from other sources upon reque
 
 ## Automated Google Tresnds Data Download using the `pytrends` Python library
 
+What is Pytrends?
+
+`Pytrends` is an unofficial Google Trends API for Python. It allows us to extract data of all kinds related to the interest of users in a specific topic or query. 
+
+As in Google’s own tool, we can extract information at a global or geolocated level, in specific time periods and even based on our own categorization of queries.
+
+[Link for Pytrends](https://pypi.org/project/pytrends/)
+
 ---
 
 
