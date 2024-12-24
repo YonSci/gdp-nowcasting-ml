@@ -139,6 +139,20 @@ Step 6: Finally, download the data in CSV format.
 
 ![](../assets/img/slla7.png)
 
+Occasionally, the Google Trends API may block downloads due to multiple requests being made in a short period. To address this issue, you can try using a VPN, clearing your browser cache, or reopening the application after some time.  
+
+To overcome this limitation, we pre-downloaded monthly Google Trends data using the Institute of Business Administration (IBA) methodology, covering the period from 2004 to December 20, 2024, for the following countries:
+
+1) Nigeria  
+2) Kenya
+3) Ivory Coast
+4) Cameroon
+5) Egypt
+6) Mauritius
+7) Ghana
+   
+If needed, we can also provide additional keywords from other sources upon request.
+
 ---
 
 ## Automated Google Tresnds Data Download using the `pytrends` Python library
