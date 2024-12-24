@@ -2,6 +2,7 @@
 title: Download Google Trends Data
 teaching: 130
 exercises: 130
+
 questions:
 - "How can Google Trends data be leveraged to gain insights into public economic sentiment?"
 - "How Google Trends data can be downloaded using diffrent methods?"
