@@ -47,34 +47,33 @@ keypoints:
     - Check for missing values & detect anomalies.
 
 2) **Data Preprocessing**
+   - **Data aggregation**: Monthly Google Trends data was aggregated to quarterly frequency.
+   - **Normalization/standardization**: Data was standardized to ensure consistent scale and comparability.
+   - **Trend removal**: Long-term trends were removed to isolate cyclical and seasonal components.
+   - **Seasonality removal**: Seasonal patterns were eliminated to mitigate their influence on the analysis.
 
-- Converted monthly Google Trends data to quarterly.
-- Normalization/standardization.
-- Removing the long-term trends. 
-- Removing Seasonality.
-
-3) **Feature Engineering**
+4) **Feature Engineering**
 - Calculate GDP growth rate.
 ![](../assets/img/gdp_growth_rate.png)
 - Created lags features for potential leading signals.
 - Merge all features into a single DataFrame.                                 
   
 4) **Train–Test Split**
-   - The final dataset was partitioned into a `training set (80%)` covering the period from `2010-09-30 to 2021-12-31` and 20% from 2022-03-31 to 2024-09-30 for out-of-sample (test set).
-  
+   - The final dataset was partitioned into a training set (80%) covering the period from `2010-09-30 to 2021-12-31` and 20% from `2022-03-31 to 2024-09-30` for out-of-sample (test set).
+
 5) **Model Training & Forecasting**
    - 10 Machine learning models trained on the training set.
-   
      - **Machine Learning Models**: A diverse set of machine learning models, including `Ridge regression`, `Lasso regression`, `ElasticNet regression`, `K-Nearest Neighbors`, `Decision Tree`, `Extra Trees`, `Gradient Boosting`, `Random Forest`, `XGBoost`, and `LightGBM`, were employed for model training.
    
-   - **Rolling Prediction**: A rolling predictions performed on the test set.                    
+   - **Rolling Prediction**: A rolling predictions performed on the test set.
+
 6) **Hyperparameter Tuning & Cross Validation**
 
-   - **Optimization**: Grid search  to find the best parameters
+   - **Optimization**: Grid search is used to find the best parameters.
    - **Cross-Validation Strategy**: Time-series CV (e.g., sklearn.TimeSeriesSplit).
 
 7) **Model Evaluation**
-   - Calculate evaluation marices (R², MSE, MAE) on both the training set and out-of-sample test set.
+   - Calculate evaluation marices (R²) on both the training set and out-of-sample test set.
   
 8) **Model Uncertainty** (Confidence Intervals)
 
