@@ -28,50 +28,67 @@ keypoints:
   
 - **Improving investor confidence**: Real-time GDP estimates allow investors to make better decisions about trade, foreign direct investment (FDI), and market stability.
 
+# Leveraging Machine Learning models and Google Trends data to nowcast Nigeria's quarterly GDP
+
 ## GDP Nowcasting Workflow
 
 ![](../assets/img/GDP-Nowcasting-Workflow.png)
 
-1) **Data Collection**
+1) **Data Collection & Preparation**
+
+1.1) **Data Sources**:
 
    - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
   
 ![](../assets/img/gdp_quarterly_nigeria.png)
      
-   - **Google Trends**: Google Trends data for Nigeria was harvested from the Google Trends dataset for the same period utilizing a web application developed internally within the African Centre for Statistics (ACS).
+   - **Google Trends**: Google Trends data for Nigeria was harvested from the [Google Trends](https://trends.google.com/trends/) dataset for the same period utilizing a [web application](https://mlops-gpd-nowcasting-88t9uagbxrtgq2ajmbpcw4.streamlit.app/) developed internally within the African Centre for Statistics (ACS) to facilate the Google Trends data collection.
+
+1.2)  **Data Loading**
+
+- Load raw datasets (GDP & Google Trends time-series data).
+- Check for missing values & detect anomalies.
+
+2) **Data Preprocessing**
+
+- Converted monthly Google Trends data to quarterly.
+- Normalization/standardization
+- Removing the long-term trends 
+- Removing Seasonality
+
+3) **Feature Engineering**
+
+- Calculate GDP growth rate
+- Created lags features for potential leading signals
   
 
-3) **Preprocessing**
-   
-- Cleaned & converted monthly Trends to quarterly. Normalized & detrended them.
-- Ensured alignments with the official GDP timeline.
-
-3) Feature Engineering
-
-- Created lags for potential leading signals (e.g., search interest 1 or 2 quarters ahead).
-
-4) Train–Test Split
+4) **Train–Test Split**
 
 - Partitioned the quarterly time series to keep 80% for training, 20% for out-of-sample validation.
 
-5) Model Training & Forecasting
+5) **Model Training & Forecasting**
+   
 - Ran 10 ML models (Ridge, Lasso, ElasticNet, KNN, Decision Tree, ExtraTrees, GBM, RF, XGB, LGBM). Each was tuned via cross-validation.
 
-6) Hyperparameter Tuning & Cross Validation
+6) **Hyperparameter Tuning & Cross Validation**
 
-- Used GridSearch or RandomSearch to find the best alpha (for Lasso, ElasticNet), max_depth, etc.
+6.1)  **Optimization**: Grid search  to find the best parameters
 
-7) Model Evaluation
-- Calculated R², MSE, etc. on both the training set and out-of-sample test set.
+6.2) **Cross-Validation Strategy**: Time-series CV (e.g., sklearn.TimeSeriesSplit).
 
-8) Model Uncertainty (Confidence Intervals)
-Employed bootstrap resampling on the final model’s predictions, deriving 5–95% intervals.
-9) Visualization
-Compared actual vs. predicted GDP levels over time, shading the forecast intervals.
+7) **Model Evaluation**
+
+- Calculate evaluation marices (R², MSE, MAE) on both the training set and out-of-sample test set.
+
+8) **Model Uncertainty** (Confidence Intervals)
+   - Employed bootstrap resampling on the final model’s predictions, deriving 5–95% intervals.
+     
+10) **Visualization**
+
+- Compared actual vs. predicted GDP levels over time, shading the forecast intervals.
 
 ## Key Results
 
 ## Future Enhancements
 
 ## Final Wrap
-
