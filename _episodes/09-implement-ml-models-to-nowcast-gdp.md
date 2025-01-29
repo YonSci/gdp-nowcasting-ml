@@ -30,6 +30,43 @@ keypoints:
 
 ## GDP Nowcasting Workflow
 
+![](../assets/img/GDP-Nowcasting-Workflow.png.png)
+
+1) **Data Collection**
+
+   - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
+     
+   - **Google Trends**: Google Trends data for Nigeria was harvested from the Google Trends dataset for the same period utilizing a web application developed internally within the African Centre for Statistics (ACS).
+  
+
+3) **Preprocessing**
+   
+- Cleaned & converted monthly Trends to quarterly. Normalized & detrended them.
+- Ensured alignments with the official GDP timeline.
+
+3) Feature Engineering
+
+- Created lags for potential leading signals (e.g., search interest 1 or 2 quarters ahead).
+
+4) Train–Test Split
+
+- Partitioned the quarterly time series to keep 80% for training, 20% for out-of-sample validation.
+
+5) Model Training & Forecasting
+- Ran 10 ML models (Ridge, Lasso, ElasticNet, KNN, Decision Tree, ExtraTrees, GBM, RF, XGB, LGBM). Each was tuned via cross-validation.
+
+6) Hyperparameter Tuning & Cross Validation
+
+- Used GridSearch or RandomSearch to find the best alpha (for Lasso, ElasticNet), max_depth, etc.
+
+7) Model Evaluation
+- Calculated R², MSE, etc. on both the training set and out-of-sample test set.
+
+8) Model Uncertainty (Confidence Intervals)
+Employed bootstrap resampling on the final model’s predictions, deriving 5–95% intervals.
+9) Visualization
+Compared actual vs. predicted GDP levels over time, shading the forecast intervals.
+
 ## Key Results
 
 ## Future Enhancements
