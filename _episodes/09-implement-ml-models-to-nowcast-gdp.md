@@ -30,11 +30,13 @@ keypoints:
 
 ## GDP Nowcasting Workflow
 
-![](../assets/img/GDP-Nowcasting-Workflow.png.png)
+![](../assets/img/GDP-Nowcasting-Workflow.png)
 
 1) **Data Collection**
 
    - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
+  
+![](../assets/img/gdp_quarterly_nigeria.png)
      
    - **Google Trends**: Google Trends data for Nigeria was harvested from the Google Trends dataset for the same period utilizing a web application developed internally within the African Centre for Statistics (ACS).
   
