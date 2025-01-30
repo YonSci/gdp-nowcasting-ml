@@ -34,6 +34,16 @@ keypoints:
 
 ## GDP Nowcasting Workflow
 
+**Data Preparation** is where various data sources such as `GDP` time series and `Google Trends` are compiled into a single, consistent dataset. 
+**Preprocessing** follows, adjusting the raw data (e.g., monthly to quarterly alignment, normalization, detrending, and seasonality removal) to isolate meaningful signals. 
+**Feature Engineering** creates new variables or transforms existing ones (like lagged Trends features) to better capture predictive relationships. 
+**Train-Test Split** preserving some recent quarters for out-of-sample validation. 
+**Model Training/Data Modeling & Forecasting** uses multiple machine learning algorithms on the training set.
+**Hyperparameter Tuning & Cross-Validation** refines each model's parameters for optimal performance. 
+**Model Uncertainty** (e.g., through bootstrap confidence intervals) to quantify predictive reliability. 
+**Model Evaluation** compares metrics like R² or MSE across models.
+**Visualization** clearly displaying forecast results, confidence intervals, and essential insights for decision-makers.
+
 ![](../assets/img/GDP-Nowcasting-Workflow.png)
 
 ### **Data Collection & Preparation**
