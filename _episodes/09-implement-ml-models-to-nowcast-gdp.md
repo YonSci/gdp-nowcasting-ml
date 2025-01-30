@@ -30,6 +30,7 @@ keypoints:
 
 # Leveraging Machine Learning models and Google Trends data to nowcast Nigeria's quarterly GDP
 
+
 **Goal**: `Train` and compare machine learning models that leverage `Google Trends` data to forecast Nigeria's `quarterly GDP` that helps policymakers and businesses react faster than waiting for official GDP releases.
 
 ## GDP Nowcasting Workflow
