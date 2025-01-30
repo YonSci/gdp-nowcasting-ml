@@ -38,7 +38,9 @@ keypoints:
 
 ### **Data Collection & Preparation**
    - **Data Sources**
-     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024. The data can be found at this [link](../data/gt_2010-01-01_2024-12-16_NG.csv).  
+     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024. The data can be found at this [link](../data/gt_2010-01-01_2024-12-16_NG.csv).
+
+The chart bellow shows Nigeria's quarterly GDP (in billions of Naira) from 2010 through 2024. Overall, GDP demonstrates a steady upward trend, reflecting growth in the country's economic output over time. However, seasonal or cyclical fluctuations appear each year. By 2024, GDP has climbed to nearly twice its 2010 level, underscoring significant long-term expansion despite intermittent short-term fluctuations. 
 
   
 ![](../assets/img/gdp_quarterly_nigeria.png)
@@ -50,6 +52,8 @@ keypoints:
     - Check for missing values & detect anomalies.
 
 ### **Data Preprocessing Steps**
+
+**Data Aggregation** involves merging different data sources into a single dataset, ensuring all relevant economic indicators (like  Google Trends signals) and official GDP figures are combined. **Normalization/Standardization** then adjusts each variable to a common scale, so large-value features don't dominate the model. Next, **Trend Removal** strips away long-term upward or downward drifts in GDP, letting us focus on short-term or cyclical fluctuations. Finally, **Seasonality Removal** subtracts repeating seasonal effects such as quarter-to-quarter spikes so the underlying patterns in the data are more apparent for accurate nowcasting.
    
    ![](../assets/img/Data-Preprocessing.png)
    
