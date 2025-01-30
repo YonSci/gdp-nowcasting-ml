@@ -63,13 +63,13 @@ The chart bellow shows Nigeria's quarterly GDP (in billions of Naira) from 2010 
 
 ### **Data Preprocessing Steps**
 
-**Data Aggregation** involves merging different data sources into a single dataset, ensuring all relevant economic indicators (like  Google Trends signals) and official GDP figures are combined. **Normalization/Standardization** then adjusts each variable to a common scale, so large-value features don't dominate the model. Next, **Trend Removal** strips away long-term upward or downward drifts in GDP, letting us focus on short-term or cyclical fluctuations. Finally, **Seasonality Removal** subtracts repeating seasonal effects such as quarter-to-quarter spikes so the underlying patterns in the data are more apparent for accurate nowcasting.
+**Data Aggregation** involves converting monthly Google Trends data into quarterly. **Normalization/Standardization** then adjusts each variable to a common scale, so large-value features don't dominate the model. Next, **Trend Removal** strips away long-term upward or downward drifts in GDP, letting us focus on short-term or cyclical fluctuations. Finally, **Seasonality Removal** subtracts repeating seasonal effects such as quarter-to-quarter spikes so the underlying patterns in the data are more apparent for accurate nowcasting.
    
-   ![](../assets/img/Data-Preprocessing.png)
+![](../assets/img/Data-Preprocessing.png)
    
 ### **Feature Engineering Process**
-   
- ![](../assets/img/Feature-Engineering-Process.png)
+
+![](../assets/img/Feature-Engineering.png)
  
 ![](../assets/img/gdp_growth_rate.png)
                                 
