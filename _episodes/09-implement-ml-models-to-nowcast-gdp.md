@@ -58,29 +58,51 @@ keypoints:
                                 
 ### **Train–Test Split**
 
-   - The final dataset was partitioned into a training set (80%) covering the period from `2010-09-30 to 2021-12-31` and 20% from `2022-03-31 to 2024-09-30` for out-of-sample (test set).
+The final dataset was partitioned into a training set (80%) covering the period from `2010-09-30 to 2021-12-31` and 20% from `2022-03-31 to 2024-09-30` for out-of-sample (test set).
 
+![](../assets/img/Train–Test-Split.png)
+ 
 ### **Model Training & Forecasting**
 
-   - 10 Machine learning models trained on the training set.
-     - **Machine Learning Models**: A diverse set of machine learning models, including `Ridge regression`, `Lasso regression`, `ElasticNet regression`, `K-Nearest Neighbors`, `Decision Tree`, `Extra Trees`, `Gradient Boosting`, `Random Forest`, `XGBoost`, and `LightGBM`, were employed for model training.
-   
-   - **Rolling Prediction**: A rolling predictions performed on the test set.
+Nine different machine learning algorithms were trained on the final data set.
+
+![](../assets/img/Machine-Learning-Model.png)
+
+Two forecasting methods were employed: 
+ - **One-step forecast**: a one-step ahead prediction for the training data
+ - **Rolling forecast**: a rolling forecast approach for the out-of-sample test data.
+
+![](../assets/img/Expanding-Window.png)
 
 ### **Hyperparameter Tuning & Cross Validation**
 
-   - **Optimization**: Grid search is used to find the best parameters.
-   - **Cross-Validation Strategy**: Time-series CV (e.g., sklearn.TimeSeriesSplit).
+**Optimization**: "Hyperparameter optimization was achieved through an exhaustive grid search approch over a predefined parameter space.
+     
+**Cross-Validation Strategy**: Time-series cross-validation, such as sklearn.TimeSeriesSplit, was employed to ensure robust performance evaluation.
 
 ### **Model Evaluation**
-   - Calculate evaluation marices (R²) on both the training set and out-of-sample test set.
-  
+
+The `coefficient of determination (R²)` was calculated for both the training and test datasets. The reported R-squared value reflects the model's performance on the held-out test set.
+
+| ML Models                   | R2    |
+|-----------------------------|-------|
+| LGBMRegressor               | 0.868 |
+| ExtraTreesRegressor         | 0.856 |
+| Random Forest               | 0.798 |
+| ElasticNet Regression       | 0.790 |
+| XGBRegressor                | 0.780 |
+| GradientBoostingRegressor   | 0.775 |
+| Lasso Regression            | 0.732 |
+| Decision Tree               | 0.688 |
+| Ridge Regression            | 0.646 |
+
 ### **Model Uncertainty** (Confidence Intervals)
 
-   - Employed bootstrap resampling on the final model’s predictions, deriving 5–95% intervals.
-     
+`Non-parametric bootstrap resampling` was used to estimate `5-95% confidence intervals` for the model's predictions.
+
 ### **Visualization**
-    - Compared actual vs. predicted GDP levels over time, shading the forecast intervals.
+
+Actual and predicted GDP time series were compared graphically, with the forecast uncertainty represented by shaded confidence intervals.
 
 ## Key Results
 
