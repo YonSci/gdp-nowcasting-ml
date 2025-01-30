@@ -52,7 +52,7 @@ keypoints:
    
 ### **Feature Engineering Process**
    
- ![](../assets/img/Feature-Engineering.png)
+ ![](../assets/img/Feature-Engineering-Process.png)
  
 ![](../assets/img/gdp_growth_rate.png)
                                 
@@ -76,7 +76,7 @@ Two forecasting methods were employed:
 
 ### **Hyperparameter Tuning & Cross Validation**
 
-**Optimization**: "Hyperparameter optimization was achieved through an exhaustive grid search approch over a predefined parameter space.
+**Optimization**: Hyperparameter optimization was achieved through an exhaustive grid search approch over a predefined parameter space.
      
 **Cross-Validation Strategy**: Time-series cross-validation, such as sklearn.TimeSeriesSplit, was employed to ensure robust performance evaluation.
 
@@ -86,15 +86,15 @@ The `coefficient of determination (R²)` was calculated for both the training an
 
 | ML Models                   | R2    |
 |-----------------------------|-------|
-| LGBMRegressor               | 0.868 |
-| ExtraTreesRegressor         | 0.856 |
-| Random Forest               | 0.798 |
-| ElasticNet Regression       | 0.790 |
-| XGBRegressor                | 0.780 |
-| GradientBoostingRegressor   | 0.775 |
-| Lasso Regression            | 0.732 |
-| Decision Tree               | 0.688 |
-| Ridge Regression            | 0.646 |
+| LGBM Regressor               | 0.868 |
+| Extra Trees Regressor        | 0.856 |
+| Random Forest Regressor      | 0.798 |
+| ElasticNet Regressor         | 0.790 |
+| XGBoost Regressor            | 0.780 |
+| Gradient Boosting Regressor  | 0.775 |
+| Lasso Regressor              | 0.732 |
+| Decision Tree Regressor      | 0.688 |
+| Ridge Regressor              | 0.646 |
 
 ### **Model Uncertainty** (Confidence Intervals)
 
@@ -103,6 +103,25 @@ The `coefficient of determination (R²)` was calculated for both the training an
 ### **Visualization**
 
 Actual and predicted GDP time series were compared graphically, with the forecast uncertainty represented by shaded confidence intervals.
+
+![](../assets/img/lgbm.png)
+
+![](../assets/img/et.png)
+
+![](../assets/img/rg.png)
+
+![](../assets/img/en.png)
+
+![](../assets/img/xgboost.png)
+
+![](../assets/img/gbr.png)
+
+![](../assets/img/lr.png)
+
+![](../assets/img/dt.png)
+
+![](../assets/img/rr.png)
+
 
 ## Key Results
 
