@@ -117,7 +117,17 @@ The `coefficient of determination (R²)` was calculated for both the training an
 
 ### **Visualization**
 
-Actual and predicted GDP time series were compared graphically, with the forecast uncertainty represented by shaded confidence intervals.
+Actual and predicted GDP time series were compared graphically, with the forecast uncertainty represented by shaded confidence intervals. 
+
+**Training Period**: 
+  - Black lines with circles = actual official GDP,
+  - blue line = predicted GDP for training (in-sample).
+
+**Test Period**: 
+  - The black lines with circles continuing into the future are actual data.
+  - The red line is the predicted GDP.
+
+**Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.
 
 ![](../assets/img/lgbm.png)
 
@@ -140,6 +150,16 @@ Actual and predicted GDP time series were compared graphically, with the forecas
 
 ## Key Results
 
+`LGBM Regressor` achieved an R-squared value of `0.868`, indicating it explained ~86.8% of GDP variance on the test set. `ExtraTreesRegressor` was at 0.856, also quite strong. Models like Decision Tree or Ridge had lower R², possibly underfitting the data or lacking enough complexity.
+
 ## Future Enhancements
 
+- **Real-Time Dashboard**: Integrate these predictions into a live Streamlit or Power BI interface so stakeholders can see updated forecasts.
+  
+- **More Google Trends Terms**: Exploring domain-specific searches (e.g., agriculture, oil, manufacturing).
+  
+- **Advanced deep learning time-Series models**: We could try advanced `deep learning time series models` such as Recurrent Neural Network, Long Short Term Memory, Gated Recurrent Unit, Transformer , Temporal Fusion Transformer, Encoder decoder LSTM, Sequence to Sequences with attention structures to capture seasonality more directly.
+
 ## Final Wrap
+
+By combining `Google Trends signals` and `advanced ML models`, we achieved `~87%` accuracy (R²) in nowcasting Nigeria’s GDP, offering an actionable, real-time vantage on economic performance.
