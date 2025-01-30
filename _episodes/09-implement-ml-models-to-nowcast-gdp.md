@@ -34,7 +34,7 @@ keypoints:
 
 ![](../assets/img/GDP-Nowcasting-Workflow.png)
 
-1) **Data Collection & Preparation**
+### **Data Collection & Preparation**
    - **Data Sources**
      - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
   
@@ -46,38 +46,40 @@ keypoints:
     - Load raw datasets (GDP & Google Trends time-series data).
     - Check for missing values & detect anomalies.
 
-2) **Data Preprocessing**
+### **Data Preprocessing**
    
    ![](../assets/img/Data-Preprocessing.png)
    
-4) **Feature Engineering**
+### **Feature Engineering**
    
  ![](../assets/img/Feature-Engineering.png)
  
 ![](../assets/img/gdp_growth_rate.png)
                                 
-4) **Train–Test Split**
+### **Train–Test Split**
+
    - The final dataset was partitioned into a training set (80%) covering the period from `2010-09-30 to 2021-12-31` and 20% from `2022-03-31 to 2024-09-30` for out-of-sample (test set).
 
-5) **Model Training & Forecasting**
+### **Model Training & Forecasting**
+
    - 10 Machine learning models trained on the training set.
      - **Machine Learning Models**: A diverse set of machine learning models, including `Ridge regression`, `Lasso regression`, `ElasticNet regression`, `K-Nearest Neighbors`, `Decision Tree`, `Extra Trees`, `Gradient Boosting`, `Random Forest`, `XGBoost`, and `LightGBM`, were employed for model training.
    
    - **Rolling Prediction**: A rolling predictions performed on the test set.
 
-6) **Hyperparameter Tuning & Cross Validation**
+### **Hyperparameter Tuning & Cross Validation**
 
    - **Optimization**: Grid search is used to find the best parameters.
    - **Cross-Validation Strategy**: Time-series CV (e.g., sklearn.TimeSeriesSplit).
 
-7) **Model Evaluation**
+### **Model Evaluation**
    - Calculate evaluation marices (R²) on both the training set and out-of-sample test set.
   
-8) **Model Uncertainty** (Confidence Intervals)
+### **Model Uncertainty** (Confidence Intervals)
 
    - Employed bootstrap resampling on the final model’s predictions, deriving 5–95% intervals.
      
-9) **Visualization**
+### **Visualization**
     - Compared actual vs. predicted GDP levels over time, shading the forecast intervals.
 
 ## Key Results
