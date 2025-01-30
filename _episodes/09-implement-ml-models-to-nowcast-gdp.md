@@ -35,7 +35,7 @@ keypoints:
 ![](../assets/img/GDP-Nowcasting-Workflow.png)
 
 1) **Data Collection & Preparation**
-   - **Data Sources**:
+   - **Data Sources**
      - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
   
 ![](../assets/img/gdp_quarterly_nigeria.png)
@@ -47,17 +47,15 @@ keypoints:
     - Check for missing values & detect anomalies.
 
 2) **Data Preprocessing**
-   - **Data aggregation**: Monthly Google Trends data was aggregated to quarterly frequency.
-   - **Normalization/standardization**: Data was standardized to ensure consistent scale and comparability.
-   - **Trend removal**: Long-term trends were removed to isolate cyclical and seasonal components.
-   - **Seasonality removal**: Seasonal patterns were eliminated to mitigate their influence on the analysis.
-
+   
+   ![](../assets/img/Data-Preprocessing.png)
+   
 4) **Feature Engineering**
-- Calculate GDP growth rate.
+   
+ ![](../assets/img/Feature-Engineering.png)
+ 
 ![](../assets/img/gdp_growth_rate.png)
-- Created lags features for potential leading signals.
-- Merge all features into a single DataFrame.                                 
-  
+                                
 4) **Train–Test Split**
    - The final dataset was partitioned into a training set (80%) covering the period from `2010-09-30 to 2021-12-31` and 20% from `2022-03-31 to 2024-09-30` for out-of-sample (test set).
 
