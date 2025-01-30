@@ -69,7 +69,11 @@ The chart bellow shows Nigeria's quarterly GDP (in billions of Naira) from 2010 
    
 ### **Feature Engineering Process**
 
+This workflow begins by calculating the GDP growth rate from raw GDP data, establishing the main economic performance indicator. Next, we create lag features shifting variables by one or more quarters to capture predictive relationships over time. Finally, we merge all features (including the newly generated lags) into a single dataset, enabling seamless modeling and analysis.
+
 ![](../assets/img/Feature-Engineering.png)
+
+This chart displays the quarterly GDP growth rates from 2010 to 2024, highlighting a recurring pattern of significant peaks and troughs each year.
  
 ![](../assets/img/gdp_growth_rate.png)
                                 
@@ -81,7 +85,7 @@ The final dataset was partitioned into a training set (80%) covering the period 
  
 ### **Model Training & Forecasting**
 
-Nine different machine learning algorithms were trained on the final data set. 
+Nine (9) different machine learning algorithms were trained on the final data set. 
 ![](../assets/img/Machine-Learning-Model.png)
 
 Two forecasting methods were employed: 
@@ -143,7 +147,9 @@ Actual and predicted GDP time series were compared graphically, with the forecas
   - The black lines with circles continuing into the future are actual data.
   - The red line is the predicted GDP.
 
-**Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.  The shaded confidence intervals reflect uncertainty—critical for policymakers to hedge risks. 
+**Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.  The shaded confidence intervals reflect uncertainty critical for policymakers to hedge risks. 
+
+For example, the following chart shows that the LGBM model closely tracks Nigeria's historical GDP during the training period (blue line vs. black line), yielding a strong R-squared of 0.87. Beyond 2022 (the test/future period), the red line represents the model's GDP projection, while the shaded red region (5–95% confidence interval) illustrates uncertainty in those forecasts. 
 
 ![](../assets/img/lgbm.png)
 
