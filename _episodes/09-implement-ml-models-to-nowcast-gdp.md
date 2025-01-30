@@ -12,7 +12,7 @@ keypoints:
 - "Google Trends, Machine Learning, Quarterly GDP, LGBM Regressor, Extra Trees Regressor, Random Forest Regressor, Elastic-Net Regressor, XGBoost Regressor, Gradient Boosting Regressor, Lasso Regressor,           Decision Tree Regressor, Ridge Regressor"
 
 ---
-# Nowcasting Nigeria's GDP with Machine Learning and Google Trends Data
+# Leveraging Machine Learning Models and Google Trends Data to Nowcast Nigeria's Quarterly GDP
 
 ## Why GDP nowcasting matters
 
@@ -28,10 +28,9 @@ keypoints:
   
 - **Improving investor confidence**: Real-time GDP estimates allow investors to make better decisions about trade, foreign direct investment (FDI), and market stability.
 
-# Leveraging Machine Learning models and Google Trends data to nowcast Nigeria's quarterly GDP
+## Objective 
 
-
-**Goal**: `Train` and compare machine learning models that leverage `Google Trends` data to forecast Nigeria's `quarterly GDP` that helps policymakers and businesses react faster than waiting for official GDP releases.
+`Train` and compare machine learning models that leverage `Google Trends` data to forecast Nigeria's `quarterly GDP` that helps policymakers and businesses react faster than waiting for official GDP releases.
 
 ## GDP Nowcasting Workflow
 
