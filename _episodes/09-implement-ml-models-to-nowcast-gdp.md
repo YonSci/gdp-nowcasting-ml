@@ -36,7 +36,7 @@ keypoints:
 
 ### **Data Collection & Preparation**
    - **Data Sources**
-     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024. The data can be found at this ![link](../assets/data/gt_2010-01-01_2024-12-16_NG.csv).
+     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024. The data can be found at this [link](../assets/data/gt_2010-01-01_2024-12-16_NG.csv).  
   
 ![](../assets/img/gdp_quarterly_nigeria.png)
      
