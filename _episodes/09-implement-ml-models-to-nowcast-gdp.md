@@ -36,7 +36,7 @@ keypoints:
 
 ### **Data Collection & Preparation**
    - **Data Sources**
-     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024.
+     - **Quarterly Gross Domestic Product (GDP)**: Official quarterly Gross Domestic Product (GDP) data obtained from the Nigerian Bureau of Statistics (NBS) spanning the years 2010 to 2024. The data can be found at this [link](../assets/data/gt_2010-01-01_2024-12-16_NG.csv).
   
 ![](../assets/img/gdp_quarterly_nigeria.png)
      
@@ -64,13 +64,27 @@ The final dataset was partitioned into a training set (80%) covering the period 
  
 ### **Model Training & Forecasting**
 
-Nine different machine learning algorithms were trained on the final data set.
-
+Nine different machine learning algorithms were trained on the final data set. 
 ![](../assets/img/Machine-Learning-Model.png)
 
 Two forecasting methods were employed: 
  - **One-step forecast**: a one-step ahead prediction for the training data
  - **Rolling forecast**: a rolling forecast approach for the out-of-sample test data.
+
+The implementation notebooks for each of the nine models are available bellow. You are welcome to modify or improve them. 
+
+| ML Models                   |
+|-----------------------------|
+| [LGBM Regressor](../code/lgbm_gdp_forecast_ng.ipynb)               |
+| [Extra Trees Regressor](../code/et_gdp_forecast_ng.ipynb)       | 
+| [Random Forest Regressor](../code/rf_gdp_forecast_ng.ipynb)     | 
+| [ElasticNet Regressor](../code/en_gdp_forecast_ng.ipynb)        | 
+| [XGBoost Regressor](../code/xgb_gdp_forecast_ng.ipynb)           | 
+| [Gradient Boosting Regressor](../code/gbr_gdp_forecast_ng.ipynb) | 
+| [Lasso Regressor](../code/lr_gdp_forecast_ng.ipynb)             | 
+| [Decision Tree Regressor](../code/dt_gdp_forecast_ng.ipynb)     | 
+| [Ridge Regressor](../code/rr_gdp_forecast_ng.ipynb)             | 
+
 
 ![](../assets/img/Expanding-Window.png)
 
