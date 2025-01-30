@@ -46,11 +46,11 @@ keypoints:
     - Load raw datasets (GDP & Google Trends time-series data).
     - Check for missing values & detect anomalies.
 
-### **Data Preprocessing**
+### **Data Preprocessing Steps**
    
    ![](../assets/img/Data-Preprocessing.png)
    
-### **Feature Engineering**
+### **Feature Engineering Process**
    
  ![](../assets/img/Feature-Engineering.png)
  
