@@ -3,13 +3,13 @@ title: Implementation of Machine Learning Models to Nowcast GDP
 teaching: 130
 exercises: 130
 questions:
-- "What are the fundamental concepts in ML?"
+- "Can Google Trends and machine learning predict Nigeria's GDP? We trained nine machine learning models to answer this question."
 
 objectives:
-- "Gain an understanding of fundamental machine learning concepts."
+- "`Train` and compare machine learning models that leverage `Google Trends` data to forecast Nigeria's `quarterly GDP` that helps policymakers and businesses react faster than waiting for official GDP releases."
 
 keypoints:
-- "ML algorithms like linear regression, k-nearest neighbors,support vector Machine, xgboost and random forests are vital algorithms"
+- "Google Trends, Machine Learning, Quarterly GDP, LGBM Regressor, Extra Trees Regressor, Random Forest Regressor, Elastic-Net Regressor, XGBoost Regressor, Gradient Boosting Regressor, Lasso Regressor,           Decision Tree Regressor, Ridge Regressor"
 
 ---
 # Nowcasting Nigeria's GDP with Machine Learning and Google Trends Data
@@ -29,6 +29,8 @@ keypoints:
 - **Improving investor confidence**: Real-time GDP estimates allow investors to make better decisions about trade, foreign direct investment (FDI), and market stability.
 
 # Leveraging Machine Learning models and Google Trends data to nowcast Nigeria's quarterly GDP
+
+**Goal**: `Train` and compare machine learning models that leverage `Google Trends` data to forecast Nigeria's `quarterly GDP` that helps policymakers and businesses react faster than waiting for official GDP releases.
 
 ## GDP Nowcasting Workflow
 
@@ -127,7 +129,7 @@ Actual and predicted GDP time series were compared graphically, with the forecas
   - The black lines with circles continuing into the future are actual data.
   - The red line is the predicted GDP.
 
-**Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.
+**Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.  The shaded confidence intervals reflect uncertainty—critical for policymakers to hedge risks. 
 
 ![](../assets/img/lgbm.png)
 
