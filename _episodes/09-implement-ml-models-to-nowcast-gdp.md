@@ -73,7 +73,7 @@ This workflow begins by calculating the GDP growth rate from raw GDP data, estab
 
 ![](../assets/img/Feature-Eng.png)
 
-This chart displays the quarterly GDP growth rates from 2010 to 2024, highlighting a recurring pattern of significant peaks and troughs each year.
+This plot presents the quarterly GDP growth rates from 2010 to 2024, clearly demonstrating a recurring pattern of substantial peaks and troughs that appear to occur annually.
  
 ![](../assets/img/gdp_growth_rate.png)
                                 
