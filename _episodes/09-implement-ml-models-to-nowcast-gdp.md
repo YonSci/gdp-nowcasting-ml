@@ -71,7 +71,7 @@ The chart bellow shows Nigeria's quarterly GDP (in billions of Naira) from 2010 
 
 This workflow begins by calculating the GDP growth rate from raw GDP data, establishing the main economic performance indicator. Next, we create lag features shifting variables by one or more quarters to capture predictive relationships over time. Finally, we merge all features (including the newly generated lags) into a single dataset, enabling seamless modeling and analysis.
 
-![](../assets/img/Feature-Engineering.png)
+![](../assets/img/Feature-Eng)
 
 This chart displays the quarterly GDP growth rates from 2010 to 2024, highlighting a recurring pattern of significant peaks and troughs each year.
  
@@ -149,7 +149,7 @@ Actual and predicted GDP time series were compared graphically, with the forecas
 
 **Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.  The shaded confidence intervals reflect uncertainty critical for policymakers to hedge risks. 
 
-### Key Insights 
+## Key Insights 
 
 **LGBM Regressor**
 
@@ -164,39 +164,39 @@ The Extra Trees Regressor model achieves an R² score of 0.86, suggesting a stro
 ![](../assets/img/et.png)
 
 **Random Forest Regressor**
+The Random Forest Regressor achieved a high R-squared of 0.80, explaining 80% of the variance in GDP. This suggests a strong fit to the data. Relative to other models evaluated, Random Forest demonstrated a commendable balance between accurately capturing historical GDP trends and acknowledging inherent model uncertainty.
 
 ![](../assets/img/rf.png)
 
 **ElasticNet Regressor**
+The ElasticNet Regressor achieved an R-squared of 0.79, explaining 79% of the GDP variance, but indicating a slightly weaker fit compared to previous models. While the model follows the general GDP trend, the widening confidence intervals, coupled with the lower R-squared, suggest increased uncertainty in future predictions, particularly for longer forecasting horizons.
 
 ![](../assets/img/en.png)
 
-The ElasticNet Regressor achieves an R² score of 0.79 suggesting a slightly weaker fit compared to the previous models, meaning the Elastic Net Regression model explains 79% of the variance in GDP. While the model follows the GDP trend, its lower R² and widening confidence interval indicate higher uncertainty in future predictions, making it less reliable for long-term forecasting compared to tree-based models like LGBM or Extra Trees.
-
 **XGBoost Regressor**
+The XGBoost model achieved an R-squared of 0.78, indicating a reasonable fit to the historical GDP data, explaining 78% of the variance. However, its performance was slightly lower than Random Forest and Extra Trees. While XGBoost effectively models past trends, the widening confidence intervals after 2022 suggest that near-term forecasts are more reliable than long-term projections.
 
 ![](../assets/img/xgboost.png)
 
 **Gradient Boosting Regressor**
+The Gradient Boosting Regressor demonstrated a coefficient of determination (R-squared) of 0.78, indicating a strong fit to the historical GDP data, comparable to that of the XGBoost model, explaining 78% of the variance. However, the widening confidence intervals post-2022 underscore the increasing uncertainty associated with long-term forecasts. Despite the model's strong performance on historical data, caution should be exercised when interpreting predictions beyond the near term.
 
 ![](../assets/img/gbr.png)
 
 **Lasso Regressor**
+The Lasso Regression model, exhibiting an R-squared of 0.73, demonstrates a marginally lower fit compared to models such as Gradient Boosting and XGBoost, accounting for 73% of the variance in GDP. 
 
 ![](../assets/img/lr.png)
 
 **Decision Tree Regressor**
+The Decision Tree model exhibited a coefficient of determination (R-squared) of 0.69, indicating a weaker fit compared to models such as Gradient Boosting, Random Forest, and LGBM, accounting for 69% of the variance in GDP. 
 
 ![](../assets/img/dt.png)
 
 **Ridge Regressor**
+The Ridge Regression model achieved a coefficient of determination (R-squared) of 0.65, explaining 65% of the variance in GDP. This indicates a weaker fit compared to models such as Gradient Boosting, LGBM, and Random Forest. 
 
 ![](../assets/img/rr.png)
-
-
-## Key Results
-
-`LGBM Regressor` achieved an R-squared value of `0.868`, indicating it explained ~86.8% of GDP variance on the test set. `ExtraTreesRegressor` was at 0.856, also quite strong. Models like Decision Tree or Ridge had lower R², possibly underfitting the data or lacking enough complexity.
 
 ## Future Enhancements
 
