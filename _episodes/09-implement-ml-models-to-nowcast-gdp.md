@@ -149,23 +149,47 @@ Actual and predicted GDP time series were compared graphically, with the forecas
 
 **Confidence Interval (Shaded Area)**: Using bootstrap, we bracket the potential future GDP from the 5th to 95th percentile. This range accounts for model and sampling uncertainty.  The shaded confidence intervals reflect uncertainty critical for policymakers to hedge risks. 
 
-For example, the following chart shows that the LGBM model closely tracks Nigeria's historical GDP during the training period (blue line vs. black line), yielding a strong R-squared of 0.87. Beyond 2022 (the test/future period), the red line represents the model's GDP projection, while the shaded red region (5–95% confidence interval) illustrates uncertainty in those forecasts. 
+### Key Insights 
+
+**LGBM Regressor**
+
+The plot illustrates the predicted GDP (in Naira) using an LGBM Regressor, incorporating 5-95% confidence intervals over a quarterly timeline. The actual GDP values are represented by the black line with dots, covering both the training and test periods. The blue line indicates the model’s predictions during the training phase, demonstrating how well it fits historical data. The red line represents the GDP nowcasting for the future period, with a shaded red region highlighting the uncertainty range. The blue-shaded area corresponds to the training period, while the red-shaded region reflects the confidence interval for future predictions, showing increasing uncertainty over time. The model achieves an R² score of 0.87, indicating a strong fit, explaining 87% of the variance in GDP. Overall, the model effectively captures seasonal and trend patterns, making it reliable for short-term forecasting, though the widening confidence intervals suggest that caution is needed when interpreting long-term projections.
 
 ![](../assets/img/lgbm.png)
 
+**Extra Trees Regressor**
+
+The Extra Trees Regressor model achieves an R² score of 0.86, suggesting a strong fit, explaining 86% of the variance in GDP. Compared to the previous LGBM model, this Extra Trees model exhibits more rigid step-like predictions, a characteristic of tree-based models.
+
 ![](../assets/img/et.png)
 
-![](../assets/img/rg.png)
+**Random Forest Regressor**
+
+![](../assets/img/rf.png)
+
+**ElasticNet Regressor**
 
 ![](../assets/img/en.png)
 
+The ElasticNet Regressor achieves an R² score of 0.79 suggesting a slightly weaker fit compared to the previous models, meaning the Elastic Net Regression model explains 79% of the variance in GDP. While the model follows the GDP trend, its lower R² and widening confidence interval indicate higher uncertainty in future predictions, making it less reliable for long-term forecasting compared to tree-based models like LGBM or Extra Trees.
+
+**XGBoost Regressor**
+
 ![](../assets/img/xgboost.png)
+
+**Gradient Boosting Regressor**
 
 ![](../assets/img/gbr.png)
 
+**Lasso Regressor**
+
 ![](../assets/img/lr.png)
 
+**Decision Tree Regressor**
+
 ![](../assets/img/dt.png)
+
+**Ridge Regressor**
 
 ![](../assets/img/rr.png)
 
