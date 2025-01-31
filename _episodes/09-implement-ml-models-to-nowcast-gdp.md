@@ -71,7 +71,7 @@ The chart bellow shows Nigeria's quarterly GDP (in billions of Naira) from 2010 
 
 This workflow begins by calculating the GDP growth rate from raw GDP data, establishing the main economic performance indicator. Next, we create lag features shifting variables by one or more quarters to capture predictive relationships over time. Finally, we merge all features (including the newly generated lags) into a single dataset, enabling seamless modeling and analysis.
 
-![](../assets/img/Feature-Eng)
+![](../assets/img/Feature-Eng.png)
 
 This chart displays the quarterly GDP growth rates from 2010 to 2024, highlighting a recurring pattern of significant peaks and troughs each year.
  
